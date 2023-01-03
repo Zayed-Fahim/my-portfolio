@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-      <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
+      <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] sticky top-0">
         <div className="container mx-auto navbar h-5 border-4">
           <div className="flex-1">
             <Link className="text-white text-4xl font-bold">
               <span className="text-[#00C4F0] font-bold">zayed</span>DEV
-              <span className="font-bold text-7xl text-[#E2A300] absolute top-[-20px]">.</span>
+              <span className="font-bold text-7xl text-[#E2A300] absolute top-[-20px]">
+                .
+              </span>
             </Link>
           </div>
           <div className="text-white">
