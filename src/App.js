@@ -3,7 +3,7 @@ import Route from './pages/Route/Route';
 
 function App() {
   return (
-    <div className='container mx-auto text-white'>
+    <div className=''>
       <Route></Route>
     </div>
   );
