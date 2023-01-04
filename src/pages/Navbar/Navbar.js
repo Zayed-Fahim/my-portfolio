@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-      <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] sticky top-0">
-        <div className="container mx-auto navbar h-5 border-4">
+      <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] sticky top-0 z-[1]">
+        <div className="container mx-auto navbar h-5">
           <div className="flex-1">
             <Link className="text-white text-4xl font-bold">
               <span className="text-[#00C4F0] font-bold">zayed</span>DEV
@@ -30,7 +30,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="pl-12">
-            <button className="text-black h-[40px] px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px]">
+            <button className="text-black h-[40px] px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
               Download CV
             </button>
           </div>
