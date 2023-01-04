@@ -1,6 +1,8 @@
 import React from 'react';
 import me from '../../assets/me/formal.png';
 import { Typewriter } from "react-simple-typewriter";
+import { FaCode, FaHtml5, FaNode, FaReact } from 'react-icons/fa';
+import { SiFirebase } from "react-icons/si";
 
 const Banner = () => {
     return (
@@ -13,7 +15,11 @@ const Banner = () => {
                 I'AM{" "}
                 <span className="text-[#00C4F0] font-bold">
                   <Typewriter
-                    words={["SAYED ASIF ZAYED", "FRONT-END DEVELOPER", "MERN STACK DEVELOPER"]}
+                    words={[
+                      "SAYED ASIF ZAYED",
+                      "FRONT-END DEVELOPER",
+                      "MERN STACK DEVELOPER",
+                    ]}
                     loop
                     cursor
                     cursorStyle="_"
@@ -43,6 +49,23 @@ const Banner = () => {
             <div className="w-[575px] h-[575px] border-solid border-[67px] border-[#00C4F0] drop-shadow-[0_0_152px_rgba(0,196,240,0.42)] rounded-[50%]  absolute bottom-[121px]"></div>
             <div className="absolute bottom-[121px]">
               <img className="h-[685px] ml-5" src={me} alt="me-1" />
+            </div>
+          </div>
+          <div>
+            <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative left-[760px] top-[220px]">
+              <FaHtml5 className="h-16 w-16 text-[#00C4F0]"></FaHtml5>
+            </div>
+            <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative left-[730px] top-[-85px]">
+              <FaReact className="h-16 w-16 text-[#00C4F0]"></FaReact>
+            </div>
+            <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative left-[850px] top-[-345px]">
+              <SiFirebase className="h-16 w-16 text-[#00C4F0]"></SiFirebase>
+            </div>
+            <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative left-[1190px] top-[-425px]">
+              <FaNode className="h-16 w-16 text-[#00C4F0]"></FaNode>
+            </div>
+            <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative left-[1295px] top-[-330px]">
+              <FaCode className="h-16 w-16 text-[#00C4F0]"></FaCode>
             </div>
           </div>
         </div>
