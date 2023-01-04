@@ -8,7 +8,7 @@ const Banner = () => {
         <div className="grid grid-cols-2 container mx-auto">
           <div className="flex flex-col relative top-60">
             <h1 className="text-[#E4E4E4] text-5xl">HELLO</h1>
-            <div className="leading-[72px] mt-8 w-[700px]">
+            <div className="leading-[72px] mt-6 w-[660px] h-[136px]">
               <h1 className="text-[#E4E4E4] text-7xl font-bold">
                 I'AM{" "}
                 <span className="text-[#00C4F0] font-bold">
@@ -40,9 +40,9 @@ const Banner = () => {
             </div>
           </div>
           <div>
-            <div className=" w-[575px] h-[575px] border-solid border-[67px] border-[#00C4F0] drop-shadow-[0_0_152px_rgba(0,196,240,0.42)] rounded-[50%]  absolute bottom-[121px]"></div>
+            <div className="w-[575px] h-[575px] border-solid border-[67px] border-[#00C4F0] drop-shadow-[0_0_152px_rgba(0,196,240,0.42)] rounded-[50%]  absolute bottom-[121px]"></div>
             <div className="absolute bottom-[121px]">
-              <img className="h-[685px] ml-5" src={me} alt="me" />
+              <img className="h-[685px] ml-5" src={me} alt="me-1" />
             </div>
           </div>
         </div>
