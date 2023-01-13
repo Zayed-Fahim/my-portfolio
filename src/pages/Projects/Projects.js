@@ -25,14 +25,14 @@ const Projects = () => {
     autoplaySpeed: 5000,
     cssEase: "linear",
     appendDots: (dots) => (
-      <div style={{position:"relative"}} className="slick-dots">
-        <ul className=""> {dots} </ul>
+      <div style={{position:"relative"}}>
+        <ul> {dots} </ul>
       </div>
     )
   };
     return (
-      <div className="h-[950px] bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
-        <h1 className="text-[#E4E4E4] text-5xl font-bold text-center p-20">
+      <div className="h-[900px] bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
+        <h1 className="text-[#E4E4E4] text-5xl font-bold text-center p-16">
           <span className="text-[#00C4F0] font-bold">
             <Typewriter
               words={["PROJECTS"]}
@@ -47,7 +47,7 @@ const Projects = () => {
         </h1>
         <Slider
           {...settings}
-          className="container mx-auto text-white pt-10 pb-10 px-44"
+          className="container mx-auto text-white pt-5 pb-5 px-44"
         >
           <div className="w-[970px] glass">
             <div className="flex p-10 justify-between">
