@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 
 const Footer = () => {
     return (
@@ -35,6 +36,20 @@ const Footer = () => {
               <br />
               Providing reliable tech since 1992
             </p>
+          </div>
+          <div>
+            <ScrollUpButton
+              style={{ width: 60, height: 60, padding: 5 }}
+              ToggledStyle={{
+                position: "relative",
+                background: "#E2A300",
+                border: "none",
+                fill: "white",
+              }}
+              EasingType="easeOutCubic"
+              AnimationDuration={2500}
+              ShowAtPosition={4050}
+            />
           </div>
         </footer>
       </div>

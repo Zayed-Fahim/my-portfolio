@@ -31,7 +31,7 @@ const Projects = () => {
     )
   };
     return (
-      <div className="h-[900px] bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
+      <div className="h-[900px] bg-gradient-to-r from-[#414141] to-[#2D2D2D]" id='projects'>
         <h1 className="text-[#E4E4E4] text-5xl font-bold text-center p-16">
           <span className="text-[#00C4F0] font-bold">
             <Typewriter

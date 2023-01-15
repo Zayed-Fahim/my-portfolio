@@ -34,7 +34,7 @@ export const Contact = () => {
       );
   };
   return (
-    <div className="h-[700px] bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
+    <div className="h-[700px] bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]" id="contact">
       <h1 className="text-[#E4E4E4] text-5xl font-bold text-center p-16">
         <span className="text-[#00C4F0] font-bold">
           <Typewriter

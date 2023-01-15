@@ -1,34 +1,37 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
     return (
       <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] sticky top-0 z-[2]">
         <div className="container mx-auto navbar h-5">
           <div className="flex-1">
-            <Link className="text-white text-4xl font-bold">
+            <NavHashLink smooth to="/home#" className="text-white text-4xl font-bold">
               <span className="text-[#00C4F0] font-bold">zayed</span>DEV
               <span className="font-bold text-7xl text-[#E2A300] absolute top-[-20px]">
                 .
               </span>
-            </Link>
+            </NavHashLink>
           </div>
           <div className="text-white">
             <ul className="flex gap-12 text-[18px] font-bold">
               <li className="hover:text-[#00C4F0]">
-                <Link>Home</Link>
+                <NavHashLink smooth to="home/#root">Home</NavHashLink>
               </li>
               <li className="hover:text-[#00C4F0]">
-                <Link>About me</Link>
+                <NavHashLink smooth to="home/#experience">Experience</NavHashLink>
               </li>
               <li className="hover:text-[#00C4F0]">
-                <Link>Projects</Link>
+                <NavHashLink smooth to="home/#about-me">About me</NavHashLink>
               </li>
               <li className="hover:text-[#00C4F0]">
-                <Link>Blogs</Link>
+                <NavHashLink smooth to="home/#projects">Projects</NavHashLink>
               </li>
               <li className="hover:text-[#00C4F0]">
-                <Link>Contact</Link>
+                <NavHashLink smooth to="/blog">Blogs</NavHashLink>
+              </li>
+              <li className="hover:text-[#00C4F0]">
+                <NavHashLink smooth to="home/#contact">Contact</NavHashLink>
               </li>
             </ul>
           </div>

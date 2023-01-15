@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] overflow-hidden h-[1230px]">
+    <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] overflow-hidden h-[1230px]" id="about-me">
       <div className="container mx-auto">
         <div className="w-[792px] h-[792px] border-solid border-[89px] border-[#E4E4E4] drop-shadow-[0_4px_70px_rgba(255,255,255,0.25)] rounded-[50%] relative top-[170px] left-24"></div>
         <div className="w-[356px] h-[356px] border-solid border-[34px] border-[#E2A200] drop-shadow-[0_4px_70px_rgba(226,162,0,0.25)] rounded-[50%] relative left-[1010px] top-[-665px]"></div>

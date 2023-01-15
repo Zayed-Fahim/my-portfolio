@@ -5,7 +5,10 @@ import { Typewriter } from "react-simple-typewriter";
 
 const Experience = () => {
   return (
-    <div className="bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
+    <div
+      className="bg-gradient-to-r from-[#414141] to-[#2D2D2D]"
+      id="experience"
+    >
       <h1 className="text-[#E4E4E4] text-5xl font-bold text-center pt-28">
         <span className="text-[#00C4F0] font-bold">
           <Typewriter
