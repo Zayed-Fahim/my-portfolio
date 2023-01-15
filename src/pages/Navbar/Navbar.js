@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 
 const Navbar = () => {
@@ -35,11 +36,11 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="pl-12">
+          <Link to="../../assets/cv/Sayed Asif Zayed.pdf" target="_blank" download className="pl-12">
             <button className="text-black h-[40px] px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
               Download CV
             </button>
-          </div>
+          </Link>
         </div>
       </div>
     );

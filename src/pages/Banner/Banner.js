@@ -3,6 +3,10 @@ import me from '../../assets/me/formal.png';
 import { Typewriter } from "react-simple-typewriter";
 import { FaCode, FaHtml5, FaNode, FaReact } from 'react-icons/fa';
 import { SiFirebase } from "react-icons/si";
+import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import "react-photo-view/dist/react-photo-view.css";
+import cv from "../../assets/cv/Sayed Asif Zayed.png";
 
 const Banner = () => {
     return (
@@ -37,12 +41,20 @@ const Banner = () => {
               <br /> a turnkey website? Then contact me to hire for your work.
             </p>
             <div className="flex gap-10 mt-8">
-              <button className="text-black h-[40px] px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
-                Resume
-              </button>
-              <button className="text-black h-[40px] px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
-                Hire Me
-              </button>
+              <Link>
+                <PhotoProvider>
+                  <PhotoView src={cv}>
+                    <button className="text-black h-[40px] px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
+                      Resume
+                    </button>
+                  </PhotoView>
+                </PhotoProvider>
+              </Link>
+              <Link>
+                <button className="text-black h-[40px] px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
+                  Hire Me
+                </button>
+              </Link>
             </div>
           </div>
           <div>
