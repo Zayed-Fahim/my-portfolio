@@ -59,7 +59,7 @@ const Banner = () => {
               </div>
             </div>
             <div>
-              <div className="w-[360px] h-[350px] lg:w-[575px] lg:h-[575px] border-solid border-[45px] top-[160px] lg:top-auto lg:border-[67px] border-[#00C4F0] drop-shadow-[0_0_152px_rgba(0,196,240,0.42)] rounded-[50%] absolute lg:bottom-[121px] mx-[14px]"></div>
+              <div className="w-[350px] h-[350px] lg:w-[575px] lg:h-[575px] border-solid border-[43px] top-[160px] lg:top-auto lg:border-[67px] border-[#00C4F0] drop-shadow-[0_0_152px_rgba(0,196,240,0.42)] rounded-[50%] absolute lg:bottom-[121px] mx-[20px]"></div>
               <div className="absolute bottom-[121px] right-[25px] lg:right-auto top-[30px] lg:top-auto">
                 <img
                   className="h-[480px] m-1 lg:m-auto lg:h-[685px] lg:ml-5"
