@@ -9,8 +9,8 @@ const Footer = () => {
   const mailtoHref = "mailto:zayedfahim33.cse@gmail.com?subject=SendMail&body=";
   return (
     <div className="h-auto bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
-      <footer className="flex justify-around items-center container mx-auto p-10 text-white">
-        <div className="flex flex-col gap-3">
+      <footer className="flex flex-wrap lg:flex-nowrap lg:justify-evenly lg:items-center container lg:mx-auto gap-2 p-5 lg:p-10 text-white">
+        <div className="flex lg:flex-col gap-3">
           <Link className="link link-hover">Home</Link>
           <Link className="link link-hover">About</Link>
           <Link className="link link-hover">Experience</Link>
@@ -39,12 +39,13 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div>
+        <div className="invisible lg:visible">
           <ScrollUpButton
             style={{ width: 60, height: 60, padding: 5 }}
             ToggledStyle={{
               position: "relative",
-              left:0,
+              left: 0,
+              top:40,
               background: "#E2A300",
               border: "none",
               fill: "white",
@@ -55,8 +56,23 @@ const Footer = () => {
           />
         </div>
       </footer>
-      <div className="text-white text-center pb-6">
-        Copyright All Right Reserved © 2023, Zayed fahim
+      <div className="text-white text-center p-5 lg:p-auto ">
+        Copyright All Right Reserved © 2023, Zayed Fahim
+      </div>
+      <div className="visible lg:invisible">
+        <ScrollUpButton
+          style={{ width: 50, height: 50, padding: 5 }}
+          ToggledStyle={{
+            position: "relative",
+            left: 250,
+            top: -200,
+            background: "#E2A300",
+            border: "none",
+            fill: "white",
+          }}
+          EasingType="easeOutCubic"
+          AnimationDuration={2500}
+        />
       </div>
     </div>
   );

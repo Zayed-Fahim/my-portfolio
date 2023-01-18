@@ -35,7 +35,7 @@ export const Contact = () => {
   };
   return (
     <div className="h-[700px] bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]" id="contact">
-      <h1 className="text-[#E4E4E4] text-5xl font-bold text-center p-16">
+      <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center p-10 lg:p-16">
         <span className="text-[#00C4F0] font-bold">
           <Typewriter
             words={["CONTACT ME"]}
@@ -48,8 +48,8 @@ export const Contact = () => {
           />
         </span>
       </h1>
-      <div className=" flex items-center justify-evenly">
-        <div className="text-white">
+      <div className=" flex flex-col lg:flex-row lg:items-center lg:justify-evenly">
+        <div className="text-white text-center lg:text-left">
           <h1 className="text-4xl">Ask me</h1>
           <br />
           <p className="text-[18px]">
@@ -59,12 +59,12 @@ export const Contact = () => {
         </div>
         <div>
           <form
-            className="flex flex-col container mx-auto"
+            className="flex flex-col mt-5 lg:mt-auto p-5 lg:p-auto container mx-auto"
             ref={form}
             onSubmit={handleSubmit(sendEmail)}
           >
             <input
-              className="h-[50px] w-[450px] rounded-lg pl-5"
+              className="h-[50px] lg:w-[450px] rounded-lg pl-5"
               placeholder="Your Name"
               {...register("name", { required: "Name is required" })}
               aria-invalid={errors.name ? "true" : "false"}
@@ -75,7 +75,7 @@ export const Contact = () => {
               </p>
             )}
             <input
-              className="h-[50px] w-[450px] mt-3 rounded-lg pl-5"
+              className="h-[50px] lg:w-[450px] mt-3 rounded-lg pl-5"
               placeholder="Your Email"
               {...register("mail", { required: "Email is required" })}
               aria-invalid={errors.mail ? "true" : "false"}
@@ -87,7 +87,7 @@ export const Contact = () => {
             )}
             <textarea
               rows={7}
-              className="w-[450px] mt-3 rounded-lg pl-5 pt-3"
+              className="lg:w-[450px] mt-3 rounded-lg pl-5 pt-3"
               placeholder="Your Message"
               {...register("message", { required: "Message is required" })}
               aria-invalid={errors.message ? "true" : "false"}
@@ -98,7 +98,7 @@ export const Contact = () => {
               </p>
             )}
             <input
-              className="h-[50px] w-[450px] bg-white text-[#E2A100] mt-5 rounded-lg uppercase text-xl font-bold"
+              className="h-[50px] lg:w-[450px] bg-white text-[#E2A100] mt-5 rounded-lg uppercase text-xl font-bold"
               type="submit"
             />
           </form>
