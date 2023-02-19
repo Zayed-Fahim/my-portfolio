@@ -39,7 +39,7 @@ const About = () => {
       </div>
       <div className="lg:relative lg:max-w-[496px]  lg:h-[822px] bg-[#2C2C2C] rounded-[14px] lg:bottom-[665px] lg:left-[740px] bottom-[700px] mx-5 z-[1] lg:mx-0">
         <div className="relative lg:left-16 bottom-7 left-7">
-          <span className="text-[38px] lg:text-5xl text-white">
+          <span className="text-[38px] font-bold lg:text-5xl text-white">
             <Typewriter
               words={["ABOUT ME"]}
               loop={1}
