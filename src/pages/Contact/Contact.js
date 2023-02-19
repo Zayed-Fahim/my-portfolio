@@ -1,24 +1,17 @@
-import React, { useRef } from "react";
+import React from "react";
 import emailjs from "@emailjs/browser";
-import { useForm } from "react-hook-form";
 import { Typewriter } from "react-simple-typewriter";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const Contact = () => {
-  const form = useRef();
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const sendEmail = () => {
-    form.current.reset();
+  const sendEmail = (e) => {
+    e.preventDefault();
     emailjs
       .sendForm(
         "service_bt76dyc",
         "template_5zoa24e",
-        form.current,
+        e.target,
         "sl9qWJ_VLA9KQrDMV"
       )
       .then(
@@ -32,14 +25,20 @@ export const Contact = () => {
           console.log(error.text);
         }
       );
+    e.target.reset();
   };
   return (
-    <div className="h-[700px] bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]" id="contact">
-      <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center p-10 lg:p-16">
+    <div
+      className="max-h-max bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] lg:py-20"
+      id="contact"
+    >
+      {/* side headings start */}
+
+      <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-8 lg:pt-0 lg:pb-20">
         <span className="text-[#00C4F0] font-bold">
           <Typewriter
-            words={["CONTACT ME"]}
-            loop
+            words={["CONTACT"]}
+            loop={1}
             cursor
             cursorStyle="_"
             typeSpeed={70}
@@ -48,59 +47,59 @@ export const Contact = () => {
           />
         </span>
       </h1>
-      <div className=" flex flex-col lg:flex-row lg:items-center lg:justify-evenly">
-        <div className="text-white text-center lg:text-left">
-          <h1 className="text-4xl">Ask me</h1>
-          <br />
-          <p className="text-[18px]">
-            Ask me if you have any queries. You will be <br /> answered via
-            email.
+
+      <div className="container mx-auto flex justify-center lg:flex-row flex-col gap-10 py-8 lg:py-0 lg:pb-0">
+        <div className="text-white lg:h-[440px] mx-auto lg:mx-0 max-w-[330px] p-5 flex flex-col gap-5">
+          <h1 className="text-3xl font-bold ">
+            What’s your story? Get in touch
+          </h1>
+          <p className="text-xl">
+            Always available for freelancing if the right project comes along,
+            Feel free to contact me.
           </p>
         </div>
-        <div>
-          <form
-            className="flex flex-col mt-5 lg:mt-auto p-5 lg:p-auto container mx-auto"
-            ref={form}
-            onSubmit={handleSubmit(sendEmail)}
-          >
-            <input
-              className="h-[50px] lg:w-[450px] rounded-lg pl-5"
-              placeholder="Your Name"
-              {...register("name", { required: "Name is required" })}
-              aria-invalid={errors.name ? "true" : "false"}
-            />
-            {errors.name?.type === "required" && (
-              <p className="text-[#E2A100]" role="alert">
-                Name is required
-              </p>
-            )}
-            <input
-              className="h-[50px] lg:w-[450px] mt-3 rounded-lg pl-5"
-              placeholder="Your Email"
-              {...register("mail", { required: "Email is required" })}
-              aria-invalid={errors.mail ? "true" : "false"}
-            />
-            {errors.mail && (
-              <p className="text-[#E2A100]" role="alert">
-                {errors.mail?.message}
-              </p>
-            )}
-            <textarea
-              rows={7}
-              className="lg:w-[450px] mt-3 rounded-lg pl-5 pt-3"
-              placeholder="Your Message"
-              {...register("message", { required: "Message is required" })}
-              aria-invalid={errors.message ? "true" : "false"}
-            />
-            {errors.message && (
-              <p className="text-[#E2A100]" role="alert">
-                {errors.message?.message}
-              </p>
-            )}
-            <input
-              className="h-[50px] lg:w-[450px] bg-white text-[#E2A100] mt-5 rounded-lg uppercase text-xl font-bold"
-              type="submit"
-            />
+
+        {/* side headings end */}
+        <div className="min-w-[55%] pb-5 mx-5 lg:mx-0 lg:pt-[25px]">
+          <form onSubmit={sendEmail}>
+            <div className="flex lg:flex-row flex-col gap-5 px-5 pb-5 pt-5 lg:pt-0">
+              <input
+                className="w-full h-[40px] p-3"
+                type="text"
+                name="user_name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                className="w-full h-[40px] p-3"
+                type="email"
+                name="user_email"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div className="flex flex-col gap-5 px-5">
+              <input
+                className="w-full h-[40px] p-3"
+                type="text"
+                name="user_subject"
+                placeholder="Subject"
+                required
+              />
+              <textarea
+                className="w-full min-h-min p-3"
+                type="text"
+                name="user_message"
+                placeholder="Your Message"
+                rows={7}
+                required
+              />
+              <div className="bg-[#E2A100] max-w-[135px] lg:max-w-[160px] py-2 px-3">
+                <button className="font-bold lg:text-xl" type="submit">
+                  Send Message
+                </button>
+              </div>
+            </div>
           </form>
         </div>
       </div>
