@@ -46,8 +46,6 @@ const About = () => {
               cursor
               cursorStyle="_"
               typeSpeed={200}
-              // deleteSpeed={80}
-              // delaySpeed={1000}
             />
           </span>
         </div>
