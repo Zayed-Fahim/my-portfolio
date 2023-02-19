@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-10">
           <img className="w-32" src={logo} alt="" />
-          <div className="flex justify-around">
+          <div className="grid grid-cols-3 gap-5 place-items-center">
             <a href="https://www.facebook.com/Zayed.Fahim33">
               <FaFacebookSquare className="h-8 w-8"></FaFacebookSquare>
             </a>
