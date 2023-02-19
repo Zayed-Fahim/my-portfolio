@@ -83,10 +83,10 @@ const Projects = () => {
                     ..<Link to="">Continue Reading</Link>
                   </span>
                 </p>
-                <div className="flex items-center gap-2 text-[#E2A100] lg:pt-[25px]">
+                <Link className="grid place-items-center place-content-center grid-cols-2 text-[#E2A100] lg:pt-[25px]">
                   <button className="text-[18px]">More</button>
-                  <FaLongArrowAltRight className="w-[18px] h-[30px]"></FaLongArrowAltRight>
-                </div>
+                  <FaLongArrowAltRight size={23} className=""></FaLongArrowAltRight>
+                </Link>
               </div>
             </div>
           </div>
@@ -121,10 +121,10 @@ const Projects = () => {
                     ..<Link to="">Continue Reading</Link>
                   </span>
                 </p>
-                <div className="flex items-center gap-2 text-[#E2A100] lg:pt-[25px]">
+                <Link className="grid place-items-center place-content-center grid-cols-2 text-[#E2A100] lg:pt-[25px]">
                   <button className="text-[18px]">More</button>
-                  <FaLongArrowAltRight className="w-[18px] h-[30px]"></FaLongArrowAltRight>
-                </div>
+                  <FaLongArrowAltRight size={23} className=""></FaLongArrowAltRight>
+                </Link>
               </div>
             </div>
           </div>
@@ -159,10 +159,10 @@ const Projects = () => {
                     ..<Link to="">Continue Reading</Link>
                   </span>
                 </p>
-                <div className="flex items-center gap-2 text-[#E2A100] lg:pt-[25px]">
+                <Link className="grid place-items-center place-content-center grid-cols-2 text-[#E2A100] lg:pt-[25px]">
                   <button className="text-[18px]">More</button>
-                  <FaLongArrowAltRight className="w-[18px] h-[30px]"></FaLongArrowAltRight>
-                </div>
+                  <FaLongArrowAltRight size={23} className=""></FaLongArrowAltRight>
+                </Link>
               </div>
             </div>
           </div>
@@ -197,10 +197,10 @@ const Projects = () => {
                     ..<Link to="">Continue Reading</Link>
                   </span>
                 </p>
-                <div className="flex items-center gap-2 text-[#E2A100] lg:pt-[25px]">
+                <Link className="grid place-items-center place-content-center grid-cols-2 text-[#E2A100] lg:pt-[25px]">
                   <button className="text-[18px]">More</button>
-                  <FaLongArrowAltRight className="w-[18px] h-[30px]"></FaLongArrowAltRight>
-                </div>
+                  <FaLongArrowAltRight size={23} className=""></FaLongArrowAltRight>
+                </Link>
               </div>
             </div>
           </div>
@@ -235,10 +235,10 @@ const Projects = () => {
                     ..<Link to="">Continue Reading</Link>
                   </span>
                 </p>
-                <div className="flex items-center gap-2 text-[#E2A100] lg:pt-[25px]">
+                <Link className="grid place-items-center place-content-center grid-cols-2 text-[#E2A100] lg:pt-[25px]">
                   <button className="text-[18px]">More</button>
-                  <FaLongArrowAltRight className="w-[18px] h-[30px]"></FaLongArrowAltRight>
-                </div>
+                  <FaLongArrowAltRight size={23} className=""></FaLongArrowAltRight>
+                </Link>
               </div>
             </div>
           </div>
@@ -273,10 +273,10 @@ const Projects = () => {
                     ..<Link to="">Continue Reading</Link>
                   </span>
                 </p>
-                <div className="flex items-center gap-2 text-[#E2A100] lg:pt-[25px]">
+                <Link className="grid place-items-center place-content-center grid-cols-2 text-[#E2A100] lg:pt-[25px]">
                   <button className="text-[18px]">More</button>
-                  <FaLongArrowAltRight className="w-[18px] h-[30px]"></FaLongArrowAltRight>
-                </div>
+                  <FaLongArrowAltRight size={23} className=""></FaLongArrowAltRight>
+                </Link>
               </div>
             </div>
           </div>
@@ -311,10 +311,10 @@ const Projects = () => {
                     ..<Link to="">Continue Reading</Link>
                   </span>
                 </p>
-                <div className="flex items-center gap-2 text-[#E2A100] lg:pt-[25px]">
+                <Link className="grid place-items-center place-content-center grid-cols-2 text-[#E2A100] lg:pt-[25px]">
                   <button className="text-[18px]">More</button>
-                  <FaLongArrowAltRight className="w-[18px] h-[30px]"></FaLongArrowAltRight>
-                </div>
+                  <FaLongArrowAltRight size={23} className=""></FaLongArrowAltRight>
+                </Link>
               </div>
             </div>
           </div>

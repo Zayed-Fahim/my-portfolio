@@ -11,7 +11,7 @@ import cv from "../../assets/cv/Sayed Asif Zayed.png";
 const ReBanner = () => {
   return (
     <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
-      <div className="container mx-auto max-h-auto lg:h-[860px] flex flex-col-reverse mt-[-850px] lg:m-auto gap-60 lg:grid grid-cols-2 place-items-center">
+      <div className="container mx-auto max-h-auto lg:h-[860px] flex flex-col-reverse mt-[-830px] lg:m-auto gap-60 lg:grid grid-cols-2 place-items-center">
         {/* banner header part start */}
         <div className="flex flex-col lg:pt-64 mb-5">
           <h1 className="text-[#E4E4E4] text-4xl m-5 mt-20 lh:mt-auto lg:m-0 lg:text-5xl">
@@ -69,7 +69,7 @@ const ReBanner = () => {
               <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-5 bottom-8">
                 <SiExpress className="h-16 w-16 text-[#00C4F0]"></SiExpress>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#7e5656] text-3xl font-bold rounded-[50%] flex justify-center items-center relative top-12 right-[108px]">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative top-12 right-[108px]">
                 <SiMongodb className="h-16 w-16 text-[#00C4F0]"></SiMongodb>
               </div>
               <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[212px] left-[370px]">

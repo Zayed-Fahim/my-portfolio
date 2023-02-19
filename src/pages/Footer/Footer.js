@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
+
 import logo from "../../assets/icon/Logo.png";
 import { FaFacebookSquare, FaGithubSquare } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
@@ -9,7 +10,7 @@ const Footer = () => {
   const mailtoHref = "mailto:zayedfahim33.cse@gmail.com?subject=SendMail&body=";
   return (
     <div className="h-auto bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
-      <footer className="flex flex-wrap lg:flex-nowrap lg:justify-evenly lg:items-center container lg:mx-auto gap-2 p-5 lg:p-10 text-white">
+      <footer className="flex flex-wrap lg:flex-nowrap lg:justify-evenly lg:items-center container lg:mx-auto gap-4 lg:gap-2 p-5 lg:p-10 text-white">
         <div className="flex lg:flex-col gap-3">
           <Link className="link link-hover">Home</Link>
           <Link className="link link-hover">About</Link>
@@ -45,7 +46,7 @@ const Footer = () => {
             ToggledStyle={{
               position: "relative",
               left: 0,
-              top:40,
+              top:5,
               background: "#E2A300",
               border: "none",
               fill: "white",
@@ -64,7 +65,7 @@ const Footer = () => {
           style={{ width: 50, height: 50, padding: 5 }}
           ToggledStyle={{
             position: "relative",
-            left: 250,
+            left: 315,
             top: -200,
             background: "#E2A300",
             border: "none",
