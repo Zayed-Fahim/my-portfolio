@@ -46,7 +46,7 @@ const Footer = () => {
             ToggledStyle={{
               position: "relative",
               left: 0,
-              top:5,
+              top: 5,
               background: "#E2A300",
               border: "none",
               fill: "white",
@@ -60,12 +60,12 @@ const Footer = () => {
       <div className="text-white text-center p-5 lg:p-auto ">
         Copyright All Right Reserved © 2023, Zayed Fahim
       </div>
-      <div className="visible lg:invisible">
+      <div className="block lg:hidden">
         <ScrollUpButton
           style={{ width: 50, height: 50, padding: 5 }}
           ToggledStyle={{
             position: "relative",
-            left: 315,
+            left: 280,
             top: -200,
             background: "#E2A300",
             border: "none",
