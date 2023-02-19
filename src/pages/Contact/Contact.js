@@ -41,7 +41,7 @@ export const Contact = () => {
             loop={1}
             cursor
             cursorStyle="_"
-            typeSpeed={70}
+            typeSpeed={300}
             deleteSpeed={80}
             delaySpeed={1000}
           />

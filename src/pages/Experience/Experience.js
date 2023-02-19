@@ -13,10 +13,10 @@ const Experience = () => {
         <span className="text-[#00C4F0] font-bold">
           <Typewriter
             words={["EXPERIENCED AT"]}
-            loop
+            loop={1}
             cursor
             cursorStyle="_"
-            typeSpeed={70}
+            typeSpeed={100}
             deleteSpeed={80}
             delaySpeed={1000}
           />

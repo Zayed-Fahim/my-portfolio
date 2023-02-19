@@ -40,10 +40,10 @@ const Projects = () => {
           <span className="text-[#00C4F0] font-bold">
             <Typewriter
               words={["PROJECTS"]}
-              loop
+              loop={1}
               cursor
               cursorStyle="_"
-              typeSpeed={70}
+              typeSpeed={400}
               deleteSpeed={80}
               delaySpeed={1000}
             />
