@@ -61,8 +61,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="../../assets/cv/Sayed Asif Zayed.pdf"
-                  target="_blank"
+                  to="../../assets/cv/Sayed Asif Zayed-cv.pdf"
                   download
                   className=""
                 >
@@ -120,7 +119,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="../../assets/cv/Sayed Asif Zayed.pdf"
+                  to="../../assets/cv/Sayed Asif Zayed-cv.pdf"
                   target="_blank"
                   download
                   className="lg:flex lg:items-center lg:justify-center"

@@ -13,7 +13,7 @@ const ReBanner = () => {
     <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
       <div className="container mx-auto max-h-auto lg:h-[860px] flex flex-col-reverse mt-[-830px] lg:m-auto gap-60 lg:grid grid-cols-2 place-items-center">
         {/* banner header part start */}
-        <div className="flex flex-col lg:pt-64 mb-5">
+        <div className="flex flex-col lg:pt-44 mb-5">
           <h1 className="text-[#E4E4E4] text-4xl m-5 mt-20 lh:mt-auto lg:m-0 lg:text-5xl">
             HELLO
           </h1>
@@ -25,8 +25,8 @@ const ReBanner = () => {
                   words={[
                     "SAYED ASIF ZAYED",
                     "FRONT-END DEVELOPER",
-                    "FULL STACK DEVELOPER",
                     "MERN STACK DEVELOPER",
+                    "FULL STACK DEVELOPER",
                   ]}
                   loop={1}
                   cursor
@@ -39,9 +39,16 @@ const ReBanner = () => {
             </h1>
           </div>
           <p className="text-[#E4E4E4] lg:text-left lg:text-[18px] lg:w-[600px] ml-5 mb-4 lg:ml-0 lg:mb-0 lg:mt-8">
-            I've been doing web design, front-end and back-end development for a
-            year now. Do you need a website design, site layout, or maybe a
-            turnkey website? Then contact me to hire for your work.
+            I am the digital genius behind my website as a MERN Full-Stack
+            developer. To bring my idea to life, I use a varied range of
+            technical talents, seamlessly combining frontend and backend
+            programming. I create a visually stunning and user-friendly frontend
+            with React that captivates my audience. To handle data and perform
+            the complicated logic that runs my site, I utilize Node.js and
+            MongoDB behind the scenes. I am committed to improving efficiency
+            and functionality. My website transforms into a dynamic, flexible,
+            and resilient online presence as a result of my expertise,
+            transforming my idea into a digital masterpiece.
           </p>
           <div className="flex self-start gap-10 ml-5 mb-4 lg:ml-0 lg:mb-0 lg:mt-8">
             <Link>
@@ -62,7 +69,7 @@ const ReBanner = () => {
         </div>
         {/* banner header part end */}
         {/* banner img part start */}
-        <div className="grid relative top-64 lg:top-[235px] mx-auto">
+        <div className="grid relative top-64 lg:top-[196px] mx-auto">
           <div className="w-[350px] h-[350px] lg:w-[575px] lg:h-[575px] border-solid border-[43px] lg:border-[67px] border-[#00C4F0] drop-shadow-[0_0_152px_rgba(0,196,240,0.42)] rounded-[50%]">
             {/* image icon part start */}
             <div className="invisible md:visible lg:visible">
@@ -86,7 +93,7 @@ const ReBanner = () => {
           </div>
         </div>
         {/* banner img part end */}
-        <div className="relative bottom-[-867px] lg:bottom-[735px] right-2 lg:left-[865px]">
+        <div className="relative bottom-[-867px] lg:bottom-[816px] right-2 lg:left-[865px]">
           <img
             className="h-[480px] m-1 lg:m-auto lg:h-[685px] lg:ml-8"
             src={me}

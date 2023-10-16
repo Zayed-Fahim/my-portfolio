@@ -64,14 +64,14 @@ export const Contact = () => {
           <form onSubmit={sendEmail}>
             <div className="flex lg:flex-row flex-col gap-5 px-5 pb-5 pt-5 lg:pt-0">
               <input
-                className="w-full h-[40px] p-3"
+                className="w-full h-[40px] p-3 focus:outline-none"
                 type="text"
                 name="user_name"
                 placeholder="Your Name"
                 required
               />
               <input
-                className="w-full h-[40px] p-3"
+                className="w-full h-[40px] p-3 focus:outline-none"
                 type="email"
                 name="user_email"
                 placeholder="Your Email"
@@ -80,14 +80,14 @@ export const Contact = () => {
             </div>
             <div className="flex flex-col gap-5 px-5">
               <input
-                className="w-full h-[40px] p-3"
+                className="w-full h-[40px] p-3 focus:outline-none"
                 type="text"
                 name="user_subject"
                 placeholder="Subject"
                 required
               />
               <textarea
-                className="w-full min-h-min p-3"
+                className="w-full min-h-min p-3 focus:outline-none"
                 type="text"
                 name="user_message"
                 placeholder="Your Message"
