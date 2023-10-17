@@ -1,18 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Typewriter } from "react-simple-typewriter";
-import project1 from "../../assets/projects/assignment-12.PNG";
-import project2 from "../../assets/projects/assignment-11.PNG";
-import project3 from "../../assets/projects/assignment-10.PNG";
-import project4 from "../../assets/projects/assignment-9.PNG";
-import project5 from "../../assets/projects/assignment-8.PNG";
-import project6 from "../../assets/projects/assignment-7.PNG";
-import project7 from "../../assets/projects/assignment-6.PNG";
 import { Link } from "react-router-dom";
 import "../../App.css";
-const Projects = () => {
+const Projects = ({ projects, setProjects }) => {
   const settings = {
     dots: true,
     arrows: false,
@@ -32,6 +25,13 @@ const Projects = () => {
       </div>
     ),
   };
+
+  useEffect(() => {
+    fetch("https://zayed-fahim-portfolio.vercel.app/projects")
+      .then((res) => res.json())
+      .then((data) => setProjects(data.payload));
+  }, [setProjects]);
+
   return (
     <div
       className="h-auto lg:h-[950px] bg-gradient-to-r from-[#414141] to-[#2D2D2D]"
@@ -55,261 +55,43 @@ const Projects = () => {
         className="container mx-auto text-white pt-5 pb-5 px-5 lg:px-44"
       >
         {/* 1 */}
-        <div className="w-auto lg:w-[970px] h-[550px] lg:h-auto lg:glass">
-          <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
-            <div>
-              <img
-                className="lg:h-[500px] lg:w-[690px]"
-                src={project1}
-                alt="project-1"
-              />
-            </div>
-            <div className="flex items-center flex-col w-[350px]">
-              <h1 className="text-[#FFFFFF] font-semibold text-[24px] pb-4 lg:pb-[25px]">
-                phones.com
-              </h1>
-              <p className="p-5 h-[200px] lg:h-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ut orci eu elit consequat posuere ut sed elit. Nulla et
-                tristique felis. Morbi quis orci non purus blandit fringilla.
-                Etiam et mollis eros. Duis venenatis vulputate lacus, non
-                tristique eros placerat vel.{" "}
-                <span className="lg:visible invisible">
-                  Nam nec magna lacus. Etiam euismod egestas mauris nec mollis.
-                  Phasellus efficitur et ex vel condimentum. Cras enim purus,
-                  tempor sed massa vel, accumsan bibendum magna. Nullam
-                  hendrerit cursus purus, sit amet viverra arcu gravida vel.
-                </span>
-              </p>
-              <Link className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px]">
-                <button className="text-[18px] text-center hover:font-bold">
-                  View Full Project
-                </button>
-              </Link>
+        {projects?.map((project) => (
+          <div className="bg-black bg-opacity-20" key={project.projectID}>
+            <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
+              <div>
+                <img
+                  className="lg:h-[500px] h-[200px] lg:w-[720px]"
+                  src={project?.websiteCover}
+                  alt="project-1"
+                />
+              </div>
+              <div className="flex flex-col w-[350px] gap-5 justify-center items-center">
+                <h1 className="text-[#FFFFFF] font-semibold lg:font-bold text-xl mt-3 lg:mt-0 lg:text-[24px] lg:pb-[25px] text-center">
+                  {project.websiteName}
+                </h1>
+                <p className="px-5 h-[200px] lg:h-[350px] lg:w-[350px] break-words">
+                  {project.shortDescription}
+                </p>
+                <Link
+                  to={`/projects/${project?.projectID}/${project?.websiteName}`}
+                  className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px] mb-5 lg:mb-0"
+                >
+                  <button className="text-[18px] text-center hover:font-bold">
+                    View Full Project
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* 2 */}
-        <div className="w-auto lg:w-[970px] h-[550px] lg:h-auto lg:glass">
-          <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
-            <div>
-              <img
-                className="lg:h-[500px] lg:w-[690px] h-[222px]"
-                src={project2}
-                alt="project-2"
-              />
-            </div>
-            <div className="flex items-center flex-col w-[350px]">
-              <h1 className="text-[#FFFFFF] font-semibold text-[24px] pb-4  lg:pb-[25px]">
-                DELIVERY dot com
-              </h1>
-              <p className="p-5 h-[200px] lg:h-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ut orci eu elit consequat posuere ut sed elit. Nulla et
-                tristique felis. Morbi quis orci non purus blandit fringilla.
-                Etiam et mollis eros. Duis venenatis vulputate lacus, non
-                tristique eros placerat vel.{" "}
-                <span className="lg:visible invisible">
-                  Nam nec magna lacus. Etiam euismod egestas mauris nec mollis.
-                  Phasellus efficitur et ex vel condimentum. Cras enim purus,
-                  tempor sed massa vel, accumsan bibendum magna. Nullam
-                  hendrerit cursus purus, sit amet viverra arcu gravida vel.
-                </span>
-              </p>
-              <Link className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px]">
-                <button className="text-[18px] text-center hover:font-bold">
-                  View Full Project
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* 3 */}
-        <div className="w-auto lg:w-[970px] h-[550px] lg:h-auto lg:glass">
-          <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
-            <div>
-              <img
-                className="lg:h-[500px] lg:w-[690px] h-[222px]"
-                src={project3}
-                alt="project-3"
-              />
-            </div>
-            <div className="flex items-center flex-col w-[350px]">
-              <h1 className="text-[#FFFFFF] font-semibold text-[24px]  pb-[25px]">
-                Active Learning
-              </h1>
-              <p className="p-5 h-[200px] lg:h-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ut orci eu elit consequat posuere ut sed elit. Nulla et
-                tristique felis. Morbi quis orci non purus blandit fringilla.
-                Etiam et mollis eros. Duis venenatis vulputate lacus, non
-                tristique eros placerat vel.{" "}
-                <span className="lg:visible invisible">
-                  Nam nec magna lacus. Etiam euismod egestas mauris nec mollis.
-                  Phasellus efficitur et ex vel condimentum. Cras enim purus,
-                  tempor sed massa vel, accumsan bibendum magna. Nullam
-                  hendrerit cursus purus, sit amet viverra arcu gravida vel.
-                </span>
-              </p>
-              <Link className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px]">
-                <button className="text-[18px] text-center hover:font-bold">
-                  View Full Project
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* 4 */}
-        <div className="w-auto lg:w-[970px] h-[550px] lg:h-auto lg:glass">
-          <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
-            <div>
-              <img
-                className="lg:h-[500px] lg:w-[690px] h-[222px]"
-                src={project4}
-                alt="project-4"
-              />
-            </div>
-            <div className="flex items-center flex-col w-[350px]">
-              <h1 className="text-[#FFFFFF] font-semibold text-[24px]  pb-[25px]">
-                Quiz 2 Go
-              </h1>
-              <p className="p-5 h-[200px] lg:h-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ut orci eu elit consequat posuere ut sed elit. Nulla et
-                tristique felis. Morbi quis orci non purus blandit fringilla.
-                Etiam et mollis eros. Duis venenatis vulputate lacus, non
-                tristique eros placerat vel.{" "}
-                <span className="lg:visible invisible">
-                  Nam nec magna lacus. Etiam euismod egestas mauris nec mollis.
-                  Phasellus efficitur et ex vel condimentum. Cras enim purus,
-                  tempor sed massa vel, accumsan bibendum magna. Nullam
-                  hendrerit cursus purus, sit amet viverra arcu gravida vel.
-                </span>
-              </p>
-              <Link className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px]">
-                <button className="text-[18px] text-center hover:font-bold">
-                  View Full Project
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* 5 */}
-        <div className="w-auto lg:w-[970px] h-[550px] lg:h-auto lg:glass">
-          <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
-            <div>
-              <img
-                className="lg:h-[500px] lg:w-[690px] h-[222px]"
-                src={project5}
-                alt="project-5"
-              />
-            </div>
-            <div className="flex items-center flex-col w-[350px]">
-              <h1 className="text-[#FFFFFF] font-semibold text-[24px]  pb-[25px]">
-                INTENSITY-FITNESS-CLUB
-              </h1>
-              <p className="p-5 h-[200px] lg:h-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ut orci eu elit consequat posuere ut sed elit. Nulla et
-                tristique felis. Morbi quis orci non purus blandit fringilla.
-                Etiam et mollis eros. Duis venenatis vulputate lacus, non
-                tristique eros placerat vel.{" "}
-                <span className="lg:visible invisible">
-                  Nam nec magna lacus. Etiam euismod egestas mauris nec mollis.
-                  Phasellus efficitur et ex vel condimentum. Cras enim purus,
-                  tempor sed massa vel, accumsan bibendum magna. Nullam
-                  hendrerit cursus purus, sit amet viverra arcu gravida vel.
-                </span>
-              </p>
-              <Link className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px]">
-                <button className="text-[18px] text-center hover:font-bold">
-                  View Full Project
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* 6 */}
-        <div className="w-auto lg:w-[970px] h-[550px] lg:h-auto lg:glass">
-          <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
-            <div>
-              <img
-                className="lg:h-[500px] lg:w-[690px] h-[222px]"
-                src={project6}
-                alt="project-6"
-              />
-            </div>
-            <div className="flex items-center flex-col w-[350px]">
-              <h1 className="text-[#FFFFFF] font-semibold text-[24px]  pb-[25px]">
-                Speed Typer_
-              </h1>
-              <p className="p-5 h-[200px] lg:h-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ut orci eu elit consequat posuere ut sed elit. Nulla et
-                tristique felis. Morbi quis orci non purus blandit fringilla.
-                Etiam et mollis eros. Duis venenatis vulputate lacus, non
-                tristique eros placerat vel.{" "}
-                <span className="lg:visible invisible">
-                  Nam nec magna lacus. Etiam euismod egestas mauris nec mollis.
-                  Phasellus efficitur et ex vel condimentum. Cras enim purus,
-                  tempor sed massa vel, accumsan bibendum magna. Nullam
-                  hendrerit cursus purus, sit amet viverra arcu gravida vel.
-                </span>
-              </p>
-              <Link className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px]">
-                <button className="text-[18px] text-center hover:font-bold">
-                  View Full Project
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* 7 */}
-        <div className="w-auto lg:w-[970px] h-[550px] lg:h-auto lg:glass">
-          <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
-            <div>
-              <img
-                className="lg:h-[500px] lg:w-[690px] h-[222px]"
-                src={project7}
-                alt="project-7"
-              />
-            </div>
-            <div className="flex items-center flex-col w-[350px]">
-              <h1 className="text-[#FFFFFF] font-semibold text-[24px]  pb-[25px]">
-                Daily Portal
-              </h1>
-              <p className="p-5 h-[200px] lg:h-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ut orci eu elit consequat posuere ut sed elit. Nulla et
-                tristique felis. Morbi quis orci non purus blandit fringilla.
-                Etiam et mollis eros. Duis venenatis vulputate lacus, non
-                tristique eros placerat vel.{" "}
-                <span className="lg:visible invisible">
-                  Nam nec magna lacus. Etiam euismod egestas mauris nec mollis.
-                  Phasellus efficitur et ex vel condimentum. Cras enim purus,
-                  tempor sed massa vel, accumsan bibendum magna. Nullam
-                  hendrerit cursus purus, sit amet viverra arcu gravida vel.
-                </span>
-              </p>
-              <Link className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px]">
-                <button className="text-[18px] text-center hover:font-bold">
-                  View Full Project
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
-      <div className="flex items-center justify-center mt-6">
-        <button className="block text-black font-bold px-5 py-1 rounded-md bg-[#E2A100]">
+      <div className="flex items-center justify-center pb-14 lg:pb-0 lg:mt-6">
+        <Link
+          to="/projects"
+          className="block text-black font-bold px-5 py-1 rounded-md bg-[#E2A100]"
+        >
           Explore All Projects
-        </button>
+        </Link>
       </div>
     </div>
   );

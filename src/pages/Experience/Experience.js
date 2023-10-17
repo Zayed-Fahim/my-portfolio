@@ -38,14 +38,14 @@ const Experience = () => {
           </div>
           <div className="bg-[#2A2A2A] rounded-[29px] shadow-[0_4px_6px_rgba(0,0,0,0.47)] w-[150px] h-[150px] lg:w-[230px] lg:h-[230px] flex flex-col justify-center items-center lg:gap-[34px]">
             <FaReact className="h-[75px] w-[75px] text-[#00C4F0]"></FaReact>
-            <h1 className="text-white lg:text-2xl">React</h1>
+            <h1 className="text-white lg:text-2xl">React JS</h1>
           </div>
         </div>
 
         <div className="flex flex-wrap lg:flex-nowrap justify-center gap-10 mt-10">
           <div className="bg-[#2A2A2A] rounded-[29px] shadow-[0_4px_6px_rgba(0,0,0,0.47)] w-[150px] h-[150px] lg:w-[230px] lg:h-[230px] flex flex-col justify-center items-center lg:gap-[34px]">
             <SiMongodb className="h-[75px] w-[75px] text-[#00C4F0]"></SiMongodb>
-            <h1 className="text-white lg:text-2xl">mongo DB</h1>
+            <h1 className="text-white lg:text-2xl">MongoDB</h1>
           </div>
           <div className="bg-[#2A2A2A] rounded-[29px] shadow-[0_4px_6px_rgba(0,0,0,0.47)] w-[150px] h-[150px] lg:w-[230px] lg:h-[230px] flex flex-col justify-center items-center lg:gap-[34px]">
             <SiExpress className="h-[75px] w-[75px] text-[#00C4F0]"></SiExpress>

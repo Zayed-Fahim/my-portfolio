@@ -1,6 +1,5 @@
-import { ToastContainer } from 'react-toastify';
-import './App.css';
-import Route from './pages/Route/Route';
+import { ToastContainer } from "react-toastify";
+import Route from "./pages/Route/Route";
 
 function App() {
   return (
