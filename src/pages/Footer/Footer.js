@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
-
+import { TinyButton as ScrollUpButton } from "react-scroll-up-button";
 import logo from "../../assets/icon/Logo.png";
 import { FaFacebookSquare, FaGithubSquare } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
@@ -19,12 +18,11 @@ const Footer = () => {
           <Link className="link link-hover">Contact</Link>
         </div>
         <div className="flex flex-col gap-3">
-          <Link className="link link-hover">Contact:</Link>
           <a href={mailtoHref}>
             Gmail: <span className="underline">zayedfahim33.cse@gmail.com</span>
           </a>
           <Link>Location: Hazaribagh,Dhaka-1209</Link>
-          <Link>Phone: +880 1891 988693, +880 1881 437702</Link>
+          <Link>Phone: +880 1881 437702</Link>
         </div>
         <div className="flex flex-col gap-10">
           <img className="w-32" src={logo} alt="" />
@@ -40,20 +38,27 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="invisible lg:visible">
+        <div className="hidden lg:block">
           <ScrollUpButton
-            style={{ width: 60, height: 60, padding: 5 }}
+            style={{
+              width: 40,
+              height: 40,
+              paddingLeft: 3,
+              paddingRight: 3,
+              paddingTop: 0,
+              borderRadius: "50%",
+              bottom: 15,
+            }}
             ToggledStyle={{
               position: "relative",
-              left: 0,
-              top: 5,
-              background: "#E2A300",
+              left: 350,
+              top: 140,
+              background: "#00C4F0",
               border: "none",
               fill: "white",
             }}
             EasingType="easeOutCubic"
             AnimationDuration={2500}
-            ShowAtPosition={4050}
           />
         </div>
       </footer>
@@ -62,12 +67,19 @@ const Footer = () => {
       </div>
       <div className="block lg:hidden">
         <ScrollUpButton
-          style={{ width: 50, height: 50, padding: 5 }}
+          style={{
+            width: 35,
+            height: 35,
+            paddingLeft: 3,
+            paddingRight: 3,
+            paddingTop: 0,
+            borderRadius: "50%",
+          }}
           ToggledStyle={{
             position: "relative",
-            left: 280,
-            top: -200,
-            background: "#E2A300",
+            left: 330,
+            top: -142,
+            background: "#00C4F0",
             border: "none",
             fill: "white",
           }}
