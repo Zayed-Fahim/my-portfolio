@@ -1,5 +1,4 @@
 import React from "react";
-import { CircleArrow as ScrollUpButton } from "react-scroll-up-button";
 
 const Blog = () => {
   return (
@@ -7,21 +6,6 @@ const Blog = () => {
       <h1 className="h-[500px] lg:h-screen flex justify-center items-center text-white text-5xl lg:text-8xl">
         COMING SOON
       </h1>
-      <div className="lg:visible invisible">
-        <ScrollUpButton
-          style={{ width: 60, height: 60, padding: 5 }}
-          ToggledStyle={{
-            position: "relative",
-            background: "#E2A300",
-            border: "none",
-            fill: "white",
-            left: 1485,
-            top: 160,
-          }}
-          EasingType="easeOutCubic"
-          AnimationDuration={2500}
-        />
-      </div>
     </div>
   );
 };

@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TinyButton as ScrollUpButton } from "react-scroll-up-button";
 import logo from "../../assets/icon/Logo.png";
 import { FaFacebookSquare, FaGithubSquare } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
-
 const Footer = () => {
   const mailtoHref = "mailto:zayedfahim33.cse@gmail.com?subject=SendMail&body=";
+
   return (
     <div className="h-auto bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
       <footer className="flex flex-wrap lg:flex-nowrap lg:justify-evenly lg:items-center container lg:mx-auto gap-4 lg:gap-2 p-5 lg:p-10 text-white">
@@ -38,54 +37,9 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="hidden lg:block">
-          <ScrollUpButton
-            style={{
-              width: 40,
-              height: 40,
-              paddingLeft: 3,
-              paddingRight: 3,
-              paddingTop: 0,
-              borderRadius: "50%",
-              bottom: 15,
-            }}
-            ToggledStyle={{
-              position: "relative",
-              left: 350,
-              top: 140,
-              background: "#00C4F0",
-              border: "none",
-              fill: "white",
-            }}
-            EasingType="easeOutCubic"
-            AnimationDuration={2500}
-          />
-        </div>
       </footer>
       <div className="text-white text-center p-5 lg:p-auto ">
         Copyright All Right Reserved © 2023, Zayed Fahim
-      </div>
-      <div className="block lg:hidden">
-        <ScrollUpButton
-          style={{
-            width: 35,
-            height: 35,
-            paddingLeft: 3,
-            paddingRight: 3,
-            paddingTop: 0,
-            borderRadius: "50%",
-          }}
-          ToggledStyle={{
-            position: "relative",
-            left: 330,
-            top: -142,
-            background: "#00C4F0",
-            border: "none",
-            fill: "white",
-          }}
-          EasingType="easeOutCubic"
-          AnimationDuration={2500}
-        />
       </div>
     </div>
   );
