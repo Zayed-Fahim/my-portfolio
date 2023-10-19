@@ -5,11 +5,11 @@ import { Typewriter } from "react-simple-typewriter";
 const About = () => {
   return (
     <div
-      className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] max-h-max py-16 lg:mb-auto lg:py-0 lg:max-h-[1075px]"
+      className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] shadow-2xl max-h-max py-16 lg:mb-auto lg:py-0 lg:max-h-[1010px]"
       id="about-me"
     >
       <div className="container mx-auto hidden lg:block">
-        <div className="lg:w-[792px] lg:min-h-[792px] border-solid border-[89px] border-[#E4E4E4] drop-shadow-[0_4px_70px_rgba(255,255,255,0.25)] rounded-[50%] relative top-[125px] mb- left-24">
+        <div className="lg:w-[770px] lg:h-[770px] border-solid border-[89px] border-[#E4E4E4] drop-shadow-[0_4px_70px_rgba(255,255,255,0.25)] rounded-[50%] relative top-[95px] left-24">
           <div className="lg:w-[356px] lg:h-[356px] border-solid border-[34px] border-[#E2A200] drop-shadow-[0_4px_70px_rgba(226,162,0,0.25)] rounded-[50%] relative bottom-[150px] left-[800px]">
             <div className="w-[486px] h-[486px] border-solid border-[55px] border-[#00C4F0] drop-shadow-[0_4px_70px_rgba(0,193,236,0.25)] rounded-[50%] relative top-[420px] right-[80px]">
               <div className="w-[330px] p-6 bg-[#2C2C2C] rounded-[14px] relative right-[750px] bottom-[500px]">
@@ -37,7 +37,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="lg:relative lg:max-w-[496px] lg:h-[822px] bg-[#2C2C2C] rounded-[14px] lg:bottom-[665px] lg:left-[740px] bottom-[700px] mx-5 z-[1] lg:mx-0">
+      <div className="lg:relative lg:max-w-[496px] lg:h-[822px] bg-[#2C2C2C] rounded-[14px] lg:bottom-[695px] lg:left-[740px] bottom-[700px] mx-5 z-[1] lg:mx-0">
         <div className="relative lg:left-16 bottom-7 left-7">
           <span className="text-[38px] font-bold lg:text-5xl text-white">
             <Typewriter

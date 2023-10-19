@@ -7,7 +7,7 @@ const Footer = () => {
   const mailtoHref = "mailto:zayedfahim33.cse@gmail.com?subject=SendMail&body=";
 
   return (
-    <div className="h-auto bg-gradient-to-r from-[#414141] to-[#2D2D2D]">
+    <div className="h-auto bg-[#242526] shadow-2xl">
       <footer className="flex flex-wrap lg:flex-nowrap lg:justify-evenly lg:items-center container lg:mx-auto gap-4 lg:gap-2 p-5 lg:p-10 text-white">
         <div className="flex lg:flex-col gap-3">
           <Link className="link link-hover">Home</Link>

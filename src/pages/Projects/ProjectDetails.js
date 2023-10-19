@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 import Slider from "react-slick";
 import { VscLiveShare, VscGithubInverted } from "react-icons/vsc";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const ProjectDetails = () => {
   const projectDetails = useLoaderData();
 
   const {
+    projectID,
     websiteName,
     title,
     description,
@@ -16,6 +18,8 @@ const ProjectDetails = () => {
     websiteLink,
     serverSideLink,
     clientSideLink,
+    featuredPhotos,
+    websitePrimaryColor,
   } = projectDetails[0];
 
   const settings = {
@@ -35,11 +39,21 @@ const ProjectDetails = () => {
     cssEase: "linear",
   };
 
+  const websiteNameStyle = {
+    background: `linear-gradient(to right, ${websitePrimaryColor[0].colorCode}, ${websitePrimaryColor[1].colorCode})`,
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    color: "transparent",
+  };
+
   return (
     <div className="bg-[#18191A]">
       <div className="flex container mx-auto gap-5 pt-[140px] pb-10">
         <div className="lg:h-auto bg-[#242526] w-[60%] drop-shadow rounded-xl px-14 pb-5">
-          <h1 className="relative left-[60px] -top-12 font-bold text-6xl italic py-3 bg-gradient-to-r from-[#00C4F0] to-[#E2A200] text-transparent bg-clip-text">
+          <h1
+            className="relative left-[60px] -top-12 font-bold text-6xl italic py-3"
+            style={websiteNameStyle}
+          >
             {websiteName}_
           </h1>
           <div className="flex items-center justify-between">
@@ -108,17 +122,43 @@ const ProjectDetails = () => {
             ))}
           </Slider>
         </div>
-        <div className="bg-[#242526] lg:h-[600px] w-[40%] rounded-xl px-10">
+        <div className="bg-[#242526] lg:h-[500px] w-[40%] rounded-xl px-10 ">
           <div>
-            <h1 className="relative left-[60px] -top-[44px] font-bold text-5xl italic py-3 bg-gradient-to-r from-[#00C4F0] to-[#E2A200] text-transparent bg-clip-text">
-              Gallery_
+            <h1
+              className="relative left-[60px] -top-[44px] font-bold text-5xl italic py-3"
+              style={websiteNameStyle}
+            >
+              Photos_
             </h1>
             <div className="flex items-center justify-between text-[#E7E9ED] text-xl italic font-bold h-[30px]">
-              <h1 className="underline">Photos</h1>
-              <Link className="text-[#00C4F0] hover:underline">
+              <h1 className="underline">Featured Photos</h1>
+              <Link
+                to={`/projects/${projectID}/${websiteName}/media`}
+                className="text-[#00C4F0] hover:underline"
+              >
                 See All Photos
               </Link>
             </div>
+          </div>
+          <div className="rounded grid grid-cols-2 gap-3 mt-10 items-center justify-center">
+            <PhotoProvider
+              speed={() => 800}
+              easing={(type) =>
+                type === 2
+                  ? "cubic-bezier(0.36, 0, 0.66, -0.56)"
+                  : "cubic-bezier(0.34, 1.56, 0.64, 1)"
+              }
+            >
+              {featuredPhotos?.map((featuredPhoto) => (
+                <PhotoView src={featuredPhoto?.image} key={featuredPhoto?._id}>
+                  <img
+                    alt={featuredPhoto?.title}
+                    src={featuredPhoto?.image}
+                    className="h-[150px] rounded-xl drop-shadow-2xl cursor-pointer"
+                  />
+                </PhotoView>
+              ))}
+            </PhotoProvider>
           </div>
         </div>
       </div>

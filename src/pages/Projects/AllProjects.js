@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const AllProjects = () => {
-  const [projects, setProjects] = useState([]);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     fetch("https://zayed-fahim-portfolio.vercel.app/projects")

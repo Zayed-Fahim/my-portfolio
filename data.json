@@ -1,0 +1,158 @@
+{
+  "projectID": 2,
+  "websitePrimaryColor": [
+    { "colorCode": "#2563EB" },
+    { "colorCode": "#FFFFFF" }
+  ],
+  "title": "Buy or Sell used mobile phones/tablets/iPads category-wise at the best prices.(phones.com)",
+  "shortDescription": "Phones.com is a Bangladeshi e-commerce platform for buying and selling pre-owned mobile devices. It offers competitive prices and a user-friendly experience, making it a trusted partner for quality used phones and hassle-free device sales. It's a great way to experience the future of mobile technology.",
+  "description": "Welcome to Phones.com, your premier e-commerce platform for buying and selling pre-owned mobile devices. At Phones.com, we're dedicated to offering you the most competitive prices available in the market, setting us apart from other websites. Our priority is providing a seamless and user-friendly experience, ensuring that you can easily navigate our website from anywhere in the world.phones.com, an e-commerce website where anyone can buy and sell their used phones, tablets, or iPads.This website offers you the best price compared to other website’s prices. This website gives you the best minimal user experience and is easy to navigate everywhere. At Phones.com, we're not just another e-commerce website; we're your trusted partner in Bangladesh for pre-owned mobile devices. Whether you're in the market for a quality used phone or want to sell your device hassle-free, we invite you to explore our platform. Experience the future of buying and selling mobile technology with Phones.com.",
+  "websiteName": "phones.com",
+  "websiteLink": "https://used-products-resale-mar-d348c.web.app/",
+  "websiteCover": "https://i.ibb.co/TkW1m9W/Home-Page.png",
+  "websiteFeatures": [
+    {
+      "feature": "Contain three levels of users (Admin, Seller, and Buyer)."
+    },
+    {
+      "feature": "Buy or Sell used mobile phones/tablets/iPads category-wise at the best prices."
+    },
+    {
+      "feature": "Admins can view, delete, and create sellers/buyers."
+    },
+    {
+      "feature": "Sellers display product details; buyers choose based on needs."
+    },
+    {
+      "feature": "Responsive website (mobile and desktop)."
+    },
+    {
+      "feature": "Enabled email and password authentication and Google authentication."
+    },
+    {
+      "feature": "Use the JWT token to verify users and protect routes from unauthorized access"
+    }
+  ],
+  "serverSideLink": "https://github.com/Zayed-Fahim/Used-products-resale-market-server-side",
+  "clientSideLink": "https://github.com/Zayed-Fahim/Used-products-resale-market-client-side",
+  "featuredPhotos": [
+    {
+      "title": "Home Page",
+      "image": "https://i.ibb.co/TkW1m9W/Home-Page.png"
+    },
+    {
+      "title": "Login Page View",
+      "image": "https://i.ibb.co/DRd64kK/Login-page.png"
+    },
+    {
+      "title": "Category Page View",
+      "image": "https://i.ibb.co/Gtc5cdh/Category-Page.png"
+    },
+    {
+      "title": "Admin Dashboard View",
+      "image": "https://i.ibb.co/ZB9WG2M/Dashboard-View.png"
+    }
+  ],
+  "media": {
+    "photos": [
+      {
+        "title": "Home Page View",
+        "image": "https://i.ibb.co/TkW1m9W/Home-Page.png"
+      },
+      {
+        "title": "Login Page View",
+        "image": "https://i.ibb.co/DRd64kK/Login-page.png"
+      },
+      {
+        "title": "Sign up Page View",
+        "image": "https://i.ibb.co/gyrH6Fx/Signup-page.png"
+      },
+      {
+        "title": "Category Page View",
+        "image": "https://i.ibb.co/Gtc5cdh/Category-Page.png"
+      },
+      {
+        "title": "Android Category Page",
+        "image": "https://i.ibb.co/fvbd7GJ/Android-Category-page.png"
+      },
+      {
+        "title": "Iphone Category Page",
+        "image": "https://i.ibb.co/GQtNQWj/Iphone-Category-Page.png"
+      },
+      {
+        "title": "Tablets/iPads Category Page",
+        "image": "https://i.ibb.co/VJvzDfz/Tablet-ipads-Category-page.png"
+      },
+      {
+        "title": "Dashboard Page",
+        "image": "https://i.ibb.co/ZB9WG2M/Dashboard-View.png"
+      }
+    ]
+  },
+  "tools": [
+    {
+      "name": "HTML5",
+      "image": "https://i.ibb.co/QFB2qBL/html5.gif"
+    },
+    {
+      "name": "CSS3",
+      "image": "https://i.ibb.co/Wk7tSX4/css3.gif"
+    },
+    {
+      "name": "JavaScript",
+      "image": "https://i.ibb.co/XsgrSP9/js.gif"
+    },
+    {
+      "name": "React JS",
+      "image": "https://i.ibb.co/tDmsbfj/react-js.gif"
+    },
+    {
+      "name": "Node JS",
+      "image": "https://i.ibb.co/WFctQ0R/node-js.gif"
+    },
+    {
+      "name": "Express JS",
+      "image": "https://i.ibb.co/8PVgFBt/express-js.gif"
+    },
+    {
+      "name": "MongoDB",
+      "image": "https://i.ibb.co/TrLDK5R/mongodb.gif"
+    },
+    {
+      "name": "Tailwind CSS",
+      "image": "https://i.ibb.co/W3FqfMV/tailwind-css.png"
+    },
+    {
+      "name": "Daisy UI",
+      "image": "https://i.ibb.co/TwKwhF4/daisy-ui.png"
+    },
+    {
+      "name": "imgBB",
+      "image": "https://i.ibb.co/fv070Ys/imgbb.png"
+    },
+    {
+      "name": "Firebase",
+      "image": "https://i.ibb.co/3YPX8ST/firebase.gif"
+    },
+    {
+      "name": "Vercel",
+      "image": "https://i.ibb.co/pKpQXr2/vercel.png"
+    },
+    {
+      "name": "JWT",
+      "image": "https://i.ibb.co/NLWgPfH/jwt.png"
+    },
+    {
+      "name": "Git",
+      "image": "https://i.ibb.co/2WMrDVg/git.gif"
+    },
+    {
+      "name": "Github",
+      "image": "https://i.ibb.co/8KTvkFv/github.gif"
+    },
+    {
+      "name": "Vs Code",
+      "image": "https://i.ibb.co/R7F7W3w/vs-code.gif"
+    }
+  ]
+}

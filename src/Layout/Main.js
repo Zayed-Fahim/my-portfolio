@@ -5,7 +5,7 @@ import Navbar from '../pages/Navbar/Navbar';
 
 const Main = () => {
     return (
-        <div>
+        <div className='max-h-max'>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

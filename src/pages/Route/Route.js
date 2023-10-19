@@ -5,9 +5,9 @@ import Blog from "../Blog/Blog";
 import Home from "../Home/Home";
 import AllProjects from "../Projects/AllProjects";
 import ProjectDetails from "../Projects/ProjectDetails";
+import ProjectMedia from "../Projects/ProjectMedia";
 
 const Route = () => {
-  
   const router = createBrowserRouter([
     {
       path: "/",
@@ -37,6 +37,15 @@ const Route = () => {
             );
           },
           element: <ProjectDetails />,
+        },
+        {
+          path: "/projects/:projectID/:websiteName/media",
+          loader: async ({ params }) => {
+            return fetch(
+              `https://zayed-fahim-portfolio.vercel.app/projects/${params.projectID}/${params.websiteName}/media`
+            );
+          },
+          element: <ProjectMedia />,
         },
       ],
     },

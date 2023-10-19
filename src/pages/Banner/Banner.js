@@ -3,8 +3,6 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaCode, FaNode, FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { Link } from "react-router-dom";
-import { PhotoProvider, PhotoView } from "react-photo-view";
-import "react-photo-view/dist/react-photo-view.css";
 
 const ReBanner = () => {
   return (
@@ -49,15 +47,15 @@ const ReBanner = () => {
             transforming my idea into a digital masterpiece.
           </p>
           <div className="flex self-start gap-10 ml-5 mb-4 lg:ml-0 lg:mb-0 lg:mt-8">
-            <Link>
-              <PhotoProvider>
-                <PhotoView src="https://i.ibb.co/j8SWKjt/Sayed-Asif-Zayed-cv.jpg">
-                  <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
-                    Resume
-                  </button>
-                </PhotoView>
-              </PhotoProvider>
-            </Link>
+            <a
+              href="https://drive.google.com/drive/u/4/folders/1iwRPXNDCgxFgwpQNSVqrZo7XCyHAEfsA"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
+                Resume
+              </button>
+            </a>
             <Link>
               <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
                 Hire Me

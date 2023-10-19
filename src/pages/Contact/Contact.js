@@ -35,7 +35,7 @@ export const Contact = () => {
       {/* side headings start */}
 
       <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-8 lg:pt-0 lg:pb-20">
-        <span className="text-[#00C4F0] font-bold">
+        <span className="font-bold">
           <Typewriter
             words={["CONTACT"]}
             loop={1}
@@ -94,8 +94,11 @@ export const Contact = () => {
                 rows={7}
                 required
               />
-              <div className="bg-[#E2A100] max-w-[135px] lg:max-w-[160px] py-2 px-3">
-                <button className="font-bold lg:text-xl" type="submit">
+              <div className="bg-[#E2A100] max-w-[135px] lg:max-w-[160px] py-1 grid place-items-center rounded">
+                <button
+                  className="font-semibold lg:font-bold lg:text-xl"
+                  type="submit"
+                >
                   Send Message
                 </button>
               </div>

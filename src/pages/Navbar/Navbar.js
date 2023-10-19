@@ -8,7 +8,7 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="z-[55] fixed top-0 navbar h-[64px] bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
+    <div className="z-[55] fixed top-0 navbar h-[64px] bg-[#242526]">
       <div className="dropdown">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
           <svg
