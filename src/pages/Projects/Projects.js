@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import "../../App.css";
-const Projects = ({ projects, setProjects }) => {
+const Projects = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const settings = {
     dots: true,
     arrows: false,
@@ -25,7 +29,7 @@ const Projects = ({ projects, setProjects }) => {
       </div>
     ),
   };
-
+  const [projects, setProjects] = useState([]);
   useEffect(() => {
     fetch("https://zayed-fahim-portfolio.vercel.app/projects")
       .then((res) => res.json())
@@ -75,6 +79,7 @@ const Projects = ({ projects, setProjects }) => {
                 <Link
                   to={`/projects/${project?.projectID}/${project?.websiteName}`}
                   className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px] mb-5 lg:mb-0"
+                  onClick={scrollToTop}
                 >
                   <button className="text-[18px] text-center hover:font-bold">
                     View Full Project
@@ -89,6 +94,7 @@ const Projects = ({ projects, setProjects }) => {
         <Link
           to="/projects"
           className="block text-black font-bold px-5 py-1 rounded-md bg-[#E2A100]"
+          onClick={scrollToTop}
         >
           Explore All Projects
         </Link>

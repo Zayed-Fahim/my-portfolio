@@ -1,7 +1,5 @@
 import React from "react";
 import topLeft from "../../assets/me/IMG_0919.DNG";
-import middleRight from "../../assets/me/IMG_0462.png";
-import bottomLeft from "../../assets/me/IMG_20211021_111432.jpg";
 import { Typewriter } from "react-simple-typewriter";
 
 const About = () => {
@@ -24,14 +22,14 @@ const About = () => {
               <div className="w-[330px] p-6 bg-[#2C2C2C] rounded-[14px] relative right-[750px] bottom-[140px]">
                 <img
                   className="w-[272px] h-[230px] shadow-[0_0_0_6px_#686868]"
-                  src={bottomLeft}
+                  src="https://i.ibb.co/0JVB6NG/IMG-20211021-111432.jpg"
                   alt="me-2"
                 />
               </div>
               <div className="w-[330px] h-[440px] p-6 bg-[#2C2C2C] rounded-[14px] relative bottom-[840px] left-12">
                 <img
                   className="w-[310px] h-[395px] shadow-[0_0_0_6px_#686868]"
-                  src={middleRight}
+                  src="https://i.ibb.co/zxJ4CMn/IMG-0462.png"
                   alt="me-3"
                 />
               </div>
@@ -53,8 +51,8 @@ const About = () => {
         </div>
         <div className="relative">
           <p className="px-5 pb-5 lg:px-[55px] lg:pb-[55px] lg:py-5 text-[#FFFFFF]">
-            Sayed Asif Zayed, a 22-year-old resident of Hazaribagh, Dhaka,
-            with a degree in Computer Science and Engineering (CSE). I proudly
+            Sayed Asif Zayed, a 22-year-old resident of Hazaribagh, Dhaka, with
+            a degree in Computer Science and Engineering (CSE). I proudly
             identify as a Full-stack MERN developer, leveraging my technical
             expertise to craft cutting-edge web experiences. My passion for
             coding runs deep, and I'm driven by the art of transforming ideas

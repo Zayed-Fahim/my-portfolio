@@ -54,8 +54,8 @@ export const Contact = () => {
             What’s your story? Get in touch
           </h1>
           <p className="text-xl">
-            Always available for freelancing if the right project comes along,
-            Feel free to contact me.
+            Always available if the right project/Job comes along, Feel free to
+            contact me.
           </p>
         </div>
 

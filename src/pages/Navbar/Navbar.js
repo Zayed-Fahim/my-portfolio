@@ -4,6 +4,9 @@ import { NavHashLink } from "react-router-hash-link";
 import logo from "../../assets/icon/navLogo.png";
 
 const Navbar = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <div className="z-[55] fixed top-0 navbar h-[64px] bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
       <div className="dropdown">
@@ -49,7 +52,7 @@ const Navbar = () => {
                   Projects
                 </NavHashLink>
               </li>
-              <li className="hover:text-[#00C4F0]">
+              <li className="hover:text-[#00C4F0]" onClick={scrollToTop}>
                 <NavHashLink smooth to="/blog">
                   Blogs
                 </NavHashLink>
@@ -107,7 +110,7 @@ const Navbar = () => {
                   Projects
                 </NavHashLink>
               </li>
-              <li className="hover:text-[#00C4F0]">
+              <li className="hover:text-[#00C4F0]" onClick={scrollToTop}>
                 <NavHashLink smooth to="/blog">
                   Blogs
                 </NavHashLink>

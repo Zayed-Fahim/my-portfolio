@@ -5,14 +5,14 @@ import Contact from "../Contact/Contact";
 import Experience from "../Experience/Experience";
 import Projects from "../Projects/Projects";
 
-const Home = ({ projects, setProjects }) => {
+const Home = () => {
   return (
     <div id="home">
-      <Banner></Banner>
-      <Experience></Experience>
-      <About></About>
-      <Projects projects={projects} setProjects={setProjects}></Projects>
-      <Contact></Contact>
+      <Banner />
+      <Experience />
+      <About />
+      <Projects />
+      <Contact />
     </div>
   );
 };

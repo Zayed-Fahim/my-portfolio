@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "../../Layout/Main";
 import Blog from "../Blog/Blog";
@@ -7,8 +7,7 @@ import AllProjects from "../Projects/AllProjects";
 import ProjectDetails from "../Projects/ProjectDetails";
 
 const Route = () => {
-  const [projects, setProjects] = useState([]);
-  console.log(projects);
+  
   const router = createBrowserRouter([
     {
       path: "/",
@@ -16,11 +15,11 @@ const Route = () => {
       children: [
         {
           path: "/home",
-          element: <Home projects={projects} setProjects={setProjects} />,
+          element: <Home />,
         },
         {
           path: "/",
-          element: <Home projects={projects} setProjects={setProjects} />,
+          element: <Home />,
         },
         {
           path: "/blog",
@@ -28,9 +27,7 @@ const Route = () => {
         },
         {
           path: "/projects",
-          element: (
-            <AllProjects projects={projects} setProjects={setProjects} />
-          ),
+          element: <AllProjects />,
         },
         {
           path: "/projects/:projectID/:websiteName",
