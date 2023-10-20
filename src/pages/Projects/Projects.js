@@ -38,10 +38,10 @@ const Projects = () => {
 
   return (
     <div
-      className="h-auto lg:h-[950px] bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-2xl"
+      className="h-auto lg:h-[910px] bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-2xl"
       id="projects"
     >
-      <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-10 lg:p-16">
+      <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-10 pb-5 lg:p-10">
         <span className="text-[#00C4F0] font-bold">
           <Typewriter
             words={["PROJECTS"]}

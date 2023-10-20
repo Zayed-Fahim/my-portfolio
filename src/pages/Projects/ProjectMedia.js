@@ -6,12 +6,12 @@ const ProjectMedia = () => {
   const projectMedias = useLoaderData();
 
   return (
-    <div className="bg-[#18191A] pt-[150px] pb-14">
-      <div className="h-auto rounded-xl bg-[#242526] mx-96">
-        <h1 className="relative left-[120px] -top-[60px] font-bold text-7xl italic py-3 bg-gradient-to-r from-[#E2A200] to-[#00C4F0] text-transparent bg-clip-text">
+    <div className="bg-[#18191A] lg:pt-[150px] pb-10 pt-[130px] lg:pb-14">
+      <div className="h-auto rounded-xl bg-[#242526] mx-5 lg:mx-96">
+        <h1 className="relative left-[60px] lg:left-[120px] -top-[45px] lg:-top-[60px] font-bold text-5xl lg:text-7xl italic py-3 bg-gradient-to-r from-[#E2A200] to-[#00C4F0] text-transparent bg-clip-text">
           Gallery_
         </h1>
-        <div className="px-10 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="px-5 lg:px-10 pb-5 lg:pb-10 grid grid-cols-2 lg:grid-cols-3 gap-5">
           <PhotoProvider
             speed={() => 800}
             easing={(type) =>
@@ -25,7 +25,7 @@ const ProjectMedia = () => {
                 <img
                   alt={photo?.title}
                   src={photo?.image}
-                  className="h-[200px] rounded-xl drop-shadow-2xl cursor-pointer"
+                  className="h-auto lg:h-[200px] rounded-xl drop-shadow-2xl cursor-pointer"
                 />
               </PhotoView>
             ))}

@@ -23,7 +23,6 @@ const ProjectDetails = () => {
   } = projectDetails[0];
 
   const settings = {
-    className: "center",
     centerMode: true,
     infinite: true,
     autoPlay: true,
@@ -37,6 +36,7 @@ const ProjectDetails = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     cssEase: "linear",
+    initialSlide: 0,
   };
 
   const websiteNameStyle = {
@@ -48,17 +48,17 @@ const ProjectDetails = () => {
 
   return (
     <div className="bg-[#18191A]">
-      <div className="flex container mx-auto gap-5 pt-[140px] pb-10">
-        <div className="lg:h-auto bg-[#242526] w-[60%] drop-shadow rounded-xl px-14 pb-5">
+      <div className="flex lg:flex-row flex-col container mx-5 lg:mx-auto gap-20 lg:gap-5 pt-[140px] pb-10">
+        <div className="lg:h-auto bg-[#242526] lg:w-[60%] w-[91%] drop-shadow rounded-xl px-5 lg:px-14 lg:pb-5">
           <h1
-            className="relative left-[60px] -top-12 font-bold text-6xl italic py-3"
+            className="relative left-[40px] lg:left-[60px] -top-12 font-bold text-5xl lg:text-6xl italic py-3"
             style={websiteNameStyle}
           >
             {websiteName}_
           </h1>
           <div className="flex items-center justify-between">
-            <h1 className="text-[#E7E9ED] text-2xl italic">
-              <span className="text-2xl font-bold italic underline">
+            <h1 className="text-[#E7E9ED] text-xl lg:text-2xl italic">
+              <span className="text-xl lg:text-2xl font-bold italic underline">
                 Title:
               </span>{" "}
               {title}.
@@ -90,11 +90,11 @@ const ProjectDetails = () => {
               </a>
             </div>
           </div>
-          <h1 className="text-[#E7E9ED] text-2xl font-bold italic mt-3 underline">
+          <h1 className="text-[#E7E9ED] text-xl lg:text-2xl font-bold italic mt-3 underline">
             Description:
           </h1>
           <p className="text-[#E7E9ED] text-[18px] mt-2">{description}</p>
-          <h1 className="text-[#E7E9ED] text-2xl font-bold italic mt-3 underline">
+          <h1 className="text-[#E7E9ED] text-xl lg:text-2xl font-bold italic mt-3 underline">
             Features:
           </h1>
           {websiteFeatures?.map((feature) => (
@@ -106,23 +106,23 @@ const ProjectDetails = () => {
               <li>{feature.feature}</li>
             </ul>
           ))}
-          <h1 className="text-[#E7E9ED] text-2xl font-bold italic mt-3 mb-2 underline">
+          <h1 className="text-[#E7E9ED] text-xl lg:text-2xl font-bold italic mt-3 mb-2 underline">
             Used Technology:
           </h1>
           <Slider {...settings}>
             {tools?.map((tool) => (
-              <div key={tool?._id} className="flex h-[180px] relative">
+              <div key={tool?._id} className="flex lg:h-[180px] relative">
                 <img
                   alt={tool?.name}
                   title={tool?.name}
                   src={tool?.image}
-                  className="h-[180px] relative left-2 p-5"
+                  className="lg:h-[180px] relative left-2 p-5"
                 />
               </div>
             ))}
           </Slider>
         </div>
-        <div className="bg-[#242526] lg:h-[500px] w-[40%] rounded-xl px-10 ">
+        <div className="bg-[#242526] lg:h-[500px] lg:w-[40%] w-[91%] rounded-xl px-5 lg:px-10 ">
           <div>
             <h1
               className="relative left-[60px] -top-[44px] font-bold text-5xl italic py-3"
@@ -130,7 +130,7 @@ const ProjectDetails = () => {
             >
               Photos_
             </h1>
-            <div className="flex items-center justify-between text-[#E7E9ED] text-xl italic font-bold h-[30px]">
+            <div className="flex items-center justify-between text-[#E7E9ED] italic font-bold h-[30px]">
               <h1 className="underline">Featured Photos</h1>
               <Link
                 to={`/projects/${projectID}/${websiteName}/media`}
@@ -140,7 +140,7 @@ const ProjectDetails = () => {
               </Link>
             </div>
           </div>
-          <div className="rounded grid grid-cols-2 gap-3 mt-10 items-center justify-center">
+          <div className="rounded grid grid-cols-2 gap-3 pb-5 lg:pb-0 mt-10 items-center justify-center">
             <PhotoProvider
               speed={() => 800}
               easing={(type) =>
@@ -154,7 +154,7 @@ const ProjectDetails = () => {
                   <img
                     alt={featuredPhoto?.title}
                     src={featuredPhoto?.image}
-                    className="h-[150px] rounded-xl drop-shadow-2xl cursor-pointer"
+                    className="h-auto lg:h-[150px] rounded-xl drop-shadow-2xl cursor-pointer"
                   />
                 </PhotoView>
               ))}

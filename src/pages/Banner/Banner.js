@@ -34,7 +34,7 @@ const ReBanner = () => {
               </span>
             </h1>
           </div>
-          <p className="text-[#E4E4E4] lg:text-left lg:text-[18px] lg:w-[600px] ml-5 mb-4 lg:ml-0 lg:mb-0 lg:mt-8">
+          <p className="text-[#E4E4E4] lg:text-left lg:text-[18px] lg:w-[600px] mx-5 mb-4 lg:ml-0 lg:mb-0 lg:mt-8">
             I am the digital genius behind my website as a MERN Full-Stack
             developer. To bring my idea to life, I use a varied range of
             technical talents, seamlessly combining frontend and backend
@@ -89,9 +89,9 @@ const ReBanner = () => {
           </div>
         </div>
         {/* banner img part end */}
-        <div className="relative bottom-[-867px] lg:bottom-[816px] right-2 lg:left-[865px]">
+        <div className="relative bottom-[-867px] lg:bottom-[816px] right-2 left-[.4px] lg:left-[865px] border-b lg:border-b-0">
           <img
-            className="h-[480px] m-1 lg:m-auto lg:h-[685px] lg:ml-8"
+            className="h-[480px] m-1 relative right-2 lg:m-auto lg:h-[685px] lg:ml-8"
             src="https://i.ibb.co/ggY9Bjd/formal.png"
             alt="me-1"
           />

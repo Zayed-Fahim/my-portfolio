@@ -29,12 +29,12 @@ export const Contact = () => {
   };
   return (
     <div
-      className="max-h-max bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] lg:py-20"
+      className="max-h-max bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] lg:py-10"
       id="contact"
     >
       {/* side headings start */}
 
-      <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-8 lg:pt-0 lg:pb-20">
+      <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-8 lg:pt-0 lg:pb-10">
         <span className="font-bold">
           <Typewriter
             words={["CONTACT"]}
@@ -48,8 +48,8 @@ export const Contact = () => {
         </span>
       </h1>
 
-      <div className="container mx-auto flex justify-center lg:flex-row flex-col gap-10 py-8 lg:py-0 lg:pb-0">
-        <div className="text-white lg:h-[440px] mx-auto lg:mx-0 max-w-[330px] p-5 flex flex-col gap-5">
+      <div className="container mx-auto flex justify-center lg:flex-row flex-col gap-10 lg:gap-20 py-8 lg:py-0">
+        <div className="text-white lg:h-auto px-5 lg:mx-0 max-w-full lg:w-[330px] flex flex-col gap-5">
           <h1 className="text-3xl font-bold ">
             What’s your story? Get in touch
           </h1>
@@ -60,9 +60,9 @@ export const Contact = () => {
         </div>
 
         {/* side headings end */}
-        <div className="min-w-[55%] pb-5 mx-5 lg:mx-0 lg:pt-[25px]">
+        <div className="min-w-[50%] pb-5 lg:pb-0 mx-5 lg:mx-0">
           <form onSubmit={sendEmail}>
-            <div className="flex lg:flex-row flex-col gap-5 px-5 pb-5 pt-5 lg:pt-0">
+            <div className="flex lg:flex-row flex-col gap-5 pb-5 pt-5 lg:pt-0">
               <input
                 className="w-full h-[40px] p-3 focus:outline-none"
                 type="text"
@@ -78,7 +78,7 @@ export const Contact = () => {
                 required
               />
             </div>
-            <div className="flex flex-col gap-5 px-5">
+            <div className="flex flex-col gap-5">
               <input
                 className="w-full h-[40px] p-3 focus:outline-none"
                 type="text"

@@ -25,7 +25,7 @@ const AllProjects = () => {
             <div class="grid grid-cols-1 lg:grid-cols-3 h-full pb-10 lg:pb-20">
               <Link
                 to={`/projects/${projects[0]?.projectID}/${projects[0]?.websiteName}`}
-                class="border-r border-gray-300 mx-3 lg:mt-[80px] lg:pl-16"
+                class="border-r border-gray-300 mx-5 lg:mt-[80px] lg:pl-16"
                 onClick={scrollToTop}
               >
                 <div class=" py-10 pb-3 mt-28 lg:mt-72 h-[465px] lg:h-[480px] relative bg-purple-100 group hover:bg-purple-200 cursor-pointer transition ease-out duration-300">
@@ -49,7 +49,7 @@ const AllProjects = () => {
               </Link>
               <Link
                 to={`/projects/${projects[1]?.projectID}/${projects[1]?.websiteName}`}
-                class="border-r border-gray-300 mx-3 lg:mt-[145px] lg:pl-16"
+                class="border-r border-gray-300 mx-5 lg:mt-[145px] lg:pl-16"
                 onClick={scrollToTop}
               >
                 <div class=" py-10 pb-3 mt-10 lg:mt-32 h-[435px] lg:h-[480px] relative bg-indigo-100 group hover:bg-indigo-200 cursor-pointer transition ease-out duration-300 ">
@@ -72,7 +72,7 @@ const AllProjects = () => {
                 </div>
               </Link>
               <Link
-                class="border-r border-gray-300 mx-3 lg:pl-16 lg:mt-[80px]"
+                class="border-r border-gray-300 mx-5 lg:pl-16 lg:mt-[80px]"
                 onClick={scrollToTop}
               >
                 <div class=" py-10 pb-3 mt-10 lg:mt-5 h-[430px] lg:h-[480px] relative bg-red-100 group hover:bg-red-200 cursor-pointer transition ease-out duration-300">
@@ -93,7 +93,7 @@ const AllProjects = () => {
                 </div>
               </Link>
               <Link
-                class="border-r border-gray-300 mx-3 lg:pl-16"
+                class="border-r border-gray-300 mx-5 lg:pl-16"
                 onClick={scrollToTop}
               >
                 <div class=" py-10 pb-3 mt-10 lg:mt-72 h-[430px] lg:h-[480px] relative bg-purple-100 group hover:bg-purple-200 cursor-pointer transition ease-out duration-300">
@@ -114,7 +114,7 @@ const AllProjects = () => {
                 </div>
               </Link>
               <Link
-                class="border-r border-gray-300 mx-3 lg:mt-[62px] lg:pl-16"
+                class="border-r border-gray-300 mx-5 lg:mt-[62px] lg:pl-16"
                 onClick={scrollToTop}
               >
                 <div class=" py-10  pb-3 mt-10 lg:mt-28 h-[430px] lg:h-[480px] relative bg-indigo-100 group hover:bg-indigo-200 cursor-pointer transition ease-out duration-300">
@@ -135,7 +135,7 @@ const AllProjects = () => {
                 </div>
               </Link>
               <Link
-                class="border-r border-gray-300 mx-3 lg:pl-16"
+                class="border-r border-gray-300 mx-5 lg:pl-16"
                 onClick={scrollToTop}
               >
                 <div class=" py-10 pb-3 mt-10 lg:mt-5 h-[430px] lg:h-[480px] relative bg-red-100 group hover:bg-red-200 cursor-pointer transition ease-out duration-300">
