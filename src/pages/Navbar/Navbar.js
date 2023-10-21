@@ -77,13 +77,13 @@ const Navbar = () => {
           </div>
         </ul>
       </div>
-      <div className="lg:grid lg:grid-cols-2 lg:sticky lg:top-0 lg:z-[55]">
+      <div className="lg:grid lg:grid-cols-2 lg:sticky lg:top-0 lg:z-[55] lg:h-24">
         <NavHashLink
           smooth
           to="/home#"
-          className="lg:ml-[183px] text-white text-4xl font-bold"
+          className="lg:ml-[185px] lg:h-[h-24] text-white text-4xl font-bold"
         >
-          <img className="w-24 lg:h-36 lg:w-36" src={logo} alt="" />
+          <img className="w-24 lg:h-24 lg:w-[147px]" src={logo} alt="" />
         </NavHashLink>
       </div>
       <div className="hidden lg:flex ml-[175px]">

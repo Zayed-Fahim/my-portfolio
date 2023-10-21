@@ -4,7 +4,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
-import "../../App.css";
+import "../CSS/project.css";
+
 const Projects = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });

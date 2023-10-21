@@ -1,91 +1,73 @@
 {
-  "projectID": 2,
+  "projectID": 4,
   "websitePrimaryColor": [
-    { "colorCode": "#2563EB" },
-    { "colorCode": "#FFFFFF" }
+    { "colorCode": "#8BD69F" },
+    { "colorCode": "#47B3BC" }
   ],
-  "title": "Buy or Sell used mobile phones/tablets/iPads category-wise at the best prices.(phones.com)",
-  "shortDescription": "Phones.com is a Bangladeshi e-commerce platform for buying and selling pre-owned mobile devices. It offers competitive prices and a user-friendly experience, making it a trusted partner for quality used phones and hassle-free device sales. It's a great way to experience the future of mobile technology.",
-  "description": "Welcome to Phones.com, your premier e-commerce platform for buying and selling pre-owned mobile devices. At Phones.com, we're dedicated to offering you the most competitive prices available in the market, setting us apart from other websites. Our priority is providing a seamless and user-friendly experience, ensuring that you can easily navigate our website from anywhere in the world.phones.com, an e-commerce website where anyone can buy and sell their used phones, tablets, or iPads.This website offers you the best price compared to other website’s prices. This website gives you the best minimal user experience and is easy to navigate everywhere. At Phones.com, we're not just another e-commerce website; we're your trusted partner in Bangladesh for pre-owned mobile devices. Whether you're in the market for a quality used phone or want to sell your device hassle-free, we invite you to explore our platform. Experience the future of buying and selling mobile technology with Phones.com.",
-  "websiteName": "phones.com",
-  "websiteLink": "https://used-products-resale-mar-d348c.web.app/",
-  "websiteCover": "https://i.ibb.co/TkW1m9W/Home-Page.png",
+  "title": "This is a course selling platform.(DELIVERY dot com)",
+  "shortDescription": "The website is a user-friendly course selling platform, providing a diverse range of educational opportunities for both course providers and students, empowering them to enhance their skills and career prospects.",
+  "description": "My website functions as a dynamic and user-friendly course selling platform, designed to provide a diverse array of educational offerings to prospective learners. As a centralized hub for learning opportunities, it offers a seamless experience for both course providers and students.For course providers, the platform serves as a powerful tool to showcase their expertise and share knowledge with a global audience. They can easily create, list, and manage courses, thereby expanding their reach and impact. For students, my website offers a one-stop destination to discover, select, and enroll in courses that cater to their interests and educational needs. It provides a secure and convenient payment system, making the enrollment process hassle-free.By offering a rich selection of courses and promoting a user-friendly experience, my platform empowers learners to enhance their skills, knowledge, and career prospects. It also supports course providers in reaching a broader audience and sharing their expertise, fostering a vibrant online learning community where knowledge is accessible to all.",
+  "websiteName": "Active Learning",
+  "websiteLink": "https://learning-platfrom-client.web.app/",
+  "websiteCover": "https://i.ibb.co/TTfN7qM/Screenshot-165.png",
   "websiteFeatures": [
     {
-      "feature": "Contain three levels of users (Admin, Seller, and Buyer)."
+      "feature": "Contain two levels of users (Admin, Seller, Buyer)."
     },
     {
-      "feature": "Buy or Sell used mobile phones/tablets/iPads category-wise at the best prices."
+      "feature": "Allow course providers to create and list their courses, complete with descriptions, pricing, and details."
     },
     {
-      "feature": "Admins can view, delete, and create sellers/buyers."
+      "feature": "Enable users to create profiles with their personal information, course history, and progress tracking."
     },
     {
-      "feature": "Sellers display product details; buyers choose based on needs."
+      "feature": "Ensure the platform is accessible on various devices, including mobile phones and tablets."
     },
     {
-      "feature": "Responsive website (mobile and desktop)."
+      "feature": " Provide advanced search and filtering options so that students can easily find courses based on category."
     },
     {
       "feature": "Enabled email and password authentication and Google authentication."
-    },
-    {
-      "feature": "Use the JWT token to verify users and protect routes from unauthorized access"
     }
   ],
-  "serverSideLink": "https://github.com/Zayed-Fahim/Used-products-resale-market-server-side",
-  "clientSideLink": "https://github.com/Zayed-Fahim/Used-products-resale-market-client-side",
+  "serverSideLink": "https://github.com/Zayed-Fahim/Learniing-platform-server-side",
+  "clientSideLink": "https://github.com/Zayed-Fahim/Learning-platform-client-side",
   "featuredPhotos": [
     {
       "title": "Home Page",
-      "image": "https://i.ibb.co/TkW1m9W/Home-Page.png"
+      "image": "https://i.ibb.co/TTfN7qM/Screenshot-165.png"
     },
     {
       "title": "Login Page View",
-      "image": "https://i.ibb.co/DRd64kK/Login-page.png"
+      "image": "https://i.ibb.co/ssMDJZ3/Screenshot-161.png"
     },
     {
-      "title": "Category Page View",
-      "image": "https://i.ibb.co/Gtc5cdh/Category-Page.png"
-    },
-    {
-      "title": "Admin Dashboard View",
-      "image": "https://i.ibb.co/ZB9WG2M/Dashboard-View.png"
+      "title": "Courses Page View",
+      "image": "https://i.ibb.co/f822MVs/Screenshot-164.png"
     }
   ],
   "media": {
     "photos": [
       {
-        "title": "Home Page View",
-        "image": "https://i.ibb.co/TkW1m9W/Home-Page.png"
+        "title": "Home Page",
+        "image": "https://i.ibb.co/TTfN7qM/Screenshot-165.png"
       },
       {
         "title": "Login Page View",
-        "image": "https://i.ibb.co/DRd64kK/Login-page.png"
+        "image": "https://i.ibb.co/ssMDJZ3/Screenshot-161.png"
       },
       {
         "title": "Sign up Page View",
-        "image": "https://i.ibb.co/gyrH6Fx/Signup-page.png"
+        "image": "https://i.ibb.co/6R5d3ZZ/Screenshot-162.png"
       },
       {
-        "title": "Category Page View",
-        "image": "https://i.ibb.co/Gtc5cdh/Category-Page.png"
+        "title": "Courses Page View",
+        "image": "https://i.ibb.co/f822MVs/Screenshot-164.png"
       },
+
       {
-        "title": "Android Category Page",
-        "image": "https://i.ibb.co/fvbd7GJ/Android-Category-page.png"
-      },
-      {
-        "title": "Iphone Category Page",
-        "image": "https://i.ibb.co/GQtNQWj/Iphone-Category-Page.png"
-      },
-      {
-        "title": "Tablets/iPads Category Page",
-        "image": "https://i.ibb.co/VJvzDfz/Tablet-ipads-Category-page.png"
-      },
-      {
-        "title": "Dashboard Page",
-        "image": "https://i.ibb.co/ZB9WG2M/Dashboard-View.png"
+        "title": "Blog Page view",
+        "image": "https://i.ibb.co/ncQ9LG6/Screenshot-163.png"
       }
     ]
   },
@@ -104,7 +86,7 @@
     },
     {
       "name": "React JS",
-      "image": "https://i.ibb.co/tDmsbfj/react-js.gif"
+      "image": "https://i.ibb.co/VYm0FPc/react-js-2.gif"
     },
     {
       "name": "Node JS",
@@ -137,10 +119,6 @@
     {
       "name": "Vercel",
       "image": "https://i.ibb.co/pKpQXr2/vercel.png"
-    },
-    {
-      "name": "JWT",
-      "image": "https://i.ibb.co/NLWgPfH/jwt.png"
     },
     {
       "name": "Git",
