@@ -64,9 +64,8 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="../../assets/cv/Sayed Asif Zayed-cv.pdf"
+                  to="../../assets/cv/Sayed Asif Zayed - CV.pdf"
                   download
-                  className=""
                 >
                   <button className="text-black lg:h-[40px] h-[30px] px-4 lg:px-10 text-sm font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
                     Download CV
@@ -122,7 +121,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="../../assets/cv/Sayed Asif Zayed-cv.pdf"
+                  to="../../assets/cv/Sayed Asif Zayed - CV.pdf"
                   target="_blank"
                   download
                   className="lg:flex lg:items-center lg:justify-center"

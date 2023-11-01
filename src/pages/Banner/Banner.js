@@ -3,7 +3,8 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaCode, FaNode, FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { Link } from "react-router-dom";
-
+import { PhotoProvider, PhotoView } from "react-photo-view";
+import resume from "../../assets/cv/Sayed Asif Zayed - Resume.png";
 const ReBanner = () => {
   return (
     <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
@@ -35,8 +36,8 @@ const ReBanner = () => {
             </h1>
           </div>
           <p className="text-[#E4E4E4] lg:text-left lg:text-[18px] lg:w-[600px] mx-5 mb-4 lg:ml-0 lg:mb-0 lg:mt-8">
-            I am the digital genius behind my website as a MERN Full-Stack
-            developer. To bring my idea to life, I use a varied range of
+            I am the digital genius behind my website as a Full-Stack
+            developer(MERN). To bring my idea to life, I use a varied range of
             technical talents, seamlessly combining frontend and backend
             programming. I create a visually stunning and user-friendly frontend
             with React that captivates my audience. To handle data and perform
@@ -47,15 +48,21 @@ const ReBanner = () => {
             transforming my idea into a digital masterpiece.
           </p>
           <div className="flex self-start gap-10 ml-5 mb-4 lg:ml-0 lg:mb-0 lg:mt-8">
-            <a
-              href="https://drive.google.com/drive/u/4/folders/1iwRPXNDCgxFgwpQNSVqrZo7XCyHAEfsA"
-              target="_blank"
-              rel="noreferrer"
+            <PhotoProvider
+              speed={() => 800}
+              easing={(type) =>
+                type === 2
+                  ? "cubic-bezier(0.36, 0, 0.66, -0.56)"
+                  : "cubic-bezier(0.34, 1.56, 0.64, 1)"
+              }
+              bannerVisible={false}
             >
-              <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
-                Resume
-              </button>
-            </a>
+              <PhotoView src={resume}>
+                <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
+                  Resume
+                </button>
+              </PhotoView>
+            </PhotoProvider>
             <Link>
               <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
                 Hire Me

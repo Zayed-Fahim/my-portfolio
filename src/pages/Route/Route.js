@@ -7,7 +7,7 @@ import AllProjects from "../Projects/AllProjects";
 import ProjectDetails from "../Projects/ProjectDetails";
 import ProjectMedia from "../Projects/ProjectMedia";
 
-const Route = () => {
+const Route = ({ setIsLoading, isLoading }) => {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -15,19 +15,21 @@ const Route = () => {
       children: [
         {
           path: "/home",
-          element: <Home />,
+          element: <Home setIsLoading={setIsLoading} isLoading={isLoading} />,
         },
         {
           path: "/",
-          element: <Home />,
+          element: <Home setIsLoading={setIsLoading} isLoading={isLoading} />,
         },
         {
           path: "/blog",
-          element: <Blog />,
+          element: <Blog setIsLoading={setIsLoading} isLoading={isLoading} />,
         },
         {
           path: "/projects",
-          element: <AllProjects />,
+          element: (
+            <AllProjects setIsLoading={setIsLoading} isLoading={isLoading} />
+          ),
         },
         {
           path: "/projects/:projectID/:websiteName",
@@ -36,7 +38,9 @@ const Route = () => {
               `https://zayed-fahim-portfolio.vercel.app/projects/${params.projectID}/${params.websiteName}`
             );
           },
-          element: <ProjectDetails />,
+          element: (
+            <ProjectDetails setIsLoading={setIsLoading} isLoading={isLoading} />
+          ),
         },
         {
           path: "/projects/:projectID/:websiteName/media",
@@ -45,7 +49,9 @@ const Route = () => {
               `https://zayed-fahim-portfolio.vercel.app/projects/${params.projectID}/${params.websiteName}/media`
             );
           },
-          element: <ProjectMedia />,
+          element: (
+            <ProjectMedia setIsLoading={setIsLoading} isLoading={isLoading} />
+          ),
         },
       ],
     },

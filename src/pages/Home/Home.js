@@ -5,7 +5,7 @@ import Contact from "../Contact/Contact";
 import Experience from "../Experience/Experience";
 import Projects from "../Projects/Projects";
 
-const Home = () => {
+const Home = ({ isLoading, setIsLoading }) => {
   return (
     <div id="home">
       <Banner />

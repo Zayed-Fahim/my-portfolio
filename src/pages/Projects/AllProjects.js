@@ -3,9 +3,9 @@ import "../CSS/projectCard.css";
 import { Link } from "react-router-dom";
 
 const AllProjects = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // };
 
   const [projects, setProjects] = useState([]);
 
