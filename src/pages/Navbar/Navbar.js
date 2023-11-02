@@ -30,7 +30,7 @@ const Navbar = () => {
       home: { start: 0, end: 940 },
       experience: { start: 941, end: 1885 },
       "about-me": { start: 1886, end: 2895 },
-      projects: { start: 2896, end: 3830 },
+      projects: { start: 2890, end: 3830 },
       "contact-me": { start: 3831, end: 4400 },
     };
 
@@ -56,11 +56,14 @@ const Navbar = () => {
     }
   };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    if (currentPath === "/") {
+      // Only enable scroll behavior on the home page
+      window.addEventListener("scroll", handleScroll, { passive: true });
+    }
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [currentPath]);
   // console.log(scrollPosition);
 
   return (
@@ -210,7 +213,10 @@ const Navbar = () => {
       <div className="lg:grid lg:grid-cols-2 lg:sticky lg:top-0 lg:z-[55] lg:h-24">
         <NavHashLink
           smooth
-          to="/home#"
+          to="/"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="lg:ml-[185px] lg:h-[h-24] text-white text-4xl font-bold"
         >
           <img className="w-24 lg:h-24 lg:w-[147px]" src={logo} alt="" />

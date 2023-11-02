@@ -4,6 +4,9 @@ import { useLoaderData } from "react-router-dom";
 import Slider from "react-slick";
 import { VscLiveShare, VscGithubInverted } from "react-icons/vsc";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import { useEffect } from "react";
+import { useState } from "react";
+import ProjectLoader from "../Components/ProjectLoader";
 
 const ProjectDetails = () => {
   const projectDetails = useLoaderData();
@@ -21,6 +24,13 @@ const ProjectDetails = () => {
     featuredPhotos,
     websitePrimaryColor,
   } = projectDetails[0];
+
+  const [isReady, setIsReady] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsReady(false);
+    }, 1500);
+  }, []);
 
   const settings = {
     centerMode: true,
@@ -46,7 +56,9 @@ const ProjectDetails = () => {
     color: "transparent",
   };
 
-  return (
+  return isReady ? (
+    <ProjectLoader />
+  ) : (
     <div className="bg-[#18191A]">
       <div className="flex lg:flex-row flex-col container mx-5 lg:mx-auto gap-20 lg:gap-5 pt-[140px] pb-10">
         <div className="lg:h-auto bg-[#242526] lg:w-[60%] w-[91%] drop-shadow rounded-xl px-5 lg:px-14 lg:pb-5">

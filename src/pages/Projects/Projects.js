@@ -7,10 +7,6 @@ import { Link } from "react-router-dom";
 import "../CSS/project.css";
 
 const Projects = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const settings = {
     dots: true,
     arrows: false,
@@ -31,6 +27,7 @@ const Projects = () => {
     ),
   };
   const [projects, setProjects] = useState([]);
+
   useEffect(() => {
     fetch("https://zayed-fahim-portfolio.vercel.app/projects")
       .then((res) => res.json())
@@ -80,7 +77,9 @@ const Projects = () => {
                 <Link
                   to={`/projects/${project?.projectID}/${project?.websiteName}`}
                   className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px] mb-5 lg:mb-0"
-                  onClick={scrollToTop}
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
                 >
                   <button className="text-[18px] text-center hover:font-bold">
                     View Full Project
@@ -95,7 +94,7 @@ const Projects = () => {
         <Link
           to="/projects"
           className="block text-black font-bold px-5 py-1 rounded-md bg-[#E2A100]"
-          onClick={scrollToTop}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           Explore All Projects
         </Link>

@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/projectCard.css";
 import { Link } from "react-router-dom";
+import FetchingLoader from "../Components/FetchingLoader";
 
 const AllProjects = () => {
-  // const scrollToTop = () => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // };
-
   const [projects, setProjects] = useState([]);
+  const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
+    setIsFetching(true);
     fetch("https://zayed-fahim-portfolio.vercel.app/projects")
       .then((res) => res.json())
-      .then((data) => setProjects(data.payload));
+      .then((data) => {
+        setTimeout(() => {
+          setIsFetching(false);
+        }, 1500);
+        setProjects(data.payload);
+      });
   }, [setProjects]);
 
-  return (
+  return isFetching ? (
+    <FetchingLoader />
+  ) : (
     <div className="bg-[#18191A] pt-20 pb-10 flex flex-col gap-4 lg:px-auto px-5">
       <div className="container mx-auto rounded-xl drop-shadow-lg bg-[#242526]">
         <h1 className="text-white py-5 text-center text-3xl lg:text-5xl font-extrabold italic bg-gradient-to-r from-[#00C4F0] via-[#E1A100] to-[#FFFF00] text-transparent bg-clip-text">
