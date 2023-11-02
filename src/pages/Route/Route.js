@@ -6,6 +6,7 @@ import Home from "../Home/Home";
 import AllProjects from "../Projects/AllProjects";
 import ProjectDetails from "../Projects/ProjectDetails";
 import ProjectMedia from "../Projects/ProjectMedia";
+import PathErrorPage from "../Components/PathErrorPage";
 
 const Route = ({ setIsLoading, isLoading }) => {
   const router = createBrowserRouter([
@@ -50,6 +51,10 @@ const Route = ({ setIsLoading, isLoading }) => {
           ),
         },
       ],
+    },
+    {
+      path: "*",
+      element: <PathErrorPage />,
     },
   ]);
   return (
