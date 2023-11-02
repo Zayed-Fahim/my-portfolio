@@ -1,14 +1,17 @@
 import React from "react";
 import { FaHtml5, FaCss3Alt, FaReact, FaNode } from "react-icons/fa";
-import { SiJavascript, SiMongodb, SiExpress, SiFirebase, SiVercel } from "react-icons/si";
+import {
+  SiJavascript,
+  SiMongodb,
+  SiExpress,
+  SiFirebase,
+  SiVercel,
+} from "react-icons/si";
 import { Typewriter } from "react-simple-typewriter";
 
 const Experience = () => {
   return (
-    <div
-      className="bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-md"
-      id="experience"
-    >
+    <div className="bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-md">
       <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-10 lg:pt-12">
         <span className="text-[#00C4F0] font-bold">
           <Typewriter

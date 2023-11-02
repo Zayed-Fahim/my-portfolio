@@ -4,14 +4,11 @@ import { Typewriter } from "react-simple-typewriter";
 
 const About = () => {
   return (
-    <div
-      className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] shadow-2xl max-h-max py-16 lg:mb-auto lg:py-0 lg:max-h-[1010px]"
-      id="about-me"
-    >
+    <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] shadow-2xl max-h-max py-16 lg:mb-auto lg:py-0 lg:max-h-[1010px]">
       <div className="container mx-auto hidden lg:block">
-        <div className="lg:w-[770px] lg:h-[770px] border-solid border-[89px] border-[#E4E4E4] drop-shadow-[0_4px_70px_rgba(255,255,255,0.25)] rounded-[50%] relative top-[95px] left-24">
-          <div className="lg:w-[356px] lg:h-[356px] border-solid border-[34px] border-[#E2A200] drop-shadow-[0_4px_70px_rgba(226,162,0,0.25)] rounded-[50%] relative bottom-[150px] left-[800px]">
-            <div className="w-[486px] h-[486px] border-solid border-[55px] border-[#00C4F0] drop-shadow-[0_4px_70px_rgba(0,193,236,0.25)] rounded-[50%] relative top-[420px] right-[80px]">
+        <div className="lg:w-[770px] lg:h-[770px] border-solid border-[89px] border-[#E4E4E4] rounded-[50%] relative top-[95px] left-24">
+          <div className="lg:w-[356px] lg:h-[356px] border-solid border-[34px] border-[#E2A200] rounded-[50%] relative bottom-[150px] left-[800px]">
+            <div className="w-[486px] h-[486px] border-solid border-[55px] border-[#00C4F0] rounded-[50%] relative top-[420px] right-[80px]">
               <div className="w-[330px] p-6 bg-[#2C2C2C] rounded-[14px] relative right-[750px] bottom-[500px]">
                 <img
                   className="w-[272px] h-[240px] shadow-[0_0_0_6px_#686868]"

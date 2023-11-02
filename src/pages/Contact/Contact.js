@@ -28,10 +28,7 @@ export const Contact = () => {
     e.target.reset();
   };
   return (
-    <div
-      className="max-h-max bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] lg:py-10"
-      id="contact"
-    >
+    <div className="max-h-max bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C] lg:py-14">
       {/* side headings start */}
 
       <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-8 lg:pt-0 lg:pb-10">
@@ -62,7 +59,7 @@ export const Contact = () => {
         {/* side headings end */}
         <div className="min-w-[50%] pb-5 lg:pb-0 mx-5 lg:mx-0">
           <form onSubmit={sendEmail}>
-            <div className="flex lg:flex-row flex-col gap-5 pb-5 pt-5 lg:pt-0">
+            <div className="flex flex-col gap-5 lg:gap-5 pt-5 lg:pt-0">
               <input
                 className="w-full h-[40px] p-3 focus:outline-none"
                 type="text"
@@ -77,8 +74,6 @@ export const Contact = () => {
                 placeholder="Your Email"
                 required
               />
-            </div>
-            <div className="flex flex-col gap-5">
               <input
                 className="w-full h-[40px] p-3 focus:outline-none"
                 type="text"

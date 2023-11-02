@@ -8,9 +8,9 @@ import resume from "../../assets/cv/Sayed Asif Zayed - Resume.png";
 const ReBanner = () => {
   return (
     <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
-      <div className="container mx-auto max-h-auto lg:h-[860px] flex flex-col-reverse mt-[-830px] lg:m-auto gap-60 lg:grid grid-cols-2 place-items-center">
+      <div className="container mx-auto lg:h-screen flex flex-col-reverse lg:flex-row lg:items-center gap-60 lg:gap-[276px] mt-[-830px] lg:m-auto">
         {/* banner header part start */}
-        <div className="flex flex-col lg:pt-44 mb-5">
+        <div className="flex flex-col lg:pt-36 mb-5">
           <h1 className="text-[#E4E4E4] text-4xl m-5 mt-20 lh:mt-auto lg:m-0 lg:text-5xl">
             HELLO
           </h1>
@@ -72,23 +72,23 @@ const ReBanner = () => {
         </div>
         {/* banner header part end */}
         {/* banner img part start */}
-        <div className="grid relative top-64 lg:top-[196px] mx-auto">
-          <div className="w-[350px] h-[350px] lg:w-[575px] lg:h-[575px] border-solid border-[43px] lg:border-[67px] border-[#00C4F0] drop-shadow-[0_0_152px_rgba(0,196,240,0.42)] rounded-[50%]">
+        <div className="grid relative top-64 lg:top-[100px] mx-auto">
+          <div className="w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] border-[40px] border-solid lg:border-[60px] border-[#00C4F0] rounded-[50%] lg:rounded-none lg:rounded-tl-[30%] lg:rounded-br-[30%]">
             {/* image icon part start */}
-            <div className="invisible md:visible lg:visible">
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-5 bottom-8">
+            <div className="hidden md:block lg:block">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-12 bottom-[60px]">
                 <SiExpress className="h-16 w-16 text-[#00C4F0]"></SiExpress>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative top-12 right-[108px]">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative top-10 right-[103px]">
                 <SiMongodb className="h-16 w-16 text-[#00C4F0]"></SiMongodb>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[212px] left-[370px]">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[283px] left-[410px]">
                 <FaReact className="h-16 w-16 text-[#00C4F0]"></FaReact>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[132px] left-[460px]">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[170px] left-[493px]">
                 <FaNode className="h-16 w-16 text-[#00C4F0]"></FaNode>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-16 bottom-8">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-[105px] bottom-10">
                 <FaCode className="h-16 w-16 text-[#00C4F0]"></FaCode>
               </div>
             </div>
@@ -96,12 +96,13 @@ const ReBanner = () => {
           </div>
         </div>
         {/* banner img part end */}
-        <div className="relative bottom-[-867px] lg:bottom-[816px] right-2 left-[.4px] lg:left-[865px] border-b lg:border-b-0">
+        <div className="relative lg:absolute bottom-[-867px] right-2 left-2.5 lg:top-[69px] lg:left-[1036px] lg:bottom-0">
           <img
-            className="h-[480px] m-1 relative right-2 lg:m-auto lg:h-[685px] lg:ml-8"
+            className="h-[490px] m-1 relative right-2.5 lg:left-0 lg:right-4 lg:h-[930px] lg:ml-[26px]"
             src="https://i.ibb.co/ggY9Bjd/formal.png"
             alt="me-1"
           />
+          <hr className="lg:hidden block w-[95%]" />
         </div>
       </div>
     </div>

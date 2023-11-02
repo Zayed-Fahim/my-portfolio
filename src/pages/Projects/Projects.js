@@ -38,10 +38,7 @@ const Projects = () => {
   }, [setProjects]);
 
   return (
-    <div
-      className="h-auto lg:h-[910px] bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-2xl"
-      id="projects"
-    >
+    <div className="h-auto lg:h-[938px] bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-2xl">
       <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-10 pb-5 lg:p-10">
         <span className="text-[#00C4F0] font-bold">
           <Typewriter
@@ -61,8 +58,11 @@ const Projects = () => {
       >
         {/* 1 */}
         {projects?.map((project) => (
-          <div className="bg-black bg-opacity-20" key={project.projectID}>
-            <div className="flex flex-col lg:flex-row lg:p-10 lg:justify-between">
+          <div
+            className="bg-black bg-opacity-20 lg:h-[600px]"
+            key={project.projectID}
+          >
+            <div className="flex flex-col lg:flex-row lg:p-10 lg:pt-12 lg:items-center lg:justify-between">
               <div>
                 <img
                   className="lg:h-[500px] h-[200px] lg:w-[720px]"

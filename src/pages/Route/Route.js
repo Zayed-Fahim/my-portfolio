@@ -14,10 +14,6 @@ const Route = ({ setIsLoading, isLoading }) => {
       element: <Main />,
       children: [
         {
-          path: "/home",
-          element: <Home setIsLoading={setIsLoading} isLoading={isLoading} />,
-        },
-        {
           path: "/",
           element: <Home setIsLoading={setIsLoading} isLoading={isLoading} />,
         },
