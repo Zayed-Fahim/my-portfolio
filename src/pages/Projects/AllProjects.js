@@ -56,6 +56,9 @@ const AllProjects = () => {
                   <Link
                     to={`/projects/${project?.projectID}/${project?.websiteName}`}
                     className="px-3 py-1 rounded-md text-white font-bold italic"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "instant" });
+                    }}
                     style={{
                       background: `linear-gradient(to right, ${project?.websitePrimaryColor[0].colorCode} 30%, ${project?.websitePrimaryColor[1].colorCode} 70%)`,
                     }}

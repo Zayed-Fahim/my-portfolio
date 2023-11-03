@@ -8,7 +8,7 @@ import ProjectDetails from "../Projects/ProjectDetails";
 import ProjectMedia from "../Projects/ProjectMedia";
 import PathErrorPage from "../Components/PathErrorPage";
 
-const Route = ({ setIsLoading, isLoading }) => {
+const Route = () => {
   const router = createBrowserRouter([
     {
       path: "/",
@@ -16,17 +16,15 @@ const Route = ({ setIsLoading, isLoading }) => {
       children: [
         {
           path: "/",
-          element: <Home setIsLoading={setIsLoading} isLoading={isLoading} />,
+          element: <Home />,
         },
         {
           path: "/blog",
-          element: <Blog setIsLoading={setIsLoading} isLoading={isLoading} />,
+          element: <Blog />,
         },
         {
           path: "/projects",
-          element: (
-            <AllProjects setIsLoading={setIsLoading} isLoading={isLoading} />
-          ),
+          element: <AllProjects />,
         },
         {
           path: "/projects/:projectID/:websiteName",
@@ -35,9 +33,7 @@ const Route = ({ setIsLoading, isLoading }) => {
               `https://zayed-fahim-portfolio.vercel.app/projects/${params.projectID}/${params.websiteName}`
             );
           },
-          element: (
-            <ProjectDetails setIsLoading={setIsLoading} isLoading={isLoading} />
-          ),
+          element: <ProjectDetails />,
         },
         {
           path: "/projects/:projectID/:websiteName/media",
@@ -46,9 +42,7 @@ const Route = ({ setIsLoading, isLoading }) => {
               `https://zayed-fahim-portfolio.vercel.app/projects/${params.projectID}/${params.websiteName}/media`
             );
           },
-          element: (
-            <ProjectMedia setIsLoading={setIsLoading} isLoading={isLoading} />
-          ),
+          element: <ProjectMedia />,
         },
       ],
     },

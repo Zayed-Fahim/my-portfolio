@@ -9,21 +9,21 @@ const About = () => {
         <div className="lg:w-[770px] lg:h-[770px] border-solid border-[89px] border-[#E4E4E4] rounded-[50%] relative top-[95px] left-24">
           <div className="lg:w-[356px] lg:h-[356px] border-solid border-[34px] border-[#E2A200] rounded-[50%] relative bottom-[150px] left-[800px]">
             <div className="w-[486px] h-[486px] border-solid border-[55px] border-[#00C4F0] rounded-[50%] relative top-[420px] right-[80px]">
-              <div className="w-[330px] p-6 bg-[#2C2C2C] rounded-[14px] relative right-[750px] bottom-[500px]">
+              <div className="w-[330px] p-6 bg-[#242526] rounded-[14px] relative right-[750px] bottom-[500px]">
                 <img
                   className="w-[272px] h-[240px] shadow-[0_0_0_6px_#686868]"
                   src={topLeft}
                   alt="me-1"
                 />
               </div>
-              <div className="w-[330px] p-6 bg-[#2C2C2C] rounded-[14px] relative right-[750px] bottom-[140px]">
+              <div className="w-[330px] p-6 bg-[#242526] rounded-[14px] relative right-[750px] bottom-[140px]">
                 <img
                   className="w-[272px] h-[230px] shadow-[0_0_0_6px_#686868]"
                   src="https://i.ibb.co/0JVB6NG/IMG-20211021-111432.jpg"
                   alt="me-2"
                 />
               </div>
-              <div className="w-[330px] h-[440px] p-6 bg-[#2C2C2C] rounded-[14px] relative bottom-[840px] left-12">
+              <div className="w-[330px] h-[440px] p-6 bg-[#242526] rounded-[14px] relative bottom-[840px] left-12">
                 <img
                   className="w-[310px] h-[395px] shadow-[0_0_0_6px_#686868]"
                   src="https://i.ibb.co/zxJ4CMn/IMG-0462.png"
@@ -34,7 +34,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="lg:relative lg:max-w-[496px] lg:h-[822px] bg-[#2C2C2C] rounded-[14px] lg:bottom-[695px] lg:left-[740px] bottom-[700px] mx-5 z-[1] lg:mx-0">
+      <div className="lg:relative lg:max-w-[496px] lg:h-[822px] bg-[#242526] shadow-md rounded-[14px] lg:bottom-[695px] lg:left-[740px] bottom-[700px] mx-5 z-[1] lg:mx-0">
         <div className="relative lg:left-16 bottom-7 left-7">
           <span className="text-[38px] font-bold lg:text-5xl text-white">
             <Typewriter

@@ -2,77 +2,37 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import logo from "../../assets/icon/navLogo.png";
+import DownloadButton from "../Components/DownloadButton";
 
 const Navbar = () => {
   const location = useLocation();
-
   const currentPath = location.pathname;
 
+  // console.log(currentPath)
   const [scrollPosition, setScrollPosition] = useState(0);
-
-  // Initialize the active section based on the current URL path
-  let activeSection = "home";
-  if (currentPath === "/?experience") {
-    activeSection = "experience";
-  } else if (currentPath === "/?about-me") {
-    activeSection = "about-me";
-  } else if (currentPath === "/?projects") {
-    activeSection = "projects";
-  } else if (currentPath === "/?contact-me") {
-    activeSection = "contact-me";
-  }
 
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);
-
-    const thresholds = {
-      home: { start: 0, end: 940 },
-      experience: { start: 941, end: 1885 },
-      "about-me": { start: 1886, end: 2895 },
-      projects: { start: 2890, end: 3830 },
-      "contact-me": { start: 3831, end: 4400 },
-    };
-
-    let newActiveSection = "home";
-    for (const section in thresholds) {
-      if (
-        position >= thresholds[section].start &&
-        position <= thresholds[section].end
-      ) {
-        newActiveSection = section;
-        break;
-      }
-    }
-
-    if (newActiveSection !== activeSection) {
-      activeSection = newActiveSection;
-      // Update the URL path based on the active section
-      if (activeSection === "home") {
-        window.history.replaceState({}, "", "/");
-      } else {
-        window.history.replaceState({}, "", `/?${activeSection}`);
-      }
-    }
   };
   useEffect(() => {
-    if (currentPath === "/") {
-      // Only enable scroll behavior on the home page
-      window.addEventListener("scroll", handleScroll, { passive: true });
-    }
+    // Add a scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [currentPath]);
+  }, []);
   // console.log(scrollPosition);
 
   return (
     <div className="z-[55] fixed top-0 navbar h-[64px] bg-[#242526]">
       <div className="dropdown">
-        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <label tabIndex={0} className="lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 text-white"
+            className="h-7 w-7 ml-2 mr-3 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -105,7 +65,7 @@ const Navbar = () => {
                       scrollPosition <= 835 &&
                       currentPath === "/" &&
                       currentPath !== "/blog"
-                        ? "border-b-[3px] w-[56%] text-[#00C4F0] border-[#E2A100]"
+                        ? "border-b-[3px] w-[57%] text-[#00C4F0] border-[#E2A100]"
                         : "border-none"
                     }`}
                   >
@@ -124,7 +84,7 @@ const Navbar = () => {
                   <div
                     className={`${
                       scrollPosition >= 836 && scrollPosition <= 1935
-                        ? "border-b-[3px] w-[56%] text-[#00C4F0] border-[#E2A100]"
+                        ? "border-b-[3px] w-[57%] text-[#00C4F0] border-[#E2A100]"
                         : "border-none"
                     }`}
                   >
@@ -143,7 +103,7 @@ const Navbar = () => {
                   <div
                     className={`${
                       scrollPosition >= 1936 && scrollPosition <= 3090
-                        ? "border-b-[3px] w-[56%] text-[#00C4F0] border-[#E2A100]"
+                        ? "border-b-[3px] w-[57%] text-[#00C4F0] border-[#E2A100]"
                         : "border-none"
                     }`}
                   >
@@ -162,7 +122,7 @@ const Navbar = () => {
                   <div
                     className={`${
                       scrollPosition >= 3091 && scrollPosition <= 3900
-                        ? "border-b-[3px] w-[56%] text-[#00C4F0] border-[#E2A100]"
+                        ? "border-b-[3px] w-[57%] text-[#00C4F0] border-[#E2A100]"
                         : "border-none"
                     }`}
                   >
@@ -173,7 +133,7 @@ const Navbar = () => {
               <li
                 className="hover:text-[#00C4F0]"
                 onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  window.scrollTo({ top: 0, behavior: "instant" });
                 }}
               >
                 <NavHashLink smooth to="/blog">
@@ -190,8 +150,8 @@ const Navbar = () => {
                 >
                   <div
                     className={`${
-                      scrollPosition >= 3901 && scrollPosition <= 4547
-                        ? "border-b-[3px] w-[56%] text-[#00C4F0] border-[#E2A100]"
+                      scrollPosition >= 3901 && scrollPosition <= 4830
+                        ? "border-b-[3px] w-[57%] text-[#00C4F0] border-[#E2A100]"
                         : "border-none"
                     }`}
                   >
@@ -199,10 +159,18 @@ const Navbar = () => {
                   </div>
                 </NavHashLink>
               </li>
-              <li className="mb-2">
-                <Link to="../../assets/cv/Sayed Asif Zayed - CV.pdf" download>
-                  <button className="text-black lg:h-[40px] h-[30px] px-4 lg:px-10 text-sm font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
-                    Download CV
+              <li>
+                <Link
+                  to="../../assets/cv/Sayed Asif Zayed - CV.pdf"
+                  target="_blank"
+                  download
+                  className="lg:flex lg:items-center lg:justify-center"
+                >
+                  <button
+                    class="py-1 w-full rounded-sm bg-[#E2A100]"
+                    type="button"
+                  >
+                    DownLoad CV
                   </button>
                 </Link>
               </li>
@@ -210,7 +178,7 @@ const Navbar = () => {
           </div>
         </ul>
       </div>
-      <div className="lg:grid lg:grid-cols-2 lg:sticky lg:top-0 lg:z-[55] lg:h-24">
+      <div className="lg:grid lg:grid-cols-2 lg:sticky lg:top-0 lg:z-[55] lg:h-24 lg:visible hidden">
         <NavHashLink
           smooth
           to="/"
@@ -222,8 +190,16 @@ const Navbar = () => {
           <img className="w-24 lg:h-24 lg:w-[147px]" src={logo} alt="" />
         </NavHashLink>
       </div>
+      <div className="lg:hidden block">
+        <NavHashLink
+          smooth
+          className="lg:ml-[185px] lg:h-[h-24] text-white text-4xl font-bold"
+        >
+          <img className="w-24 lg:h-24 lg:w-[147px]" src={logo} alt="" />
+        </NavHashLink>
+      </div>
       <div className="hidden lg:flex ml-[165px]">
-        <ul className="px-10">
+        <ul className="pl-[70px]">
           <div className="text-white">
             <ul className="flex gap-10 justify-center items-center text-[17px] font-bold">
               <li className="hover:text-[#00C4F0]">
@@ -310,7 +286,7 @@ const Navbar = () => {
                   smooth
                   to="/blog"
                   onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    window.scrollTo({ top: 0, behavior: "instant" });
                   }}
                 >
                   <div
@@ -343,23 +319,11 @@ const Navbar = () => {
                   </div>
                 </NavHashLink>
               </li>
-              <li>
-                <Link
-                  to="../../assets/cv/Sayed Asif Zayed - CV.pdf"
-                  target="_blank"
-                  download
-                  className="lg:flex lg:items-center lg:justify-center"
-                >
-                  <button className="text-black lg:h-[40px] h-[30px] px-4 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
-                    Download CV
-                  </button>
-                </Link>
-              </li>
+              <DownloadButton name="Download CV" />
             </ul>
           </div>
         </ul>
       </div>
-      {/* <div className="navbar-end"></div> */}
     </div>
   );
 };

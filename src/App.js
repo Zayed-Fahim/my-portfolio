@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
   if (isLoading) {
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="overflow-hidden">
-      <Route loading={isLoading} isLoading={setIsLoading}></Route>
+      <Route></Route>
       <ScrollUp />
       <ToastContainer></ToastContainer>
     </div>

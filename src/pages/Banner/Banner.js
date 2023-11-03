@@ -5,7 +5,9 @@ import { SiExpress, SiMongodb } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import resume from "../../assets/cv/Sayed Asif Zayed - Resume.png";
-const ReBanner = () => {
+import HireMeButton from "../Components/HireMeButton";
+
+const Banner = () => {
   return (
     <div className="bg-gradient-to-r from-[#2C2C2C] to-[#1C1C1C]">
       <div className="container mx-auto lg:h-screen flex flex-col-reverse lg:flex-row lg:items-center gap-60 lg:gap-[276px] mt-[-830px] lg:m-auto">
@@ -58,22 +60,44 @@ const ReBanner = () => {
               bannerVisible={false}
             >
               <PhotoView src={resume}>
-                <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
+                <button
+                  class="btn2 px-5 h-[35px] xl:h-10 lg:h-10 relative rounded-sm bg-[#E2A100] font-bold text-white hover:font-bold tracking-wider leading-none overflow-hidden hover:text-black"
+                  type="button"
+                >
+                  <span class="absolute inset-0 bg-[#00C4F0] font-bold !text-white"></span>
+                  <span class="absolute inset-0 flex justify-center items-center font-bold">
+                    Resume
+                  </span>
                   Resume
                 </button>
               </PhotoView>
             </PhotoProvider>
-            <Link>
-              <button className="text-black h-[40px] px-8 lg:px-10 font-bold bg-gradient-to-r from-[#E2A300] to-[#E29500] rounded-[6px] shadow-[0_2px_13px_rgba(226,158,0,0.48)]">
-                Hire Me
-              </button>
-            </Link>
+            <div>
+              <Link
+                to="/?contact-me"
+                className="hidden lg:block"
+                onClick={() => {
+                  window.scrollTo({ top: 3835, behavior: "smooth" });
+                }}
+              >
+                <HireMeButton name={"Hire me"} />
+              </Link>
+              <Link
+                to="/?contact-me"
+                className="lg:hidden block"
+                onClick={() => {
+                  window.scrollTo({ top: 4081, behavior: "smooth" });
+                }}
+              >
+                <HireMeButton name={"Hire me"} />
+              </Link>
+            </div>
           </div>
         </div>
         {/* banner header part end */}
         {/* banner img part start */}
-        <div className="grid relative top-64 lg:top-[100px] mx-auto">
-          <div className="w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] border-[40px] border-solid lg:border-[60px] border-[#00C4F0] rounded-[50%] lg:rounded-none lg:rounded-tl-[30%] lg:rounded-br-[30%]">
+        <div className="grid relative top-[270px] lg:top-[100px] mx-auto">
+          <div className="w-[350px] relative h-[350px] lg:w-[600px] lg:h-[500px] border-[30px] border-solid lg:border-[60px] border-[#00C4F0] rounded-[50%] lg:rounded-none lg:rounded-tl-[30%] lg:rounded-br-[30%]">
             {/* image icon part start */}
             <div className="hidden md:block lg:block">
               <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-12 bottom-[60px]">
@@ -85,7 +109,7 @@ const ReBanner = () => {
               <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[283px] left-[410px]">
                 <FaReact className="h-16 w-16 text-[#00C4F0]"></FaReact>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[170px] left-[493px]">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[180px] left-[493px]">
                 <FaNode className="h-16 w-16 text-[#00C4F0]"></FaNode>
               </div>
               <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-[105px] bottom-10">
@@ -96,17 +120,17 @@ const ReBanner = () => {
           </div>
         </div>
         {/* banner img part end */}
-        <div className="relative lg:absolute bottom-[-867px] right-2 left-2.5 lg:top-[69px] lg:left-[1036px] lg:bottom-0">
+        <div className="relative flex flex-col justify-center items-center lg:absolute bottom-[-867px] lg:top-[69px] lg:left-[1036px] lg:bottom-0">
           <img
-            className="h-[490px] m-1 relative right-2.5 lg:left-0 lg:right-4 lg:h-[930px] lg:ml-[26px]"
+            className="h-[490px] relative right-2.5 lg:right-4 lg:left-[1px] lg:h-[930px] lg:ml-[26px]"
             src="https://i.ibb.co/ggY9Bjd/formal.png"
             alt="me-1"
           />
-          <hr className="lg:hidden block w-[95%]" />
+          <hr className="lg:hidden block w-full" />
         </div>
       </div>
     </div>
   );
 };
 
-export default ReBanner;
+export default Banner;

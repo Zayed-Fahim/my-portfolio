@@ -3,13 +3,14 @@ import emailjs from "@emailjs/browser";
 import { Typewriter } from "react-simple-typewriter";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SendButton from "../Components/SendButton";
 
 export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_bt76dyc",
+        "service_6dv0c7k",
         "template_5zoa24e",
         e.target,
         "sl9qWJ_VLA9KQrDMV"
@@ -17,12 +18,14 @@ export const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          toast.success("Email send successfully!", {
+          toast.success("Email send successfully! I will Contact you soon.", {
             position: toast.POSITION.TOP_CENTER,
           });
         },
         (error) => {
-          console.log(error.text);
+          toast.success("Ops! Something went wrong! Please try again later.", {
+            position: toast.POSITION.TOP_CENTER,
+          });
         }
       );
     e.target.reset();
@@ -46,58 +49,70 @@ export const Contact = () => {
       </h1>
 
       <div className="container mx-auto flex justify-center lg:flex-row flex-col gap-10 lg:gap-20 py-8 lg:py-0">
-        <div className="text-white lg:h-auto px-5 lg:mx-0 max-w-full lg:w-[330px] flex flex-col gap-5">
-          <h1 className="text-3xl font-bold ">
-            What’s your story? Get in touch
-          </h1>
-          <p className="text-xl">
-            Always available if the right project/Job comes along, Feel free to
-            contact me.
-          </p>
-        </div>
-
-        {/* side headings end */}
-        <div className="min-w-[50%] pb-5 lg:pb-0 mx-5 lg:mx-0">
-          <form onSubmit={sendEmail}>
-            <div className="flex flex-col gap-5 lg:gap-5 pt-5 lg:pt-0">
+        <div className="bg-[#242526] text-[#E4E4E4] max-w-screen-xl mx-5 lg:mx-auto md:mx-auto xl:mx-auto px-5 py-16 md:grid md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 xl:pt-16 xl:pb-10 rounded-lg gap-8">
+          <div className="flex flex-col justify-between space-y-8">
+            <h2 className="text-4xl font-bold lg:text-5xl">Let's talk!</h2>
+            <p className="text-[#E4E4E4]">
+              Always available if the right project/Job comes along, Feel free
+              to contact me.
+            </p>
+            <img
+              src="https://i.ibb.co/qjJ41T4/let-s-talk.gif"
+              alt="Let's Talk"
+              className="p-6"
+            />
+          </div>
+          <form className="space-y-6" onSubmit={sendEmail}>
+            <div>
+              <label htmlFor="name" className="text-sm">
+                Full name
+              </label>
               <input
-                className="w-full h-[40px] p-3 focus:outline-none"
+                id="name"
                 type="text"
                 name="user_name"
-                placeholder="Your Name"
+                placeholder=""
+                className="w-full p-3 rounded bg-gray-800 focus:outline-none"
                 required
               />
+            </div>
+            <div>
+              <label htmlFor="email" className="text-sm">
+                Email
+              </label>
               <input
-                className="w-full h-[40px] p-3 focus:outline-none"
+                id="email"
                 type="email"
                 name="user_email"
-                placeholder="Your Email"
+                className="w-full p-3 rounded bg-gray-800 focus:outline-none"
                 required
               />
+            </div>
+            <div>
+              <label htmlFor="subject" className="text-sm">
+                Subject
+              </label>
               <input
-                className="w-full h-[40px] p-3 focus:outline-none"
+                id="subject"
                 type="text"
                 name="user_subject"
-                placeholder="Subject"
+                className="w-full p-3 rounded bg-gray-800 focus:outline-none"
                 required
               />
-              <textarea
-                className="w-full min-h-min p-3 focus:outline-none"
-                type="text"
-                name="user_message"
-                placeholder="Your Message"
-                rows={7}
-                required
-              />
-              <div className="bg-[#E2A100] max-w-[135px] lg:max-w-[160px] py-1 grid place-items-center rounded">
-                <button
-                  className="font-semibold lg:font-bold lg:text-xl"
-                  type="submit"
-                >
-                  Send Message
-                </button>
-              </div>
             </div>
+            <div>
+              <label htmlFor="message" className="text-sm">
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows="3"
+                name="user_message"
+                className="w-full p-3 rounded bg-gray-800 focus:outline-none"
+                required
+              ></textarea>
+            </div>
+            <SendButton name={"SEND MESSAGE"} />
           </form>
         </div>
       </div>

@@ -1,11 +1,22 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import { useLoaderData } from "react-router-dom";
+import MediaLoader from "../Components/MediaLoader";
 
 const ProjectMedia = () => {
   const projectMedias = useLoaderData();
+  const [isReady, setIsReady] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsReady(false);
+    }, 1500);
+  }, []);
 
-  return (
+  return isReady ? (
+    <MediaLoader />
+  ) : (
     <div className="bg-[#18191A] lg:pt-[150px] pb-10 pt-[130px] lg:pb-14">
       <div className="h-auto rounded-xl bg-[#242526] mx-5 lg:mx-96">
         <h1 className="relative left-[60px] lg:left-[120px] -top-[45px] lg:-top-[60px] font-bold text-5xl lg:text-7xl italic py-3 bg-gradient-to-r from-[#E2A200] to-[#00C4F0] text-transparent bg-clip-text">

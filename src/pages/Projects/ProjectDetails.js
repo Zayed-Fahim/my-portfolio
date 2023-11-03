@@ -33,20 +33,35 @@ const ProjectDetails = () => {
   }, []);
 
   const settings = {
-    centerMode: true,
-    infinite: true,
-    autoPlay: true,
-    pauseOnHover: true,
-    slidesToShow: 1,
     speed: 500,
-    rows: 1,
     arrows: false,
-    slidesPerRow: 4,
-    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    lazyLoad: true,
+    centerPadding: "11px",
+    autoplaySpeed: 2000,
     cssEase: "linear",
+    infinite: true,
+    slidesToShow: 4,
+    rows: 1,
+    slidesToScroll: 3,
     initialSlide: 0,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+    ],
   };
 
   const websiteNameStyle = {
@@ -63,12 +78,12 @@ const ProjectDetails = () => {
       <div className="flex lg:flex-row flex-col container mx-5 lg:mx-auto gap-20 lg:gap-5 pt-[140px] pb-10">
         <div className="lg:h-auto bg-[#242526] lg:w-[60%] w-[91%] drop-shadow rounded-xl px-5 lg:px-14 lg:pb-5">
           <h1
-            className="relative left-[40px] lg:left-[60px] -top-12 font-bold text-5xl lg:text-6xl italic py-3"
+            className="relative left-[40px] lg:left-[60px] -top-12 font-bold text-4xl lg:text-6xl italic py-3"
             style={websiteNameStyle}
           >
             {websiteName}_
           </h1>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between -mt-5 lg:mt-0">
             <h1 className="text-[#E7E9ED] text-xl lg:text-2xl italic">
               <span className="text-xl lg:text-2xl font-bold italic underline">
                 Title:

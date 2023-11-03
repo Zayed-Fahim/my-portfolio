@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import "../CSS/project.css";
+import ExploreProjectButton from "../Components/ExploreProjectButton";
+import ProjectDetailsButton from "../Components/ProjectDetailsButton";
 
 const Projects = () => {
   const settings = {
@@ -55,10 +57,7 @@ const Projects = () => {
       >
         {/* 1 */}
         {projects?.map((project) => (
-          <div
-            className="bg-black bg-opacity-20 lg:h-[600px]"
-            key={project.projectID}
-          >
+          <div className="bg-[#242526] lg:h-[600px]" key={project.projectID}>
             <div className="flex flex-col lg:flex-row lg:p-10 lg:pt-12 lg:items-center lg:justify-between">
               <div>
                 <img
@@ -78,27 +77,17 @@ const Projects = () => {
                   to={`/projects/${project?.projectID}/${project?.websiteName}`}
                   className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px] mb-5 lg:mb-0"
                   onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "smooth" })
+                    window.scrollTo({ top: 0, behavior: "instant" })
                   }
                 >
-                  <button className="text-[18px] text-center hover:font-bold">
-                    View Full Project
-                  </button>
+                  <ProjectDetailsButton name={"Full Project"} />
                 </Link>
               </div>
             </div>
           </div>
         ))}
       </Slider>
-      <div className="flex items-center justify-center pb-14 lg:pb-0 lg:mt-6">
-        <Link
-          to="/projects"
-          className="block text-black font-bold px-5 py-1 rounded-md bg-[#E2A100]"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          Explore All Projects
-        </Link>
-      </div>
+      <ExploreProjectButton name={"Explore All Projects"} />
     </div>
   );
 };
