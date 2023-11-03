@@ -78,7 +78,7 @@ const ProjectDetails = () => {
       <div className="flex lg:flex-row flex-col container mx-5 lg:mx-auto gap-20 lg:gap-5 pt-[140px] pb-10">
         <div className="lg:h-auto bg-[#242526] lg:w-[60%] w-[91%] drop-shadow rounded-xl px-5 lg:px-14 lg:pb-5">
           <h1
-            className="relative left-[40px] lg:left-[60px] -top-12 font-bold text-4xl lg:text-6xl italic py-3"
+            className="relative left-[40px] lg:left-[60px] -top-9 lg:-top-12 xl:-top-12 font-bold text-4xl lg:text-6xl italic py-3"
             style={websiteNameStyle}
           >
             {websiteName}_

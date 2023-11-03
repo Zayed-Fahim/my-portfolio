@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../CSS/projectCard.css";
-import { Link } from "react-router-dom";
 import FetchingLoader from "../Components/FetchingLoader";
+import ClickHere from "../Components/ClickHere";
 
 const AllProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -28,44 +28,36 @@ const AllProjects = () => {
           Explore All of My Projects_
         </h1>
       </div>
-      <div className="container mx-auto h-auto grid lg:grid-cols-3 gap-5 grid-cols-1 pt-5 pb-3 lg:pt-10 lg:pb-10 lg:px-10 bg-[#242526] rounded-xl">
+      <div className="container mx-auto h-auto grid lg:grid-cols-3 gap-5 lg:gap-10 xl:gap-10 grid-cols-1 pt-5 pb-6 lg:pt-10 lg:pb-10 lg:px-10 bg-[#242526] rounded-xl">
         {projects?.map((project) => (
-          <div className="" key={project?.projectID}>
-            <div className="flip-box">
+          <div
+            className="flip w-[85%] h-[250px] mx-7 xl:mx-auto lg:mx-auto  lg:w-[100%] lg:h-[340px] xl:w-[100%] xl:h-[340px]"
+            key={project?.projectID}
+          >
+            <div className="flip-content">
               <div
-                className="front rounded-xl"
+                className="flip-front "
                 style={{
-                  background: `linear-gradient(to right, ${project?.websitePrimaryColor[0].colorCode} 30%, ${project?.websitePrimaryColor[1].colorCode} 70%)`,
+                  border: `6px solid ${project?.websitePrimaryColor[0].colorCode}`,
+                  boxShadow: `6px 6px ${project?.websitePrimaryColor[1].colorCode};`,
+                  backgroundColor: `${project?.websitePrimaryColor[0].colorCode}`,
                 }}
               >
-                <div className="content text-center p-7">
-                  <img
-                    className="rounded-xl lg:h-[270px] drop-shadow-2xl"
-                    src={project?.websiteCover}
-                    alt={project?.websiteName}
-                  />
-                </div>
+                <img
+                  src={project?.websiteCover}
+                  className="xl:h-[328px] lg:h-[328px] h-[238px]"
+                  alt=""
+                />
               </div>
               <div
-                className="back rounded-xl"
+                className="flip-back"
                 style={{
-                  background: `linear-gradient(to right, ${project?.websitePrimaryColor[1].colorCode} 30%, ${project?.websitePrimaryColor[0].colorCode} 70%)`,
+                  backgroundColor: `${project?.websitePrimaryColor[0].colorCode}`,
+                  border: `6px solid ${project?.websitePrimaryColor[0].colorCode}`,
+                  boxShadow: `6px 6px ${project?.websitePrimaryColor[1].colorCode}`,
                 }}
               >
-                <div className="content">
-                  <Link
-                    to={`/projects/${project?.projectID}/${project?.websiteName}`}
-                    className="px-3 py-1 rounded-md text-white font-bold italic"
-                    onClick={() => {
-                      window.scrollTo({ top: 0, behavior: "instant" });
-                    }}
-                    style={{
-                      background: `linear-gradient(to right, ${project?.websitePrimaryColor[0].colorCode} 30%, ${project?.websitePrimaryColor[1].colorCode} 70%)`,
-                    }}
-                  >
-                    See Details
-                  </Link>
-                </div>
+                <ClickHere name={"Click Here"} project={project} />
               </div>
             </div>
           </div>

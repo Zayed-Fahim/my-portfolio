@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Typewriter } from "react-simple-typewriter";
-import { Link } from "react-router-dom";
 import "../CSS/project.css";
 import ExploreProjectButton from "../Components/ExploreProjectButton";
 import ProjectDetailsButton from "../Components/ProjectDetailsButton";
@@ -35,7 +34,7 @@ const Projects = () => {
       .then((res) => res.json())
       .then((data) => setProjects(data.payload));
   }, [setProjects]);
-
+  console.log(projects);
   return (
     <div className="h-auto lg:h-[938px] bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-2xl">
       <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-10 pb-5 lg:p-10">
@@ -57,7 +56,7 @@ const Projects = () => {
       >
         {/* 1 */}
         {projects?.map((project) => (
-          <div className="bg-[#242526] lg:h-[600px]" key={project.projectID}>
+          <div className="bg-[#242526] lg:h-[600px]" key={project?.projectID}>
             <div className="flex flex-col lg:flex-row lg:p-10 lg:pt-12 lg:items-center lg:justify-between">
               <div>
                 <img
@@ -73,15 +72,7 @@ const Projects = () => {
                 <p className="px-5 h-[200px] lg:h-[350px] lg:w-[350px] break-words">
                   {project.shortDescription}
                 </p>
-                <Link
-                  to={`/projects/${project?.projectID}/${project?.websiteName}`}
-                  className="grid place-items-center place-content-center text-[#E2A100] lg:pt-[25px] mb-5 lg:mb-0"
-                  onClick={() =>
-                    window.scrollTo({ top: 0, behavior: "instant" })
-                  }
-                >
-                  <ProjectDetailsButton name={"Full Project"} />
-                </Link>
+                <ProjectDetailsButton project={project} name={"Full Project"} />
               </div>
             </div>
           </div>

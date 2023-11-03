@@ -167,7 +167,7 @@ const Navbar = () => {
                   className="lg:flex lg:items-center lg:justify-center"
                 >
                   <button
-                    class="py-1 w-full rounded-sm bg-[#E2A100]"
+                    className="py-1 w-full rounded-sm bg-[#E2A100]"
                     type="button"
                   >
                     DownLoad CV

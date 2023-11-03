@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Typewriter } from "react-simple-typewriter";
 import { toast } from "react-toastify";
@@ -6,6 +6,34 @@ import "react-toastify/dist/ReactToastify.css";
 import SendButton from "../Components/SendButton";
 
 export const Contact = () => {
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    user_subject: "",
+    user_message: "",
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // Update the form data with the new input value
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  // Check if all required fields are filled to enable the "Send" button
+  useEffect(() => {
+    const { user_name, user_email, user_subject, user_message } = formData;
+    const isValid =
+      user_name !== "" &&
+      user_email !== "" &&
+      user_subject !== "" &&
+      user_message !== "";
+    setIsFormValid(isValid);
+  }, [formData]);
+
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -28,6 +56,14 @@ export const Contact = () => {
           });
         }
       );
+    // Reset the form and the isFormValid state
+    setFormData({
+      user_name: "",
+      user_email: "",
+      user_subject: "",
+      user_message: "",
+    });
+    setIsFormValid(false);
     e.target.reset();
   };
   return (
@@ -74,6 +110,8 @@ export const Contact = () => {
                 placeholder=""
                 className="w-full p-3 rounded bg-gray-800 focus:outline-none"
                 required
+                value={formData.user_name}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -86,6 +124,8 @@ export const Contact = () => {
                 name="user_email"
                 className="w-full p-3 rounded bg-gray-800 focus:outline-none"
                 required
+                value={formData.user_email}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -98,6 +138,8 @@ export const Contact = () => {
                 name="user_subject"
                 className="w-full p-3 rounded bg-gray-800 focus:outline-none"
                 required
+                value={formData.user_subject}
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -110,9 +152,11 @@ export const Contact = () => {
                 name="user_message"
                 className="w-full p-3 rounded bg-gray-800 focus:outline-none"
                 required
+                value={formData.user_message}
+                onChange={handleChange}
               ></textarea>
             </div>
-            <SendButton name={"SEND MESSAGE"} />
+            <SendButton name={"SEND MESSAGE"} isFormValid={isFormValid} />
           </form>
         </div>
       </div>
