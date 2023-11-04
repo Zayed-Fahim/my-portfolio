@@ -78,7 +78,7 @@ const Navbar = () => {
                   smooth
                   to="/?experience"
                   onClick={() => {
-                    window.scrollTo({ top: 1105, behavior: "smooth" });
+                    window.scrollTo({ top: 1066, behavior: "smooth" });
                   }}
                 >
                   <div
@@ -97,7 +97,7 @@ const Navbar = () => {
                   smooth
                   to="/?about-me"
                   onClick={() => {
-                    window.scrollTo({ top: 2190, behavior: "smooth" });
+                    window.scrollTo({ top: 2154, behavior: "smooth" });
                   }}
                 >
                   <div
@@ -116,7 +116,7 @@ const Navbar = () => {
                   smooth
                   to="/?projects"
                   onClick={() => {
-                    window.scrollTo({ top: 3262, behavior: "smooth" });
+                    window.scrollTo({ top: 3150, behavior: "smooth" });
                   }}
                 >
                   <div
@@ -145,13 +145,13 @@ const Navbar = () => {
                   to="/?contact-me"
                   smooth
                   onClick={() => {
-                    window.scrollTo({ top: 4081, behavior: "smooth" });
+                    window.scrollTo({ top: 3952, behavior: "smooth" });
                   }}
                 >
                   <div
                     className={`${
                       scrollPosition >= 3901 && scrollPosition <= 4830
-                        ? "border-b-[3px] w-[57%] text-[#00C4F0] border-[#E2A100]"
+                        ? "border-b-[3px] w-[60%] text-[#00C4F0] border-[#E2A100]"
                         : "border-none"
                     }`}
                   >

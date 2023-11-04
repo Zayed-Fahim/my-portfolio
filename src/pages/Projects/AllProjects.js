@@ -39,7 +39,7 @@ const AllProjects = () => {
                 className="flip-front "
                 style={{
                   border: `6px solid ${project?.websitePrimaryColor[0].colorCode}`,
-                  boxShadow: `6px 6px ${project?.websitePrimaryColor[1].colorCode};`,
+                  boxShadow: `6px 6px ${project?.websitePrimaryColor[1].colorCode}`,
                   backgroundColor: `${project?.websitePrimaryColor[0].colorCode}`,
                 }}
               >

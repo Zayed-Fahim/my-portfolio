@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ProjectDetailsButton = ({ name, project }) => {
   return (
-    <div className="flex items-center justify-center">
+    <div>
       <Link
         to={`/projects/${project?.projectID}/${project?.websiteName}`}
         className="text-white font-bold rounded-sm bg-[#E2A100]"

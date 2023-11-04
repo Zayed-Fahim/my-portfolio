@@ -65,11 +65,11 @@ const Projects = () => {
                   alt="project-1"
                 />
               </div>
-              <div className="flex flex-col w-[350px] gap-5 justify-center items-center">
+              <div className="flex flex-col w-full pb-5 lg:pb-0 lg:w-[350px] gap-5 justify-center items-center">
                 <h1 className="text-[#FFFFFF] font-semibold lg:font-bold text-xl mt-3 lg:mt-0 lg:text-[24px] lg:pb-[25px] text-center">
                   {project.websiteName}
                 </h1>
-                <p className="px-5 h-[200px] lg:h-[350px] lg:w-[350px] break-words">
+                <p className="px-5 h-auto lg:h-[350px] lg:w-[350px] break-words">
                   {project.shortDescription}
                 </p>
                 <ProjectDetailsButton project={project} name={"Full Project"} />
