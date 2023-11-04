@@ -100,19 +100,19 @@ const Banner = () => {
           <div className="w-[350px] relative h-[350px] lg:w-[600px] lg:h-[500px] border-[30px] border-solid lg:border-[60px] border-[#00C4F0] rounded-[50%] lg:rounded-none lg:rounded-tl-[30%] lg:rounded-br-[30%]">
             {/* image icon part start */}
             <div className="hidden md:block lg:block">
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-12 bottom-[60px] animate-bounce">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-12 bottom-[60px]">
                 <SiExpress className="h-16 w-16 text-[#00C4F0]"></SiExpress>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative top-10 right-[103px] animate-bounce">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative top-10 right-[103px]">
                 <SiMongodb className="h-16 w-16 text-[#00C4F0]"></SiMongodb>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[283px] left-[410px] animate-bounce">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[283px] left-[410px]">
                 <FaReact className="h-16 w-16 text-[#00C4F0]"></FaReact>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[180px] left-[493px] animate-bounce">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative bottom-[180px] left-[493px]">
                 <FaNode className="h-16 w-16 text-[#00C4F0]"></FaNode>
               </div>
-              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-[105px] bottom-10 animate-bounce">
+              <div className="w-[90px] h-[90px] bg-gradient-to-r from-[#414141] to-[#2D2D2D] text-3xl font-bold rounded-[50%] flex justify-center items-center relative right-[105px] bottom-10">
                 <FaCode className="h-16 w-16 text-[#00C4F0]"></FaCode>
               </div>
             </div>
