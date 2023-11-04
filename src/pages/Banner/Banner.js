@@ -86,7 +86,7 @@ const Banner = () => {
                 to="/?contact-me"
                 className="lg:hidden block"
                 onClick={() => {
-                  window.scrollTo({ top: 4081, behavior: "smooth" });
+                  window.scrollTo({ top: 3952, behavior: "smooth" });
                 }}
               >
                 <HireMeButton name={"Hire me"} />
