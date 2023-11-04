@@ -34,7 +34,7 @@ const Projects = () => {
       .then((res) => res.json())
       .then((data) => setProjects(data.payload));
   }, [setProjects]);
-  console.log(projects);
+  // console.log(projects);
   return (
     <div className="h-auto lg:h-[938px] bg-gradient-to-r from-[#1C1C1C] to-[#2C2C2C] shadow-2xl">
       <h1 className="text-[#E4E4E4] text-[38px] lg:text-5xl font-bold text-center pt-10 pb-5 lg:p-10">

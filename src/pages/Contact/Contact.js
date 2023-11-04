@@ -38,14 +38,14 @@ export const Contact = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        "service_6dv0c7k",
+        "service_9rw0jve",
         "template_w8b378e",
         e.target,
         "sl9qWJ_VLA9KQrDMV"
       )
       .then(
         (result) => {
-          console.log(result.text);
+          // console.log(result.text);
           toast.success("Email send successfully! I will Contact you soon.", {
             position: toast.POSITION.TOP_CENTER,
           });
