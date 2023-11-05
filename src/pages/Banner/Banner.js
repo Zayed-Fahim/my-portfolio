@@ -122,7 +122,7 @@ const Banner = () => {
         {/* banner img part end */}
         <div className="relative flex flex-col justify-center items-center lg:absolute bottom-[-867px] lg:top-[69px] lg:left-[1036px] lg:bottom-0">
           <img
-            className="h-[490px] relative right-2.5 lg:right-4 lg:left-[1px] lg:h-[930px] lg:ml-[26px]"
+            className="h-[490px] relative right-2.5 lg:right-4 lg:left-1.5 lg:h-[930px] lg:ml-[26px]"
             src="https://i.ibb.co/ggY9Bjd/formal.png"
             alt="me-1"
           />

@@ -7,7 +7,7 @@ import Projects from "../Projects/Projects";
 
 const Home = ({ isLoading, setIsLoading }) => {
   return (
-    <div >
+    <div>
       <Banner />
       <Experience />
       <About />

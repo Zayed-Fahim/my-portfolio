@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../CSS/button.css";
 
 const DownloadButton = ({ name }) => {
   return (
     <>
       <li>
-        <Link
-          to="../../assets/cv/Sayed Asif Zayed - CV.pdf"
+        <a
+          href="https://drive.google.com/file/d/15NkqMSBoJjWaH06w4qoXuZcIIY4bHHGk/view?usp=sharing"
+          rel="noopener noreferrer"
           target="_blank"
           download
           className="lg:flex lg:items-center lg:justify-center"
@@ -22,7 +22,7 @@ const DownloadButton = ({ name }) => {
             </span>
             {name}
           </button>
-        </Link>
+        </a>
       </li>
     </>
   );

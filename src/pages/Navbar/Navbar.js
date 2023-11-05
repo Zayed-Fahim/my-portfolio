@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import logo from "../../assets/icon/navLogo.png";
 import DownloadButton from "../Components/DownloadButton";
@@ -27,12 +27,12 @@ const Navbar = () => {
   // console.log(scrollPosition);
 
   return (
-    <div className="z-[55] fixed top-0 navbar h-[64px] bg-[#242526]">
+    <div className="z-[55] fixed top-0 navbar h-[64px] lg:h-20 bg-[#242526]">
       <div className="dropdown">
         <label tabIndex={0} className="lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-7 w-7 ml-2 mr-3 text-white"
+            className="h-6 w-6 ml-2 mr-3 text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -160,19 +160,23 @@ const Navbar = () => {
                 </NavHashLink>
               </li>
               <li>
-                <Link
-                  to="../../assets/cv/Sayed Asif Zayed - CV.pdf"
+                <a
+                  href="https://drive.google.com/file/d/15NkqMSBoJjWaH06w4qoXuZcIIY4bHHGk/view?usp=sharing"
+                  rel="noopener noreferrer"
                   target="_blank"
                   download
                   className="lg:flex lg:items-center lg:justify-center"
                 >
                   <button
-                    className="py-1 w-full rounded-sm bg-[#E2A100]"
+                    className="btn2 w-full h-[35px] relative rounded-sm bg-[#E2A100] hover:font-bold tracking-wider leading-none overflow-hidden hover:text-black"
                     type="button"
                   >
-                    DownLoad CV
+                    <span className="absolute inset-0 bg-[#00C4F0]"></span>
+                    <span className="absolute inset-0 flex justify-center items-center font-bold">
+                      Download CV
+                    </span>
                   </button>
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -185,21 +189,21 @@ const Navbar = () => {
           onClick={() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="lg:ml-[185px] lg:h-[h-24] text-white text-4xl font-bold"
+          className="lg:ml-[185px] lg:h-20 text-white text-4xl font-bold"
         >
-          <img className="w-24 lg:h-24 lg:w-[147px]" src={logo} alt="" />
+          <img className="h-20 w-[147px]" src={logo} alt="" />
         </NavHashLink>
       </div>
       <div className="lg:hidden block">
         <NavHashLink
           smooth
-          className="lg:ml-[185px] lg:h-[h-24] text-white text-4xl font-bold"
+          className="lg:ml-[185px] lg:h-20 text-white text-4xl font-bold"
         >
-          <img className="w-24 lg:h-24 lg:w-[147px]" src={logo} alt="" />
+          <img className="w-20 h-20 " src={logo} alt="" />
         </NavHashLink>
       </div>
       <div className="hidden lg:flex ml-[165px]">
-        <ul className="pl-[70px]">
+        <ul className="pl-[78px]">
           <div className="text-white">
             <ul className="flex gap-10 justify-center items-center text-[17px] font-bold">
               <li className="hover:text-[#00C4F0]">
