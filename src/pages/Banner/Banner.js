@@ -1,9 +1,9 @@
 import React from "react";
-import { Typewriter } from "react-simple-typewriter";
 import { FaCode, FaNode, FaReact } from "react-icons/fa";
 import { SiExpress, SiMongodb } from "react-icons/si";
-import { Link } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
+import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 import resume from "../../assets/cv/Sayed Asif Zayed - Resume.png";
 import HireMeButton from "../Components/HireMeButton";
 
@@ -120,13 +120,14 @@ const Banner = () => {
           </div>
         </div>
         {/* banner img part end */}
-        <div className="relative flex flex-col justify-center items-center lg:absolute bottom-[-867px] lg:top-[69px] lg:left-[1036px] lg:bottom-0">
+
+        <div className="relative flex flex-col justify-center items-center lg:absolute bottom-[-867px] lg:top-[69px] lg:left-[1027px] lg:bottom-2">
           <img
             className="h-[490px] relative right-2.5 lg:right-4 lg:left-1.5 lg:h-[930px] lg:ml-[26px]"
             src="https://i.ibb.co/ggY9Bjd/formal.png"
             alt="me-1"
           />
-          <hr className="lg:hidden block w-full" />
+          <hr className="lg:hidden xl:hidden 2xl:hidden block w-full" />
         </div>
       </div>
     </div>

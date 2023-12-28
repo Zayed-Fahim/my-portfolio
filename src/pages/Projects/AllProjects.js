@@ -57,7 +57,7 @@ const AllProjects = () => {
                   boxShadow: `6px 6px ${project?.websitePrimaryColor[1].colorCode}`,
                 }}
               >
-                <ClickHere name={"Click Here"} project={project} />
+                <ClickHere name={"See Details"} project={project} />
               </div>
             </div>
           </div>

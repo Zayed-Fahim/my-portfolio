@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
-import Route from "./pages/Route/Route";
-import ScrollUp from "./pages/Components/ScrollUp";
-import "react-photo-view/dist/react-photo-view.css";
-import { useState, useEffect } from "react";
 import Loading from "./pages/Components/Loading";
+import ScrollUp from "./pages/Components/ScrollUp";
+import Route from "./pages/Route/Route";
+import "react-photo-view/dist/react-photo-view.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 3400);
   }, []);
 
   if (isLoading) {
@@ -20,9 +20,9 @@ function App() {
 
   return (
     <div className="overflow-hidden">
-      <Route></Route>
+      <Route />
       <ScrollUp />
-      <ToastContainer></ToastContainer>
+      <ToastContainer />
     </div>
   );
 }
