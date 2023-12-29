@@ -5,7 +5,7 @@ import ScrollUp from "./pages/Components/ScrollUp";
 import Route from "./pages/Route/Route";
 import "react-photo-view/dist/react-photo-view.css";
 
-function App() {
+const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -25,6 +25,6 @@ function App() {
       <ToastContainer />
     </div>
   );
-}
+};
 
 export default App;

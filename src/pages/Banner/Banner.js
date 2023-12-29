@@ -120,14 +120,13 @@ const Banner = () => {
           </div>
         </div>
         {/* banner img part end */}
-
-        <div className="relative flex flex-col justify-center items-center lg:absolute bottom-[-867px] lg:top-[69px] lg:left-[1027px] lg:bottom-2">
+        <div className="relative flex flex-col justify-center items-center lg:absolute bottom-[-867px] right-2 lg:top-[69px] lg:left-[897px] lg:bottom-2">
           <img
-            className="h-[490px] relative right-2.5 lg:right-4 lg:left-1.5 lg:h-[930px] lg:ml-[26px]"
+            className="h-[490px] lg:h-[930px] lg:ml-[26px]"
             src="https://i.ibb.co/ggY9Bjd/formal.png"
             alt="me-1"
           />
-          <hr className="lg:hidden xl:hidden 2xl:hidden block w-full" />
+          <hr className="lg:hidden xl:hidden 2xl:hidden relative left-1 w-full" />
         </div>
       </div>
     </div>
