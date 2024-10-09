@@ -1,0 +1,102 @@
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 4px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #717171;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+}
+
+.form-container .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  resize: none;
+  height: 96px;
+  border: 1px solid #414141;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #16a34a;
+}
+
+.form-container .form-group textarea:focus {
+  outline: none;
+  border-color: #16a34a;
+}
+
+.form-container .form-group-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-container .form-group-row .form-group {
+  flex: 1;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: flex-start;
+  font-family: inherit;
+  color: black;
+  font-weight: 600;
+  width: 40%;
+  padding: 10px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-container .form-submit-btn:hover {
+  color: black;
+}
+
+.form-container .form-group-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .form-container .form-group-row {
+    flex-direction: column;
+  }
+}
