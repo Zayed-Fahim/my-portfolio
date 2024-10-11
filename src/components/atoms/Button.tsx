@@ -1,7 +1,7 @@
 import React from "react";
 
 interface ButtonProps {
-  title: string;
+  title?: string;
   type?: "button" | "submit" | "reset";
   icon?: React.ReactNode;
   className?: string;
