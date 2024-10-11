@@ -1,5 +1,4 @@
 import { STACKS } from "@/data/stacks";
-import { Animation } from "../molecules";
 
 const TechStacks = () => {
   return (
