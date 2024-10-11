@@ -1,3 +1,4 @@
 export interface Stack {
-  [key: string]: JSX.Element;
+  name?: string;
+  icon?: JSX.Element;
 }

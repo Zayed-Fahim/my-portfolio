@@ -4,6 +4,8 @@ export interface ISocialLink {
   name: string;
   url: string;
   icon: JSX.Element;
+  tooltip?: boolean;
+  className?: string;
 }
 
 export const socialLinks: ISocialLink[] = [

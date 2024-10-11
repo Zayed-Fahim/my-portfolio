@@ -11,9 +11,10 @@ const Footer = () => {
         </p>
 
         <div className="flex justify-center items-center gap-5">
-          {socialLinks.map((link, index) => (
-            <SocialLink key={index} {...link} />
-          ))}
+          {socialLinks.map((link, index) => {
+            const newLink = { ...link, tooltip: true };
+            return <SocialLink key={index} {...newLink} />;
+          })}
         </div>
       </footer>
     </section>
