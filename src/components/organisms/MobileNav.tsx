@@ -58,10 +58,7 @@ const MobileNav = () => {
               className="flex items-center gap-x-2 font-incognito font-semibold text-lg dark:shadow-line-dark shadow-line-light p-6 group"
               onClick={onToggleNav}
             >
-              <link.icon
-                className="text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300"
-                aria-hidden="true"
-              />
+              {link.icon}
               {link.title}
             </Link>
           ))}
