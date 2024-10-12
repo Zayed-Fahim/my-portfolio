@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site":"zayed-fahim",
     "public": "out",
     "ignore": [
       "firebase.json",

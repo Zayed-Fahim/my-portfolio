@@ -1,41 +1,14 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+import { HiOutlineX } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import {
-  HiBeaker,
-  HiBookmarkAlt,
-  HiCamera,
-  HiOutlineX,
-  HiUser,
-} from "react-icons/hi";
 import Logo from "../../../public/logo_4.png";
+import { navItems } from "@/data/navItems";
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);
-  const data = [
-    {
-      title: "About",
-      href: "/about",
-      icon: HiUser,
-    },
-    {
-      title: "Projects",
-      href: "/projects",
-      icon: HiBeaker,
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-      icon: HiBookmarkAlt,
-    },
-    {
-      title: "Photos",
-      href: "/photos",
-      icon: HiCamera,
-    },
-  ];
 
   const onToggleNav = () => {
     setNavShow((status) => {
@@ -78,9 +51,9 @@ const MobileNav = () => {
           </button>
         </div>
         <nav className="flex flex-col mt-6">
-          {data.map((link) => (
+          {navItems.map((link, index) => (
             <Link
-              key={link.title}
+              key={index}
               href={link.href}
               className="flex items-center gap-x-2 font-incognito font-semibold text-lg dark:shadow-line-dark shadow-line-light p-6 group"
               onClick={onToggleNav}

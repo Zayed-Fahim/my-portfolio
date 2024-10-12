@@ -3,30 +3,12 @@ import Link from "next/link";
 import Logo from "../../../public/logo_4.png";
 import { Theme } from "../atoms";
 import { MobileNav } from "../organisms";
+import { navItems } from "@/data/navItems";
 
 const Navbar = () => {
-  const data = [
-    {
-      title: "About",
-      href: "/about",
-    },
-    {
-      title: "Projects",
-      href: "/projects",
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-    },
-    {
-      title: "Photos",
-      href: "/photos",
-    },
-  ];
-
   return (
-    <section>
-      <header className="sticky top-0 left-0 md:relative dark:bg-[#18181B] bg-[#F1F1F1] md:bg-transparent md:dark:bg-transparent text-sm py-4 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
+    <section className="sticky top-0 left-0 md:relative z-[9999999]">
+      <header className="dark:bg-[#18181B] bg-[#F1F1F1] md:bg-transparent md:dark:bg-transparent text-sm py-4 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/" className="md:block hidden">
             <Image
@@ -49,8 +31,8 @@ const Navbar = () => {
 
           <nav className="md:block hidden">
             <ul className="flex items-center gap-x-8">
-              {data.map((link, id) => (
-                <li key={id}>
+              {navItems.map((link, index) => (
+                <li key={index}>
                   <Link
                     href={link.href}
                     className="font-incognito dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900 duration-300 text-base"

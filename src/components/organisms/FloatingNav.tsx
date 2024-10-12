@@ -15,9 +15,10 @@ const FloatingNav = ({
   className,
 }: {
   navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
+    title: string;
+    href: string;
+    id: string;
+    icon: JSX.Element;
   }[];
   className?: string;
 }) => {
@@ -63,18 +64,18 @@ const FloatingNav = ({
           )}
         >
           <div className="flex gap-10">
-            <div className="flex items-center justify-between space-x-4 mx-auto">
+            <div className="flex items-center justify-between space-x-8 mx-auto">
               {navItems.map((navItem, idx: number) => (
                 <Link
                   key={`link=${idx}`}
-                  href={navItem?.link}
+                  href={navItem.href}
                   className={cn(
                     "relative items-center flex space-x-1 font-incognito dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900 duration-300 text-base"
                   )}
                 >
-                  <span className="block sm:hidden">{navItem.icon}</span>
-                  <span className="text-sm !cursor-pointer">
-                    {navItem.name}
+                  <span className="block sm:hidden">{navItem?.icon}</span>
+                  <span className="text-base !cursor-pointer">
+                    {navItem.title}
                   </span>
                 </Link>
               ))}
