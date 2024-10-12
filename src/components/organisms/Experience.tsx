@@ -14,7 +14,7 @@ import {
 
 const Experience = () => {
   return (
-    <div className="mb-16">
+    <div className="mb-16" id="experience">
       <Animation delay={0.16}>
         <div className="mb-16">
           <h2 className="font-incognito text-4xl mb-4 font-bold tracking-tight">

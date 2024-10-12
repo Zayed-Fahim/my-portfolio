@@ -1,15 +1,18 @@
-import "../../app/styles/gradientBorder.css";
 import { Animation, SocialPlatform } from "@/components/molecules";
-import { HeroSvg } from "@/constants";
 import {
   Contact,
   Experience,
   GithubContributionsGraph,
 } from "@/components/organisms";
+import { HeroSvg } from "@/constants";
+import "../../app/styles/gradientBorder.css";
 
 const HomeTemplate = () => {
   return (
-    <section className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20">
+    <section
+      className="max-w-7xl mx-auto md:px-16 px-6 lg:mt-32 mt-20"
+      id="home"
+    >
       <div className="flex lg:flex-row flex-col xl:items-center items-start xl:justify-center justify-between gap-x-12 gap-y-6 mb-16">
         <div className="lg:max-w-2xl max-w-2xl flex flex-col gap-3">
           <Animation delay={0.1}>

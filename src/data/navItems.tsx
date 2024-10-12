@@ -11,7 +11,7 @@ import {
 export interface INavItemsPrps {
   title: string;
   href: string;
-  id: string;
+  id?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
 }
@@ -27,14 +27,8 @@ export const navItems: INavItemsPrps[] = [
     icon: <HiHome className={`${className}`} aria-hidden="true" />,
   },
   {
-    title: "About",
-    href: "/about",
-    id: "about",
-    icon: <HiUser className={`${className}`} aria-hidden="true" />,
-  },
-  {
     title: "Experience",
-    href: "",
+    href: "#experience",
     id: "experience",
     icon: <HiBriefcase className={`${className}`} aria-hidden="true" />,
   },
@@ -44,6 +38,13 @@ export const navItems: INavItemsPrps[] = [
     id: "projects",
     icon: <HiBeaker className={`${className}`} aria-hidden="true" />,
   },
+  {
+    title: "About",
+    href: "/about",
+    id: "about",
+    icon: <HiUser className={`${className}`} aria-hidden="true" />,
+  },
+
   {
     title: "Blog",
     href: "/blog",
@@ -58,7 +59,7 @@ export const navItems: INavItemsPrps[] = [
   },
   {
     title: "Contact",
-    href: "",
+    href: "#contact",
     id: "contact",
     icon: <BiSolidContact className={`${className}`} aria-hidden="true" />,
   },

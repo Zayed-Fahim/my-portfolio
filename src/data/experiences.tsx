@@ -97,7 +97,7 @@ export const EXPERIENCES: Experience[] = [
             },
           ],
           accomplishments: [
-            "Developed REST APIs to enable seamless data integration and ensure reliable backend services.",
+            "Developed REST APIs to enable seamless data integration and ensure reliable backend services for <span><Link href={`https://zaynaxhealth.com`} className={`text-secondary-color hover:dark:text-white hover:text-black`}>Zaynax Health</span>.",
             "Optimized aggregation queries, significantly improving data retrieval speed and system performance.",
             "Architected microservices for key modules (product, auth, customer, CMS, WMS, payment), enhancing scalability, communication, and reliability.",
             "Integrated third-party APIs to expand platform functionality and improve user experience.",

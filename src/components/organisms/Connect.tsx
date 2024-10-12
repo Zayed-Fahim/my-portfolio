@@ -11,7 +11,7 @@ const Connect = () => {
         <p>
           Questions or collaborations? Reach out to me at{" "}
           <span className="text-secondary-color hover:underline">
-            <Link href="">here</Link>
+            <Link href="/#contact">here</Link>
           </span>{" "}
           or connect through social media. Let&apos;s build something amazing
           together!

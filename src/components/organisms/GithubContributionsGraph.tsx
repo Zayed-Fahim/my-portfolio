@@ -27,7 +27,7 @@ const GithubContributionsGraph = () => {
   const years = getGitHubYears(joinYear);
 
   return (
-    <div className="glow-border p-5">
+    <div className="glow-border p-5" id="github-contributions">
       <Animation delay={0.16}>
         <h2 className="font-incognito text-4xl font-bold tracking-tight mb-8">
           Contrbution Graph
