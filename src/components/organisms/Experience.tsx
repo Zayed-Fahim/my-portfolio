@@ -23,7 +23,7 @@ const Experience = () => {
         </div>
       </Animation>
 
-      <div className={cn("max-w-none px-4", "font-incognito")}>
+      <div className={cn("px-4", "font-incognito")}>
         <Animation delay={0.18}>
           <ol className={cn("space-y-4 border-l-[1px] border-[#B2B2B2] pl-10")}>
             {EXPERIENCES.map(({ company }, index) => {
@@ -250,22 +250,28 @@ const Experience = () => {
                                   <Animation delay={0.18}>
                                     <ul className={cn("pl-4")}>
                                       {accomplishments.map(
-                                        (accomplishment, index) => (
-                                          <li
-                                            key={index}
-                                            className={cn(
-                                              "list-disc my-1 leading-snug"
-                                            )}
-                                          >
-                                            <span
+                                        (accomplishment, index) => {
+                                          const htmlContent = {
+                                            __html: accomplishment,
+                                          };
+                                          return (
+                                            <li
+                                              key={index}
                                               className={cn(
-                                                "dark:text-zinc-400 text-zinc-600"
+                                                "list-disc my-1 leading-snug"
                                               )}
                                             >
-                                              {accomplishment}
-                                            </span>
-                                          </li>
-                                        )
+                                              <p
+                                                className={cn(
+                                                  "dark:text-zinc-400 text-zinc-600"
+                                                )}
+                                                dangerouslySetInnerHTML={
+                                                  htmlContent
+                                                }
+                                              />
+                                            </li>
+                                          );
+                                        }
                                       )}
                                     </ul>
                                   </Animation>

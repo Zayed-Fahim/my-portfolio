@@ -97,7 +97,15 @@ export const EXPERIENCES: Experience[] = [
             },
           ],
           accomplishments: [
-            "Developed REST APIs to enable seamless data integration and ensure reliable backend services for <span><Link href={`https://zaynaxhealth.com`} className={`text-secondary-color hover:dark:text-white hover:text-black`}>Zaynax Health</span>.",
+            `Developed REST APIs to enable seamless data integration and ensure reliable backend services for 
+  <span>
+    <a href="https://zaynaxhealth.com" target="_blank" class="text-secondary-color hover:dark:text-white hover:text-black">Zaynax Health</a>
+  </span> 
+  and 
+  <span>
+    <a href="https://zdrop.com.bd" target="_blank" class="text-secondary-color hover:dark:text-white hover:text-black">zDrop</a>
+  </span>.
+`,
             "Optimized aggregation queries, significantly improving data retrieval speed and system performance.",
             "Architected microservices for key modules (product, auth, customer, CMS, WMS, payment), enhancing scalability, communication, and reliability.",
             "Integrated third-party APIs to expand platform functionality and improve user experience.",
@@ -190,7 +198,17 @@ export const EXPERIENCES: Experience[] = [
           ],
           accomplishments: [
             "Developed an admin panel using Next.js for efficient blog content management and administration.",
-            "Designed and implemented REST APIs for blog services, boosting user engagement on platforms like Zaynax Health and Home Leads.",
+
+            `
+  Designed and implemented REST APIs for blog services, boosting user engagement on platforms like 
+  <span>
+    <a href="https://zaynaxhealth.com" target="_blank" class="text-secondary-color hover:dark:text-white hover:text-black">Zaynax Health</a>
+  </span> 
+  and 
+  <span>
+    <a href="https://usehomeleads.com/" target="_blank" class="text-secondary-color hover:dark:text-white hover:text-black">Home Leads</a>
+  </span>.
+`,
             "Collaborated with cross-functional teams to align project objectives with business goals.",
             "Utilized Git and GitHub for version control and collaborative development, ensuring efficient code management.",
           ],

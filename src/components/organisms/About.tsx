@@ -1,3 +1,4 @@
+"use client";
 import {
   PageHeader,
   Tooltip,
@@ -12,8 +13,10 @@ import Link from "next/link";
 import { IoMdDownload } from "react-icons/io";
 import { LuExternalLink } from "react-icons/lu";
 import { Animation } from "../molecules";
+import { useState } from "react";
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-16">
       <div className="flex flex-col items-start gap-16 min-h-screen">
@@ -26,15 +29,23 @@ const About = () => {
             delay={0.14}
           >
             <div className="flex flex-col gap-3 sticky top-12 w-[280px]">
-              <Image
-                src="/zayed/2.png"
-                alt="zayed-fahim"
-                width={280}
-                height={280}
-                loading="lazy"
-                quality={80}
-                className="rounded-xl aspect-auto md:hover:scale-105 transition-all duration-300 ease-in-out"
-              />
+              <div className="relative">
+                {loading && (
+                  <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse" />
+                )}
+                <Image
+                  src="/zayed/2.png"
+                  alt="zayed-fahim"
+                  width={280}
+                  height={280}
+                  loading="lazy"
+                  quality={80}
+                  className={`relative rounded-xl aspect-auto md:hover:scale-105 transition-all duration-300 ease-in-out ${
+                    loading ? "opacity-0" : "opacity-100"
+                  }`}
+                  onLoad={() => setLoading(false)}
+                />
+              </div>
               <div className="flex justify-center items-center gap-3">
                 <Link
                   href={SITE.author.resume}

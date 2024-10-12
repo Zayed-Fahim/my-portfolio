@@ -28,7 +28,7 @@ export const navItems: INavItemsPrps[] = [
   },
   {
     title: "Experience",
-    href: "#experience",
+    href: "/#experience",
     id: "experience",
     icon: <HiBriefcase className={`${className}`} aria-hidden="true" />,
   },
@@ -59,7 +59,7 @@ export const navItems: INavItemsPrps[] = [
   },
   {
     title: "Contact",
-    href: "#contact",
+    href: "/#contact",
     id: "contact",
     icon: <BiSolidContact className={`${className}`} aria-hidden="true" />,
   },
