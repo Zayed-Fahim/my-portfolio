@@ -10,3 +10,5 @@ export { default as Contact } from "./Contact";
 export { default as Biography } from "./Biography";
 export { default as TechStacks } from "./TechStacks";
 export { default as Connect } from "./Connect";
+export { default as Projects } from "./Projects";
+export { default as ProjectCard } from "./ProjectCard";

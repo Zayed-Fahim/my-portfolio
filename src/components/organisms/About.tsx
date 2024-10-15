@@ -1,6 +1,7 @@
 "use client";
 import {
   PageHeader,
+  SkeletonLoader,
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -16,7 +17,8 @@ import { Animation } from "../molecules";
 import { useState } from "react";
 
 const About = () => {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-16">
       <div className="flex flex-col items-start gap-16 min-h-screen">
@@ -30,20 +32,24 @@ const About = () => {
           >
             <div className="flex flex-col gap-3 sticky top-12 w-[280px]">
               <div className="relative">
-                {loading && (
-                  <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse" />
+                {isLoading && (
+                  <SkeletonLoader
+                    className="absolute w-[280px] h-[294px] bg-gradient-to-r from-[#e5e5e5] via-[#f0f0f0] to-[#e5e5e5]
+            dark:bg-[linear-gradient(120deg,#2a2a2a_30%,#3a3a3a_38%,#3a3a3a_40%,#2a2a2a_48%)] rounded-xl bg-[length:200%_100%] bg-[position:100%_0] 
+            animate-skeleton-load"
+                  />
                 )}
                 <Image
                   src="/zayed/2.png"
                   alt="zayed-fahim"
-                  width={280}
-                  height={280}
+                  width={907}
+                  height={970}
                   loading="lazy"
                   quality={80}
                   className={`relative rounded-xl aspect-auto md:hover:scale-105 transition-all duration-300 ease-in-out ${
-                    loading ? "opacity-0" : "opacity-100"
+                    isLoading ? "opacity-0" : "opacity-100"
                   }`}
-                  onLoad={() => setLoading(false)}
+                  onLoad={() => setIsLoading(false)}
                 />
               </div>
               <div className="flex justify-center items-center gap-3">

@@ -41,6 +41,14 @@ const config: Config = {
       backgroundPosition: {
         zero: "0 0",
       },
+      keyframes: {
+        skeletonload: {
+          "100%": { "background-position": "-100% 0" },
+        },
+      },
+      animation: {
+        "skeleton-load": "skeletonload 2s infinite",
+      },
     },
   },
   plugins: [],

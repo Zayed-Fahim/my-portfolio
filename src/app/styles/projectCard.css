@@ -1,0 +1,39 @@
+.project-card {
+  backdrop-filter: blur(54px);
+  position: relative;
+}
+
+.project-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5rem;
+  right: -1rem;
+  width: 12rem;
+  height: 12rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: var(--bg-image);
+}
+
+.project-card__link {
+  font-size: 1.25rem;
+  letter-spacing: 0.19em;
+  text-decoration: none;
+  position: relative;
+}
+
+.project-card__link::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 50%;
+  height: 1px;
+  background: #e4e4e7;
+  transition: all 0.3s ease;
+}
+
+.project-card__link:hover::after {
+  width: 100%;
+}

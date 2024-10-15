@@ -13,7 +13,7 @@ const PageHeader: React.FC<IPageHeaderProps> = ({
 }) => {
   return (
     <div
-      className={`${className} flex flex-col items-start gap-10 font-incognito`}
+      className={`${className} flex flex-col items-start gap-5 font-incognito`}
     >
       <h1 className="text-4xl md:text-5xl lg:text-[3.75rem] font-bold leading-4">
         {title}
