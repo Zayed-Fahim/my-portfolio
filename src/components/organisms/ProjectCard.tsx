@@ -4,14 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { memo, useState } from "react";
 import { FaGithub } from "react-icons/fa";
-import {
-  SkeletonLoader,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../atoms";
-import { Animation } from "../molecules";
+import { Animation } from "@/components/molecules";
+import { SkeletonLoader, ToolTip } from "@/components/atoms";
 
 interface IProjectCardProps {
   styles: IStylesProps;
@@ -89,30 +83,19 @@ const ProjectCard: React.FC<IProjectCardProps> = memo(
                 {title}
               </Link>
               <div className="flex items-center gap-2">
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <div>
-                        <Link href={serverRepo} rel="noopener" target="_blank">
-                          <FaGithub className="w-5 h-5 text-[#a1a1aa] hover:text-black hover:dark:text-white" />
-                        </Link>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>Server Side Code</TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <div>
-                        <Link href={clientRepo} rel="noopener" target="_blank">
-                          <FaGithub className="w-5 h-5 text-[#a1a1aa] hover:text-black hover:dark:text-white" />
-                        </Link>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent>Client Side Code</TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <div className="group relative inline-block">
+                  <Link href={serverRepo} rel="noopener" target="_blank">
+                    <FaGithub className="w-5 h-5 text-[#a1a1aa] hover:text-black hover:dark:text-white" />
+                  </Link>
+                  <ToolTip name="Server Side Code" />
+                </div>
+
+                <div className="group relative inline-block">
+                  <Link href={clientRepo} rel="noopener" target="_blank">
+                    <FaGithub className="w-5 h-5 text-[#a1a1aa] hover:text-black hover:dark:text-white" />
+                  </Link>
+                  <ToolTip name="Client Side Code" />
+                </div>
               </div>
             </div>
           </Animation>
@@ -125,15 +108,11 @@ const ProjectCard: React.FC<IProjectCardProps> = memo(
 
           <Animation delay={0.22}>
             <div className="flex items-center gap-3 mt-2">
-              {technologies.map(({ name, icon }) => (
-                <TooltipProvider key={name}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <div className="cursor-pointer">{icon}</div>
-                    </TooltipTrigger>
-                    <TooltipContent>{name}</TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+              {technologies.map(({ name, icon }, index) => (
+                <div className="group relative inline-block" key={index}>
+                  <div className="cursor-pointer">{icon}</div>
+                  <ToolTip name={name} />
+                </div>
               ))}
             </div>
           </Animation>

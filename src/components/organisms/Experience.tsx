@@ -5,12 +5,7 @@ import Link from "next/link";
 import { EXPERIENCES } from "@/data/experiences";
 import { Animation } from "../molecules";
 import { GoDotFill } from "react-icons/go";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../atoms";
+import { ToolTip } from "@/components/atoms";
 
 const Experience = () => {
   return (
@@ -227,22 +222,19 @@ const Experience = () => {
                                     >
                                       {stacks?.map(({ name, icon }, index) => {
                                         return (
-                                          <TooltipProvider key={index}>
-                                            <Tooltip>
-                                              <TooltipTrigger asChild>
-                                                <div
-                                                  className={cn(
-                                                    "rounded bg-[#F7F7F7] dark:bg-[#18181B] border-[1.5px] border-black/[0.1] dark:border-white/[0.2] p-1.5"
-                                                  )}
-                                                >
-                                                  {icon}
-                                                </div>
-                                              </TooltipTrigger>
-                                              <TooltipContent>
-                                                {name}
-                                              </TooltipContent>
-                                            </Tooltip>
-                                          </TooltipProvider>
+                                          <div
+                                            className="group relative inline-block w-auto"
+                                            key={index}
+                                          >
+                                            <div
+                                              className={cn(
+                                                "rounded bg-[#F7F7F7] dark:bg-[#18181B] border-[1.5px] border-black/[0.1] dark:border-white/[0.2] p-1.5"
+                                              )}
+                                            >
+                                              {icon}
+                                            </div>
+                                            <ToolTip name={name} />
+                                          </div>
                                         );
                                       })}
                                     </div>

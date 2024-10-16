@@ -1,6 +1,6 @@
 import { ProjectCard } from "@/components/organisms";
 import { projectData } from "@/data/projects";
-import { PageHeader } from "../atoms";
+import { PageHeader } from "@/components/atoms";
 import dynamic from "next/dynamic";
 import React, { memo } from "react";
 

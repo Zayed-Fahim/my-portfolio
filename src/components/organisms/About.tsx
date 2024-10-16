@@ -1,20 +1,13 @@
 "use client";
-import {
-  PageHeader,
-  SkeletonLoader,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/atoms";
 import { Biography } from "@/components/organisms";
 import { SITE } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdDownload } from "react-icons/io";
 import { LuExternalLink } from "react-icons/lu";
-import { Animation } from "../molecules";
+import { Animation } from "@/components/molecules";
 import { useState } from "react";
+import { PageHeader, SkeletonLoader, ToolTip } from "@/components/atoms";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,20 +54,17 @@ const About = () => {
                   <p>View Résumé</p>
                   <LuExternalLink />
                 </Link>
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Link
-                        href="./resume/resume.pdf"
-                        className="flex flex-row-reverse justify-center items-center text-[18px] gap-x-2 rounded py-3 px-2.5 dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
-                        download="Resume_Sayed-Asif-Zayed.pdf"
-                      >
-                        <IoMdDownload className="text-secondary-color" />
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>Download Résumé</TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+
+                <div className="group relative inline-block">
+                  <Link
+                    href="./resume/resume.pdf"
+                    className="flex flex-row-reverse justify-center items-center text-[18px] gap-x-2 rounded py-3 px-2.5 dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
+                    download="Resume_Sayed-Asif-Zayed.pdf"
+                  >
+                    <IoMdDownload className="text-secondary-color" />
+                  </Link>
+                  <ToolTip name="Download Résumé" />
+                </div>
               </div>
               <div className="text-center">
                 <h1 className="font-bold text-xl">Sayed Asif Zayed</h1>
