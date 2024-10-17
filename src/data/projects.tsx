@@ -19,7 +19,7 @@ export const projectData = [
       brandColor: "#0CCE6B",
     },
     title: "My Portfolio",
-    shortDescription: "Here is my digital version of resume.",
+    shortDescription: "Welcome to my own digital home on the internet.",
     technologies: [
       {
         name: "JavaScript",
