@@ -39,7 +39,7 @@ const Navbar = () => {
                 return (
                   <li key={index}>
                     <Link
-                      href={link.href}
+                      href={link?.href}
                       className={`font-incognito duration-300 text-base ${
                         pathName === link.href && !pathName.includes("/#")
                           ? "text-primary-color"

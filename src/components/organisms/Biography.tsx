@@ -109,9 +109,7 @@ const Biography = () => {
           </div>
         </div>
 
-        <Animation delay={0.22}>
-          <TechStacks />
-        </Animation>
+        <TechStacks />
 
         <Animation delay={0.22}>
           <Connect />

@@ -2,12 +2,12 @@ import { Animation, SocialPlatform } from "@/components/molecules";
 import { HeroSvg } from "@/constants";
 import "../../app/styles/gradientBorder.css";
 import dynamic from "next/dynamic";
+import { Contact } from "@/components/organisms";
 
 const Experience = dynamic(() => import("@/components/organisms/Experience"));
 const GithubContributionsGraph = dynamic(
   () => import("@/components/organisms/GithubContributionsGraph")
 );
-const Contact = dynamic(() => import("@/components/organisms/Contact"));
 
 const HomeTemplate = () => {
   return (
