@@ -1,20 +1,25 @@
 import Link from "next/link";
 import { Animation } from "@/components/molecules";
-import { Connect, TechStacks } from "@/components/organisms";
+import { Connect } from "@/components/organisms";
+import dynamic from "next/dynamic";
+
+const TechStacks = dynamic(() => import("@/components/organisms/TechStacks"));
 
 const Biography = () => {
   return (
     <>
       <div className="flex flex-col gap-10">
-        <Animation delay={0.18}>
-          <div className="flex flex-col text-[17px] gap-10">
+        <div className="flex flex-col text-[17px] gap-10">
+          <Animation delay={0.16}>
             <div>
               <h1 className="font-incognito font-semibold tracking-tight sm:text-5xl text-3xl lg:leading-tight basis-1/2">
                 I&apos;m Zayed Fahim. I live in Dhaka, <br /> where I build the
                 future.
               </h1>
             </div>
-            <div className="flex flex-col gap-5 text-[#52525b] dark:text-[#a1a1aa]">
+          </Animation>
+          <div className="flex flex-col gap-5 text-[#52525b] dark:text-[#a1a1aa]">
+            <Animation delay={0.18}>
               <p>
                 Hi there! Thanks for visiting my digital home on the internet.
               </p>
@@ -30,6 +35,8 @@ const Biography = () => {
                 , a well-regarded company located in Badda, Dhaka, where I have
                 the opportunity to put my skills to work on a daily basis.
               </p>
+            </Animation>
+            <Animation delay={0.2}>
               <p>
                 I have a wealth of experience in crafting scalable software
                 systems that meet both technical and business requirements,
@@ -64,6 +71,8 @@ const Biography = () => {
                 , allows me to deliver efficient and effective software
                 solutions that meet the unique needs of organizations.
               </p>
+            </Animation>
+            <Animation delay={0.22}>
               <p>
                 In my role as a Software Engineer, I take a charge of
                 developing, and maintaining software that meets both technical
@@ -75,6 +84,8 @@ const Biography = () => {
                 technical expertise to deliver customized solutions that drive
                 business outcomes.
               </p>
+            </Animation>
+            <Animation delay={0.24}>
               <p>
                 I consider myself a curious and inquisitive person, always eager
                 to learn and improve my skills. In my free time, I enjoy working
@@ -84,6 +95,8 @@ const Biography = () => {
                 out new learning opportunities in order to stay up-to-date with
                 the latest industry advancements.
               </p>
+            </Animation>
+            <Animation delay={0.26}>
               <p>
                 I also have a strong appreciation for video games and music. I
                 find that these activities provide an important balance to my
@@ -92,15 +105,17 @@ const Biography = () => {
                 balance is the key to keeping both my code and my spirits
                 bug-free! 🎮🎶
               </p>
-            </div>
+            </Animation>
           </div>
-        </Animation>
+        </div>
 
         <Animation delay={0.22}>
           <TechStacks />
         </Animation>
 
-        <Connect />
+        <Animation delay={0.22}>
+          <Connect />
+        </Animation>
       </div>
     </>
   );

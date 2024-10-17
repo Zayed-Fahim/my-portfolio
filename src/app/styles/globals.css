@@ -37,7 +37,7 @@ html {
 @import "prism.css";
 
 body {
-  background-image: url("/noise.png");
+  background-image: url("/logo/noise.png");
   background-size: 200px 200px;
   background-position: 0 0;
 }

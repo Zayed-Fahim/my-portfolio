@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { HiOutlineX } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Logo from "../../../public/logo_4.png";
+import Logo from "../../../public/logo/logo_4.png";
 import { navItems } from "@/data/navItems";
+import { usePathname } from "next/navigation";
 
 const MobileNav = () => {
+  const pathName = usePathname();
   const [navShow, setNavShow] = useState(false);
 
   const onToggleNav = () => {
@@ -55,7 +57,11 @@ const MobileNav = () => {
             <Link
               key={index}
               href={link.href}
-              className="flex items-center gap-x-2 font-incognito font-semibold text-lg dark:shadow-line-dark shadow-line-light p-6 group"
+              className={`font-incognito flex items-center gap-x-2 font-semibold text-lg dark:shadow-line-dark shadow-line-light p-6 group ${
+                pathName === link.href && !pathName.includes("/#")
+                  ? "text-primary-color"
+                  : "dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900"
+              }`}
               onClick={onToggleNav}
             >
               {link.icon}

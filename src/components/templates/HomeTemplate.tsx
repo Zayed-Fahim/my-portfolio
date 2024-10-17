@@ -1,11 +1,13 @@
 import { Animation, SocialPlatform } from "@/components/molecules";
-import {
-  Contact,
-  Experience,
-  GithubContributionsGraph,
-} from "@/components/organisms";
 import { HeroSvg } from "@/constants";
 import "../../app/styles/gradientBorder.css";
+import dynamic from "next/dynamic";
+
+const Experience = dynamic(() => import("@/components/organisms/Experience"));
+const GithubContributionsGraph = dynamic(
+  () => import("@/components/organisms/GithubContributionsGraph")
+);
+const Contact = dynamic(() => import("@/components/organisms/Contact"));
 
 const HomeTemplate = () => {
   return (

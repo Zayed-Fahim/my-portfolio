@@ -8,8 +8,9 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { Theme } from "../atoms";
+import { Theme } from "@/components/atoms";
 import { INavItemsPrps } from "@/data/navItems";
+import { usePathname } from "next/navigation";
 
 const FloatingNav = ({
   navItems,
@@ -18,6 +19,7 @@ const FloatingNav = ({
   navItems: INavItemsPrps[];
   className?: string;
 }) => {
+  const pathName = usePathname();
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(false);
@@ -64,9 +66,11 @@ const FloatingNav = ({
               <Link
                 key={`link=${idx}`}
                 href={navItem.href}
-                className={cn(
-                  "relative items-center flex space-x-1 font-incognito dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900 duration-300 text-base"
-                )}
+                className={`relative items-center flex space-x-1 font-incognito duration-300 text-base ${
+                  pathName === navItem.href && !pathName.includes("/#")
+                    ? "text-primary-color"
+                    : "dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900"
+                }`}
               >
                 <span className="text-base !cursor-pointer">
                   {navItem.title}

@@ -1,5 +1,4 @@
 "use client";
-import { Biography } from "@/components/organisms";
 import { SITE } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +7,9 @@ import { LuExternalLink } from "react-icons/lu";
 import { Animation } from "@/components/molecules";
 import { useState } from "react";
 import { PageHeader, SkeletonLoader, ToolTip } from "@/components/atoms";
+import dynamic from "next/dynamic";
+
+const Biography = dynamic(() => import("@/components/organisms/Biography"));
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);

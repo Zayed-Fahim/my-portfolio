@@ -1,11 +1,15 @@
+"use client";
+import { Theme } from "@/components/atoms";
+import { MobileNav } from "@/components/organisms";
+import { navItems } from "@/data/navItems";
 import Image from "next/image";
 import Link from "next/link";
-import Logo from "../../../public/logo_4.png";
-import { Theme } from "../atoms";
-import { MobileNav } from "../organisms";
-import { navItems } from "@/data/navItems";
+import { usePathname } from "next/navigation";
+import Logo from "../../../public/logo/logo_4.png";
 
 const Navbar = () => {
+  const pathName = usePathname();
+
   return (
     <section className="sticky top-0 left-0 md:relative z-[9999999]">
       <header className="dark:bg-[#18181B] bg-[#F1F1F1] md:bg-transparent md:dark:bg-transparent text-sm py-4 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
@@ -31,16 +35,22 @@ const Navbar = () => {
 
           <nav className="md:block hidden">
             <ul className="flex items-center gap-x-8">
-              {navItems.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.href}
-                    className="font-incognito dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900 duration-300 text-base"
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
+              {navItems.map((link, index) => {
+                return (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className={`font-incognito duration-300 text-base ${
+                        pathName === link.href && !pathName.includes("/#")
+                          ? "text-primary-color"
+                          : "dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900"
+                      }`}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 

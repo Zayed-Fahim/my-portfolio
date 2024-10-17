@@ -1,6 +1,6 @@
 import React from "react";
 import "../../app/styles/socialPlatformButton.css";
-import { Button } from "../atoms";
+import { Button } from "@/components/atoms";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { LuExternalLink } from "react-icons/lu";
 import Link from "next/link";

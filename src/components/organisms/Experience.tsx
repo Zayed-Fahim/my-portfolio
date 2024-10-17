@@ -3,7 +3,7 @@ import Image from "next/image";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { EXPERIENCES } from "@/data/experiences";
-import { Animation } from "../molecules";
+import { Animation } from "@/components/molecules";
 import { GoDotFill } from "react-icons/go";
 import { ToolTip } from "@/components/atoms";
 
@@ -228,7 +228,7 @@ const Experience = () => {
                                           >
                                             <div
                                               className={cn(
-                                                "rounded bg-[#F7F7F7] dark:bg-[#18181B] border-[1.5px] border-black/[0.1] dark:border-white/[0.2] p-1.5"
+                                                "rounded bg-[#F7F7F7] dark:bg-[#18181B] border-[1.5px] border-black/[0.1] dark:border-white/[0.2] p-1.5 cursor-pointer"
                                               )}
                                             >
                                               {icon}

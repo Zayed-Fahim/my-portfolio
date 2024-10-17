@@ -1,15 +1,26 @@
-import { ProjectCard } from "@/components/organisms";
+"use client";
 import { projectData } from "@/data/projects";
 import { PageHeader } from "@/components/atoms";
+import React, { useState, useEffect } from "react";
+import { Animation } from "@/components/molecules";
 import dynamic from "next/dynamic";
-import React, { memo } from "react";
 
-// Dynamically load Animation component
-const Animation = dynamic(() => import("../molecules/Animation"), {
-  ssr: false,
-});
+const ProjectCard = dynamic(() => import("@/components/organisms/ProjectCard"));
+const ProjectCardSkeletonLoader = dynamic(
+  () => import("@/components/atoms/ProjectCardSkeletonLoader")
+);
 
 const Projects = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="max-w-7xl mx-auto px-6 md:px-16">
       <div className="flex flex-col gap-28">
@@ -21,15 +32,23 @@ const Projects = () => {
         </Animation>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-14 gap-y-24">
-          {projectData.map((project, i) => (
-            <Animation delay={0.06} key={i}>
-              <ProjectCard {...project} />
-            </Animation>
-          ))}
+          {isLoading
+            ? Array(4)
+                .fill(0)
+                .map((_, i) => (
+                  <Animation delay={0.06} key={i}>
+                    <ProjectCardSkeletonLoader />
+                  </Animation>
+                ))
+            : projectData.map((project, i) => (
+                <Animation delay={0.06} key={i}>
+                  <ProjectCard {...project} />
+                </Animation>
+              ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default memo(Projects);
+export default Projects;

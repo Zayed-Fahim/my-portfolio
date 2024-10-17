@@ -26,7 +26,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: {
       name: "Zaynax Limited",
-      logo: "/zaynax_logo.jpeg",
+      logo: "/logo/zaynax_logo.jpeg",
       location: "Dhaka, Bangladesh",
       workplaceType: "On-Site",
       jobType: "Full-time",
@@ -219,7 +219,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: {
       name: "Crystal Vision Solution (CVS)",
-      logo: "/cvs_logo.jpeg",
+      logo: "/logo/cvs_logo.jpeg",
       location: "Mirpur, Dhaka, Bangladesh",
       workplaceType: "On-Site",
       jobType: "Internship",

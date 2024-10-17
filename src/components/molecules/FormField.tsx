@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Textarea } from "../atoms";
+import { Input, Textarea } from "@/components/atoms";
 
 interface IFormFieldProps {
   as: "input" | "textarea";

@@ -1,11 +1,10 @@
-import "@/app/styles/globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { ThemeProvider } from "@/providers";
-import { FloatingNav, Footer, Navbar } from "@/components/organisms";
 import { gitlabmono, incognito } from "@/app/fonts/font";
-import { Animation } from "@/components/molecules";
+import "@/app/styles/globals.css";
+import { Animation, MetaData } from "@/components/molecules";
+import { FloatingNav, Footer, Navbar } from "@/components/organisms";
 import { navItems } from "@/data/navItems";
+import { ThemeProvider } from "@/providers";
+import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,30 +12,12 @@ const inter = Inter({
   variable: "--inter",
 });
 
-const options = {
+export const metadata = MetaData({
   title: "Zayed Fahim | Software Engineer",
-  description: "",
+  description: "Portfolio of Zayed Fahim",
   url: "https://zayed-fahim.web.app/",
-  ogImage: "",
-};
-
-export const metadata: Metadata = {
-  title: options.title,
-  metadataBase: new URL(options.url),
-  description: options.description,
-  openGraph: {
-    title: options.title,
-    url: options.url,
-    siteName: "zayed-fahim.web.app",
-    locale: "en-US",
-    type: "website",
-    description: options.description,
-    images: options.ogImage,
-  },
-  alternates: {
-    canonical: options.url,
-  },
-};
+  ogImage: "https://zayed-fahim.web.app/og-image.jpg",
+});
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

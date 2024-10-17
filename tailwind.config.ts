@@ -35,8 +35,7 @@ const config: Config = {
         full: "min-content 1fr",
       },
       backgroundImage: {
-        noise:
-          "url('https://res.cloudinary.com/victoreke/image/upload/v1691779257/victoreke/noise.png')",
+        noise: "url('/logo/noise.png')",
       },
       backgroundPosition: {
         zero: "0 0",

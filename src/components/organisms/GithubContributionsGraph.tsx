@@ -52,6 +52,7 @@ const GithubContributionsGraph = () => {
               colorScheme={serverTheme}
               blockSize={14}
               year={calendarYear}
+              style={{ cursor: "pointer" }}
               renderBlock={(block, activity) =>
                 React.cloneElement(block, {
                   "data-tooltip-id": "react-tooltip",
