@@ -12,3 +12,5 @@ export { default as TechStacks } from "./TechStacks";
 export { default as Connect } from "./Connect";
 export { default as Projects } from "./Projects";
 export { default as ProjectCard } from "./ProjectCard";
+export { default as BlogCard } from "./BlogCard";
+export { default as Blogs } from "./Blogs";

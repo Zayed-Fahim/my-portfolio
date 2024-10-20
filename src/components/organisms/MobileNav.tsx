@@ -22,7 +22,7 @@ const MobileNav = () => {
       return !status;
     });
   };
-
+  console.log({ pathName });
   return (
     <div className="sticky top-0 left-0">
       <button

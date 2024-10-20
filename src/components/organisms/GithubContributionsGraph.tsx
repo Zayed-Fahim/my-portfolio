@@ -36,7 +36,7 @@ const GithubContributionsGraph = () => {
             Contrbution Graph
           </h2>
           <Link
-            className="text-xl font-bold hover:text-secondary-color"
+            className="md:text-xl font-bold hover:text-secondary-color"
             href="https://github.com/Zayed-Fahim"
             target="_blank"
           >

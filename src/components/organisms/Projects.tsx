@@ -1,9 +1,14 @@
 "use client";
 import { projectData } from "@/data/projects";
-import { PageHeader, ProjectCardSkeletonLoader } from "@/components/atoms";
-import { ProjectCard } from "@/components/organisms";
+import { PageHeader } from "@/components/atoms";
 import React, { useState, useEffect } from "react";
 import { Animation } from "@/components/molecules";
+import dynamic from "next/dynamic";
+
+const ProjectCardSkeletonLoader = dynamic(
+  () => import("../atoms/ProjectCardSkeletonLoader")
+);
+const ProjectCard = dynamic(() => import("../organisms/ProjectCard"));
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +33,7 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-x-14 sm:gap-x-6 gap-y-24">
           {isLoading
-            ? Array(4)
+            ? Array(5)
                 .fill(0)
                 .map((_, i) => (
                   <Animation delay={0.06} key={i}>
