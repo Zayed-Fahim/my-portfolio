@@ -31,7 +31,7 @@ const Projects = () => {
           />
         </Animation>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-x-14 sm:gap-x-6 gap-y-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-x-14 sm:gap-x-6 gap-y-24 transition-all duration-1000 ease-in-out">
           {isLoading
             ? Array(5)
                 .fill(0)

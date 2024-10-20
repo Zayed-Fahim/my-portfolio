@@ -67,7 +67,7 @@ const FloatingNav = ({
                 key={`link=${idx}`}
                 href={navItem.href}
                 className={`relative items-center flex space-x-1 font-incognito duration-300 text-base ${
-                  pathName === navItem.href && !pathName.includes("/#")
+                  pathName === navItem.href
                     ? "text-primary-color"
                     : "dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900"
                 }`}
