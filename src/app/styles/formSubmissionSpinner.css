@@ -1,11 +1,11 @@
-.loader {
+.spinner {
   width: 16px;
   height: 16px;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
 }
-.loader::before {
+.spinner::before {
   content: "";
   box-sizing: border-box;
   position: absolute;

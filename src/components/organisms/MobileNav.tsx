@@ -22,7 +22,7 @@ const MobileNav = () => {
       return !status;
     });
   };
-  console.log({ pathName });
+
   return (
     <div className="sticky top-0 left-0">
       <button
@@ -56,9 +56,9 @@ const MobileNav = () => {
           {navItems.map((link, index) => (
             <Link
               key={index}
-              href={link.href}
+              href={link?.href}
               className={`font-incognito flex items-center gap-x-2 font-semibold text-lg dark:shadow-line-dark shadow-line-light p-6 group ${
-                pathName === link.href
+                pathName && pathName === link?.href
                   ? "text-primary-color"
                   : "dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900"
               }`}

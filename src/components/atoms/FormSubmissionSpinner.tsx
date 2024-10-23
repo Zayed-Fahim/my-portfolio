@@ -5,7 +5,7 @@ const FormSubmissionSpinner = ({ title }: { title: string }) => {
   return (
     <div className="flex justify-start items-center gap-5 max-w-fit">
       <p className="text-white font-incognito">{title}</p>
-      <div className="loader"></div>
+      <div className="spinner"></div>
     </div>
   );
 };

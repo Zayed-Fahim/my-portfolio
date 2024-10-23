@@ -1,6 +1,7 @@
 "use client";
 import { YearButton } from "@/components/atoms";
 import { Animation } from "@/components/molecules";
+import configuration from "@/configuration";
 import { getGitHubYears } from "@/helpers/calculateGithubYears";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -24,8 +25,8 @@ const GithubContributionsGraph = () => {
   }, [scheme]);
 
   const today = new Date().getFullYear();
-  const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME || "Zayed-Fahim";
-  const joinYear = Number(process.env.NEXT_PUBLIC_GITHUB_JOIN_YEAR);
+  const username = configuration.githubUsername || "Zayed-Fahim";
+  const joinYear = Number(configuration.githubJoinYear) || 2020;
   const years = getGitHubYears(joinYear);
 
   return (

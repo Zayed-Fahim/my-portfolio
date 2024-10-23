@@ -64,10 +64,10 @@ const FloatingNav = ({
           <div className="flex items-center justify-between space-x-8 mx-auto">
             {navItems.map((navItem, idx: number) => (
               <Link
-                key={`link=${idx}`}
-                href={navItem.href}
+                key={idx}
+                href={navItem?.href}
                 className={`relative items-center flex space-x-1 font-incognito duration-300 text-base ${
-                  pathName === navItem.href
+                  pathName && pathName === navItem?.href
                     ? "text-primary-color"
                     : "dark:text-white text-zinc-600 dark:hover:text-primary-color hover:text-zinc-900"
                 }`}

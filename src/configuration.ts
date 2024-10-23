@@ -1,27 +1,16 @@
 interface IConfig {
-  baseUrl: string | undefined;
-  apiBaseUrl: string | undefined;
-  githubUsername: string | undefined;
-  githubJoinYear: string | undefined;
+  baseUrl: string;
+  apiBaseUrl: string;
+  githubUsername: string;
+  githubJoinYear: string;
 }
 
 const configuration = (): IConfig => {
-  const {
-    NEXT_PUBLIC_GITHUB_USERNAME: githubUsername,
-    NEXT_PUBLIC_GITHUB_JOIN_YEAR: githubJoinYear,
-    API_BASE_URL: apiBaseUrl,
-    BASE_URL: baseUrl,
-  } = process.env;
-
-  if (!apiBaseUrl || !githubUsername || !githubJoinYear) {
-    console.error("Missing important environment variable");
-  }
-
   return {
-    baseUrl,
-    apiBaseUrl,
-    githubUsername,
-    githubJoinYear,
+    baseUrl: process.env.BASE_URL || "http://localhost:3000",
+    apiBaseUrl: process.env.API_BASE_URL || "https://zayedfahim.vercel.app",
+    githubUsername: process.env.GITHUB_USERNAME || "Zayed-Fahim",
+    githubJoinYear: process.env.GITHUB_JOIN_YEAR || "2020",
   };
 };
 
