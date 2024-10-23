@@ -4,7 +4,8 @@ import "../../app/styles/gradientBorder.css";
 import { z } from "zod";
 import React, { useState } from "react";
 import { FormField } from "@/components/molecules";
-import { Button, Message } from "@/components/atoms";
+import { Button, FormSubmissionSpinner, Message } from "@/components/atoms";
+import { fetchData } from "@/utils/fetchData";
 
 const emailFormatSchema = z
   .string()
@@ -35,6 +36,7 @@ const initialFormState: ContactFormData = {
 };
 
 const ContactForm = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState<ContactFormData>(initialFormState);
   const [errors, setErrors] = useState<FormErrors>({});
   const [formMessage, setFormMessage] = useState<string | null>(null);
@@ -87,7 +89,7 @@ const ContactForm = () => {
     setFormMessage(null);
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const requiredValidation = contactSchema.safeParse(formData);
@@ -116,11 +118,25 @@ const ContactForm = () => {
       }
     }
 
-    console.log("Form submitted with data:", formData);
-
-    resetForm();
-    setFormMessage("Form submitted successfully!");
-    setMessageType("success");
+    setIsLoading(true);
+    try {
+      const url =
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/email/send` as string;
+      const response = await fetchData(url, "post", {
+        data: formData,
+      });
+      if (response.success) {
+        resetForm();
+        setFormMessage("Form submitted successfully!");
+        setMessageType("success");
+      }
+    } catch (error: unknown) {
+      console.error("Error occurred during form submission:", error);
+      setFormMessage("Failed to submit the form. Please try again.");
+      setMessageType("error");
+    } finally {
+      setIsLoading(false);
+    }
 
     setTimeout(() => {
       setFormMessage(null);
@@ -133,8 +149,16 @@ const ContactForm = () => {
         className="form bg-[#F8F8F8] dark:bg-primary-bg"
         onSubmit={handleFormSubmit}
       >
-        {formMessage && (
-          <Message type={messageType} message={formMessage} className="pb-1" />
+        {isLoading ? (
+          <FormSubmissionSpinner title="Form Submitting" />
+        ) : (
+          formMessage && (
+            <Message
+              type={messageType}
+              message={formMessage}
+              className="pb-1"
+            />
+          )
         )}
         <div className="form-group-row">
           <div className="form-group">
@@ -149,6 +173,7 @@ const ContactForm = () => {
               name="fullName"
               id="fullName"
               type="text"
+              className="font-incognito text-[14px]"
               value={formData.fullName}
               onChange={handleChange}
             />
@@ -169,6 +194,7 @@ const ContactForm = () => {
               name="email"
               id="email"
               type="email"
+              className="font-incognito text-[14px]"
               value={formData.email}
               onChange={handleChange}
             />
@@ -188,6 +214,7 @@ const ContactForm = () => {
             name="subject"
             id="subject"
             type="text"
+            className="font-incognito text-[14px]"
             value={formData.subject}
             onChange={handleChange}
           />
@@ -205,6 +232,7 @@ const ContactForm = () => {
             }
             name="message"
             id="message"
+            className="font-incognito text-[14px]"
             rows={10}
             cols={50}
             value={formData.message}
