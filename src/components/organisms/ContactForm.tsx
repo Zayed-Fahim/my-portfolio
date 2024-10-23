@@ -119,9 +119,9 @@ const ContactForm = () => {
     }
 
     setIsLoading(true);
+
     try {
-      const url =
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/email/send` as string;
+      const url = "https://zayedfahim.vercel.app/api/v2/email/send";
       const response = await fetchData(url, "post", {
         data: formData,
       });
