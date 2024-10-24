@@ -10,7 +10,7 @@ const SocialPlatform = () => {
     "w-[22px] h-[22px] text-[#3f3f46] dark:text-white dark:group-hover:text-white opacity-50 dark:opacity-30 group-hover:opacity-100";
   const titleClassName =
     "text-[#3f3f46] font-semibold text-base dark:text-white dark:group-hover:text-[#3f3f46] flex flex-col";
-  const borderClassName = "w-auto h-[2px] bg-[#9ca3af] group-hover:opacity-0";
+  const borderClassName = "w-auto h-[1px] bg-[#a1a1aa] group-hover:opacity-0";
 
   return (
     <div className="flex items-center justify-start gap-5 flex-wrap">

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface ButtonProps {
-  title?: string;
+  title: string;
   type?: "button" | "submit" | "reset";
   icon?: React.ReactNode;
   className?: string;
@@ -21,10 +21,10 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button type={type} className={`${className}`} onClick={onClick}>
-      {icon && <span>{icon}</span>}
+      {icon && <div>{icon}</div>}
       {title && (
         <div className={`${titleClassName}`}>
-          <span className="font-incognito">{title}</span>
+          <span className={`font-incognito`}>{title}</span>
           {borderClassName && <span className={`${borderClassName}`} />}
         </div>
       )}

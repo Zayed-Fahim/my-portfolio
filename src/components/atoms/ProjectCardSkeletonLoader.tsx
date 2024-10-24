@@ -17,7 +17,7 @@ const ProjectCardSkeletonLoader = () => {
       {/* website and github link section */}
       <div className="p-4 flex flex-col gap-4">
         <div className="flex items-center justify-between">
-          <SkeletonLoader className={`${skeletonClass} w-2/4 h-5`} />
+          <SkeletonLoader className={`${skeletonClass} w-2/4 h-5 rounded-md`} />
           <div className="flex items-center gap-2">
             <SkeletonLoader
               className={`${skeletonClass} w-5 h-5 rounded-full`}
@@ -28,13 +28,13 @@ const ProjectCardSkeletonLoader = () => {
           </div>
         </div>
 
-        <SkeletonLoader className={`${skeletonClass} w-full h-6`} />
+        <SkeletonLoader className={`${skeletonClass} w-full h-6 rounded-md`} />
 
         <div className="flex items-center gap-3 mt-2">
           {[...Array(5)].map((_, index) => (
             <SkeletonLoader
               key={index}
-              className={`${skeletonClass} w-6 h-6 rounded`}
+              className={`${skeletonClass} w-6 h-6 rounded-md`}
             />
           ))}
         </div>

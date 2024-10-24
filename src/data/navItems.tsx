@@ -1,5 +1,5 @@
 // import { BiSolidContact } from "react-icons/bi";
-import { HiBeaker, HiBookmarkAlt, HiCamera, HiUser } from "react-icons/hi";
+import { HiBeaker, HiBookmarkAlt, HiUser } from "react-icons/hi";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdMenuBook } from "react-icons/md";
 
@@ -15,12 +15,6 @@ const className =
   "text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300";
 
 export const navItems: INavItemsPrps[] = [
-  // {
-  //   title: "Experiences",
-  //   href: "/experiences",
-  //   id: "experiences",
-  //   icon: <HiBriefcase className={`${className}`} aria-hidden="true" />,
-  // },
   {
     title: "About",
     href: "/about",
@@ -50,11 +44,5 @@ export const navItems: INavItemsPrps[] = [
     href: "/guestbook",
     id: "guestbook",
     icon: <MdMenuBook className={`${className}`} aria-hidden="true" />,
-  },
-  {
-    title: "Photos",
-    href: "/photos",
-    id: "photos",
-    icon: <HiCamera className={`${className}`} aria-hidden="true" />,
   },
 ];
