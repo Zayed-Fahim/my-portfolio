@@ -13,7 +13,7 @@ export const blogs: IBlogDetailsProps[] = [
     title: "The Rise of JavaScript Frameworks.",
     date: "2024-09-20",
     views: 150,
-    imageSrc: "/images/blog/javascript-frameworks.jpg",
+    imageSrc: "/optimized.png",
     blogLink: "the-rise-of-javascript-frameworks",
     description:
       "Explore how JavaScript frameworks have evolved and why they're essential for modern web development.",
@@ -44,7 +44,7 @@ export const blogs: IBlogDetailsProps[] = [
     title: "Next.js: The Future of Server-side Rendering.",
     date: "2024-09-10",
     views: 320,
-    imageSrc: "/images/blog/nextjs-ssr.jpg",
+    imageSrc: "/blog.webp",
     blogLink: "nextjs-server-side-rendering",
     description:
       "An in-depth look at how Next.js is revolutionizing server-side rendering for high-performance web applications.",

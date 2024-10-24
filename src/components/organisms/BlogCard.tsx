@@ -20,7 +20,7 @@ const BlogCard: React.FC<IBlogDetailsProps> = ({
   return (
     <Link
       href={`/blog/${blogLink}`}
-      className="flex lg:flex-row flex-col h-auto lg:items-center items-start gap-8 p-3 rounded-lg group
+      className="flex lg:flex-row flex-col lg:items-center items-start gap-8 p-3 rounded-lg group
       dark:bg-primary-bg bg-secondary-bg border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
     >
       <Animation delay={0.1}>
@@ -28,13 +28,18 @@ const BlogCard: React.FC<IBlogDetailsProps> = ({
           <Image
             src={imageSrc}
             alt={title}
-            fill
-            className="object-cover rounded-md group-hover:scale-125 transition-transform duration-300 dark:bg-zinc-800 bg-zinc-100"
+            width={1280}
+            height={768}
+            sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+            quality={100}
+            className="h-full object-cover rounded-md group-hover:scale-125 transition-transform duration-300"
           />
         </div>
       </Animation>
 
-      <div className="flex-grow max-w-full lg:max-w-[550px] xl:max-w-[650px] pr-4">
+      <div className="flex-grow w-full lg:max-w-[550px] xl:max-w-[650px] pr-4">
         <Animation delay={0.12}>
           <h2 className="text-2xl font-semibold tracking-tight mb-4">
             {title.length > 54 ? title.slice(0, 54) + "..." : title}
