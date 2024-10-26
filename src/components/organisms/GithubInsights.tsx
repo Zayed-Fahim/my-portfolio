@@ -1,27 +1,40 @@
+"use client";
 import "../../app/styles/gradientBorder.css";
 import React from "react";
 import { Animation, GithubContributionsGraph } from "../molecules";
 import { OverViewCard } from "../atoms";
 import Link from "next/link";
 import { GitHub } from "@/constants";
+import configuration from "@/configuration";
+import { useGithubStats } from "@/hooks/useGithubStats";
+import IncrementCounter from "../atoms/IncrementCounter";
 
 const GithubInsights = () => {
+  const {
+    totalContributions,
+    lastSevenDaysContributions,
+    highestDailyContribution,
+    averageDailyContribution,
+    isLoading,
+    error,
+  } = useGithubStats(configuration.githubUsername);
+
   const contributions = [
     {
-      count: 500,
       title: "Total",
+      count: isLoading ? "..." : totalContributions,
     },
     {
-      count: 15,
       title: "This Week",
+      count: isLoading ? "..." : lastSevenDaysContributions,
     },
     {
-      count: 20,
       title: "Best Day",
+      count: isLoading ? "..." : highestDailyContribution,
     },
     {
-      count: 5,
       title: "Average(Per Day)",
+      count: isLoading ? "..." : averageDailyContribution,
     },
   ];
 
@@ -35,6 +48,10 @@ const GithubInsights = () => {
       count: 1,
     },
   ];
+
+  if (error) {
+    return <div>Error loading GitHub data</div>;
+  }
 
   return (
     <div className="flex flex-col gap-5">
@@ -66,7 +83,13 @@ const GithubInsights = () => {
             {userData.map(({ title, count }, i) => (
               <OverViewCard key={i}>
                 <h1 className="text-base">{title}</h1>
-                <p className="font-bold text-xl">{count}</p>
+                <p className="font-bold text-xl">
+                  {typeof count === "number" ? (
+                    <IncrementCounter to={count} />
+                  ) : (
+                    count
+                  )}
+                </p>
               </OverViewCard>
             ))}
           </div>
@@ -82,7 +105,11 @@ const GithubInsights = () => {
               {contributions.map(({ title, count }, i) => (
                 <OverViewCard key={i}>
                   <h1 className="text-base">{title}</h1>
-                  <p className="font-bold text-xl">{count}</p>
+                  {typeof count === "number" ? (
+                    <IncrementCounter to={count} />
+                  ) : (
+                    count
+                  )}
                 </OverViewCard>
               ))}
             </div>

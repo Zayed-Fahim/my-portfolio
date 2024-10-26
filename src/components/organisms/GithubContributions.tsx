@@ -16,7 +16,7 @@ const GithubContributions = () => {
             Contrbution Graph
           </h2>
           <Link
-            className="font-bold hover:text-secondary-color"
+            className="font-bold hover:text-secondary-color text-[#a1a1aa]"
             href="https://github.com/Zayed-Fahim"
             target="_blank"
           >

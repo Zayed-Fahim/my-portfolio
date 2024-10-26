@@ -11,10 +11,11 @@ const WakaTime = () => {
       <Animation delay={0.1}>
         <PageHeader
           title="Insights"
-          description=<span>
+          description=<span className="text-pretty">
             Discover a comprehensive overview of digital presence, encompassing
-            coding insights, key metrics, and more, <br /> all conveniently in
-            one place.
+            coding insights, key metrics, and more,
+            <br className="hidden md:block" />
+            all conveniently in one place.
           </span>
         />
       </Animation>
