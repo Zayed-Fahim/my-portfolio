@@ -7,14 +7,12 @@ const skeletonClass =
 const ProjectCardSkeletonLoader = () => {
   return (
     <div className="dark:bg-primary-bg bg-secondary-bg border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 relative rounded-xl flex flex-col sm:max-h-[500px] max-h-[485px]">
-      {/* image section */}
       <div className="relative">
         <SkeletonLoader
           className={`${skeletonClass} rounded-tl-xl rounded-tr-xl w-full h-[250px] md:h-[285px] lg:h-[301px]`}
         />
       </div>
 
-      {/* website and github link section */}
       <div className="p-4 flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <SkeletonLoader className={`${skeletonClass} w-2/4 h-5 rounded-md`} />

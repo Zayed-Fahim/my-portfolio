@@ -14,3 +14,5 @@ export { default as Loader } from "./Loader";
 export { default as ProjectCardSkeletonLoader } from "./ProjectCardSkeletonLoader";
 export { default as BlogCardSkeletonLoader } from "./BlogCardSkeletonLoader";
 export { default as FormSubmissionSpinner } from "./FormSubmissionSpinner";
+export { default as OverViewCard } from "./OverViewCard";
+export { default as ProgressBar } from "./ProgressBar";

@@ -1,7 +1,5 @@
-// import { BiSolidContact } from "react-icons/bi";
 import { HiBeaker, HiBookmarkAlt, HiUser } from "react-icons/hi";
-import { LuLayoutDashboard } from "react-icons/lu";
-import { MdMenuBook } from "react-icons/md";
+import { MdInsights, MdMenuBook } from "react-icons/md";
 
 export interface INavItemsPrps {
   title: string;
@@ -34,10 +32,10 @@ export const navItems: INavItemsPrps[] = [
     icon: <HiBookmarkAlt className={`${className}`} aria-hidden="true" />,
   },
   {
-    title: "Dashboard",
-    href: "/dashboard",
-    id: "dashboard",
-    icon: <LuLayoutDashboard className={`${className}`} aria-hidden="true" />,
+    title: "Insights",
+    href: "/insights",
+    id: "insights",
+    icon: <MdInsights className={`${className}`} aria-hidden="true" />,
   },
   {
     title: "Guestbook",

@@ -2,7 +2,7 @@ import React from "react";
 
 interface IPageHeaderProps {
   title: string;
-  description: string;
+  description: JSX.Element | string;
   className?: string;
 }
 
