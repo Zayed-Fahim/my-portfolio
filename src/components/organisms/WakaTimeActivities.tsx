@@ -1,6 +1,7 @@
 import "../../app/styles/gradientBorder.css";
 import { OverViewCard } from "../atoms";
 import Progress from "../atoms/ProgressBar";
+import { Animation } from "../molecules";
 
 const WakaTimeActivities = () => {
   const activities = [
@@ -50,18 +51,22 @@ const WakaTimeActivities = () => {
 
   return (
     <div className="w-full flex flex-col gap-5">
-      <div className="grid grid-cols-2 gap-5">
-        {activities.map(({ title, count }, i) => (
-          <OverViewCard key={i}>
-            <h1 className="text-base">{title}</h1>
-            <p className="font-bold text-xl">{count}</p>
-          </OverViewCard>
-        ))}
-      </div>
+      <Animation delay={0.16}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {activities.map(({ title, count }, i) => (
+            <OverViewCard key={i}>
+              <h1 className="text-base">{title}</h1>
+              <p className="font-bold text-xl">{count}</p>
+            </OverViewCard>
+          ))}
+        </div>
+      </Animation>
 
-      <div className="flex flex-grow gap-5 items-stretch w-full">
-        {/* First card */}
-        <div className="flex-1 rounded-xl glow-border relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch w-full">
+        <Animation
+          delay={0.18}
+          className="flex-1 rounded-xl glow-border relative"
+        >
           <p className="absolute -top-3 left-3 bg-white dark:bg-primary-bg px-2 font-semibold">
             Languages
           </p>
@@ -77,10 +82,12 @@ const WakaTimeActivities = () => {
               ))}
             </ul>
           </OverViewCard>
-        </div>
+        </Animation>
 
-        {/* Second card */}
-        <div className="flex-1 rounded-xl glow-border relative">
+        <Animation
+          delay={0.18}
+          className="flex-1 rounded-xl glow-border relative"
+        >
           <p className="absolute -top-3 left-3 bg-white dark:bg-primary-bg px-2 font-semibold">
             Others
           </p>
@@ -96,7 +103,7 @@ const WakaTimeActivities = () => {
               ))}
             </ul>
           </OverViewCard>
-        </div>
+        </Animation>
       </div>
     </div>
   );

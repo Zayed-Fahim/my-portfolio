@@ -30,7 +30,7 @@ const ProgressBar = ({
           <div className={cn("w-24")}>{name}</div>
           <div
             className={cn(
-              "relative flex h-4 flex-1 justify-center rounded-full bg-secondary-bg dark:bg-primary-bg"
+              "relative flex h-3 lg:h-4 flex-1 justify-center rounded-full bg-secondary-bg dark:bg-primary-bg"
             )}
           >
             <motion.span
@@ -38,7 +38,7 @@ const ProgressBar = ({
               animate="animate"
               variants={variants}
               className={cn(
-                "absolute left-0 top-0 h-4 rounded-full px-3",
+                "absolute left-0 top-0 h-3 lg:h-4 rounded-full px-3",
                 className
               )}
             >

@@ -32,7 +32,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
             {children}
 
-            <Animation delay={0.25}>
+            <Animation delay={0.26}>
               <Footer />
             </Animation>
           </ThemeProvider>
