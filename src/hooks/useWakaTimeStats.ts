@@ -2,6 +2,36 @@
 import useSWR from "swr";
 import { wakaTimeFetcher } from "./fetcher";
 
+// Define interfaces for API responses
+interface WakaTimeStats {
+  grand_total: {
+    total_seconds: number;
+  };
+  date: string;
+  operating_systems: Array<{
+    name: string;
+    percent: number;
+  }>;
+  editors: Array<{
+    name: string;
+    percent: number;
+  }>;
+  languages: Array<{
+    name: string;
+    percent: number;
+  }>;
+}
+
+interface AllTimeStats {
+  data: {
+    text: string;
+  };
+}
+
+interface SummaryResponse {
+  data: WakaTimeStats[];
+}
+
 type CodingStats = {
   dailyAverage: string;
   weeklyTotal: string;
@@ -23,7 +53,7 @@ type CodingStats = {
 
 export const useWakaTimeStats = () => {
   // Set up SWR hooks with daily revalidation
-  const { data: summaryData, error: summaryError } = useSWR(
+  const { data: summaryData, error: summaryError } = useSWR<SummaryResponse>(
     "https://wakatime.com/api/v1/users/current/summaries?range=last_7_days",
     wakaTimeFetcher,
     {
@@ -33,7 +63,7 @@ export const useWakaTimeStats = () => {
     }
   );
 
-  const { data: allTimeData, error: allTimeError } = useSWR(
+  const { data: allTimeData, error: allTimeError } = useSWR<AllTimeStats>(
     "https://wakatime.com/api/v1/users/current/all_time_since_today",
     wakaTimeFetcher,
     {
@@ -59,13 +89,12 @@ export const useWakaTimeStats = () => {
     };
   }
 
-  // Process the data
   const days = summaryData.data;
   let totalSeconds = 0;
   let bestDay = { date: "", total_seconds: 0 };
 
   // Calculate total seconds and find best day
-  days.forEach((day: any) => {
+  days.forEach((day) => {
     totalSeconds += day.grand_total.total_seconds;
     if (day.grand_total.total_seconds > bestDay.total_seconds) {
       bestDay = {
@@ -95,13 +124,13 @@ export const useWakaTimeStats = () => {
   const lastDay = days[days.length - 1];
 
   // Process operating systems
-  const operatingSystems = lastDay.operating_systems.map((os: any) => ({
+  const operatingSystems = lastDay.operating_systems.map((os) => ({
     name: os.name,
     percent: parseFloat(os.percent.toFixed(2)),
   }));
 
   // Process editors
-  const editors = lastDay.editors.map((editor: any) => ({
+  const editors = lastDay.editors.map((editor) => ({
     name: editor.name,
     percent: parseFloat(editor.percent.toFixed(2)),
   }));
@@ -110,17 +139,20 @@ export const useWakaTimeStats = () => {
   const mainLanguages = ["TypeScript", "JavaScript"];
   let otherPercent = 0;
 
-  const languages = lastDay.languages.reduce((acc: any[], lang: any) => {
-    if (mainLanguages.includes(lang.name)) {
-      acc.push({
-        name: lang.name,
-        percent: parseFloat(lang.percent.toFixed(2)),
-      });
-    } else {
-      otherPercent += lang.percent;
-    }
-    return acc;
-  }, []);
+  const languages = lastDay.languages.reduce(
+    (acc: CodingStats["languages"], lang) => {
+      if (mainLanguages.includes(lang.name)) {
+        acc.push({
+          name: lang.name,
+          percent: parseFloat(lang.percent.toFixed(2)),
+        });
+      } else {
+        otherPercent += lang.percent;
+      }
+      return acc;
+    },
+    []
+  );
 
   if (otherPercent > 0) {
     languages.push({
