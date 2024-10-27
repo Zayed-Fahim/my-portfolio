@@ -11,9 +11,12 @@ export const createFetcher = (config: FetcherConfig = {}) => {
       const headers: Record<string, string> = {};
 
       if (config.requiresAuth && config.apiKey) {
-        headers.Authorization = `Basic ${Buffer.from(config.apiKey).toString(
+        headers.Authorization = `Basic ${Buffer.from(config?.apiKey).toString(
           "base64"
         )}`;
+        headers["Content-Type"] = "application/json";
+        headers["Access-Control-Allow-Origin"] = "https://api.wakatime.com";
+        headers.Host = "wakatime.com";
       }
 
       const response = await axios.get(url, { headers });
@@ -35,5 +38,5 @@ export const githubFetcher = createFetcher();
 
 export const wakaTimeFetcher = createFetcher({
   requiresAuth: true,
-  apiKey: `Basic ${process.env.WAKATIME_API_KEY}`,
+  apiKey: `${process.env.WAKATIME_API_KEY}`,
 });

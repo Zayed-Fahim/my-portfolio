@@ -1,48 +1,64 @@
 "use client";
-import { useWakaTimeStats } from "@/hooks/useWakaTimeStats";
 import "../../app/styles/gradientBorder.css";
 import { OverViewCard } from "../atoms";
 import Progress from "../atoms/ProgressBar";
 import { Animation } from "../molecules";
 
 const WakaTimeActivities = () => {
-  const { data, isLoading, error } = useWakaTimeStats();
-
-  console.log({ error });
+  // const { data, isLoading, error } = useWakaTimeStats();
 
   const activities = [
     {
       title: "Daily Coding Average",
-      count: isLoading ? "..." : data?.dailyAverage,
+      count: "6 hrs 38 mins",
     },
     {
       title: "This Week Coding Time",
-      count: isLoading ? "..." : data?.weeklyTotal,
+      count: "45 hrs 55 mins",
     },
     {
       title: "Best Day Coding Time",
-      count: isLoading ? "..." : data?.bestDayTime,
+      count: "Tue Oct 22nd 2024(12 hrs 5 mins)",
     },
     {
       title: "All Time Coding Time",
-      count: isLoading ? "..." : data?.allTimeTotal,
+      count: "484 hrs 17 mins",
+    },
+  ];
+
+  const languages = [
+    {
+      name: "Typescript",
+      percent: 74,
+    },
+    {
+      name: "JavaScript",
+      percent: 10,
+    },
+    {
+      name: "Others",
+      percent: 16,
     },
   ];
 
   const others = [
     {
-      name: data?.editors[0].name,
-      percent: data?.editors[0].percent,
+      name: "VS Code",
+      percent: 100,
     },
     {
-      name: data?.operatingSystems[0].name,
-      percent: data?.operatingSystems[0].percent,
+      name: "Windows",
+      percent: 85,
+    },
+    {
+      name: "Ubuntu",
+      percent: 15,
     },
   ];
 
-  if (error) {
-    return <div>Error loading WakaTime data</div>;
-  }
+  // if (error) {
+  //   return <div>Error loading WakaTime data</div>;
+  // }
 
   return (
     <div className="w-full flex flex-col gap-5">
@@ -67,7 +83,7 @@ const WakaTimeActivities = () => {
           </p>
           <OverViewCard border={true}>
             <ul className="flex flex-col gap-1 px-4 py-3">
-              {data?.languages.map((data, i) => (
+              {languages.map((data, i) => (
                 <li key={i}>
                   <Progress
                     data={data}

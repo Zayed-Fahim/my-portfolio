@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "deploy": "next build && firebase deploy --only hosting:zayed-fahim",
+    "lint": "next lint",
     "start": "serve out",
-    "lint": "next lint"
+    "check-types": "tsc --noEmit --pretty",
+    "build": "yarn clean && yarn check-types && next build",
+    "clean": "rimraf .next && rimraf out && rimraf node_modules",
+    "deploy": "next build && firebase deploy --only hosting:zayed-fahim"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -36,6 +38,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.14",
     "postcss": "^8",
+    "rimraf": "^6.0.1",
     "serve": "^14.2.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
