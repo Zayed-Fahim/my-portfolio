@@ -1,12 +1,8 @@
 {
   "hosting": {
-    "site":"zayed-fahim",
+    "site": "zayed-fahim",
     "public": "out",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
