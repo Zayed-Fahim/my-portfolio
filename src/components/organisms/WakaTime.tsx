@@ -38,7 +38,7 @@ const WakaTime = () => {
               <Link
                 href="https://wakatime.com/@Zayed_Fahim"
                 target="_blank"
-                className="hover:text-secondary-color"
+                className="hover:text-secondary-color text-[#a1a1aa]"
               >
                 @Zayed_Fahim
               </Link>

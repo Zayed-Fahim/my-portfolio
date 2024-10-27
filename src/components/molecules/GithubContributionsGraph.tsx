@@ -4,7 +4,6 @@ import GitHubCalendar from "react-github-calendar";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import { YearButton } from "@/components/atoms";
 import { useTheme } from "next-themes";
-import configuration from "@/configuration";
 import { getGitHubYears } from "@/helpers/calculateGithubYears";
 
 const GithubContributionsGraph = () => {
@@ -24,8 +23,8 @@ const GithubContributionsGraph = () => {
   );
 
   const today = new Date().getFullYear();
-  const username = configuration.githubUsername || "Zayed-Fahim";
-  const joinYear = Number(configuration.githubJoinYear) || 2020;
+  const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME as string;
+  const joinYear = Number(process.env.NEXT_PUBLIC_GITHUB_JOIN_YEAR);
   const years = getGitHubYears(joinYear);
 
   return (

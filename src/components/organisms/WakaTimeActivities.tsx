@@ -1,53 +1,48 @@
+"use client";
+import { useWakaTimeStats } from "@/hooks/useWakaTimeStats";
 import "../../app/styles/gradientBorder.css";
 import { OverViewCard } from "../atoms";
 import Progress from "../atoms/ProgressBar";
 import { Animation } from "../molecules";
 
 const WakaTimeActivities = () => {
+  const { data, isLoading, error } = useWakaTimeStats();
+
+  console.log({ error });
+
   const activities = [
     {
       title: "Daily Coding Average",
-      count: "4 hrs 30 mins",
+      count: isLoading ? "..." : data?.dailyAverage,
     },
     {
       title: "This Week Coding Time",
-      count: "27 hrs",
+      count: isLoading ? "..." : data?.weeklyTotal,
     },
     {
       title: "Best Day Coding Time",
-      count: "October 09, 2024 (9 hrs 4 mins)",
+      count: isLoading ? "..." : data?.bestDayTime,
     },
     {
       title: "All Time Coding Time",
-      count: "1,378 hrs 18 mins",
-    },
-  ];
-
-  const languages = [
-    {
-      name: "JavaScript",
-      percent: 74,
-    },
-    {
-      name: "TypeScript",
-      percent: 10,
-    },
-    {
-      name: "Others",
-      percent: 16,
+      count: isLoading ? "..." : data?.allTimeTotal,
     },
   ];
 
   const others = [
     {
-      name: "VS Code",
-      percent: 100,
+      name: data?.editors[0].name,
+      percent: data?.editors[0].percent,
     },
     {
-      name: "Windows",
-      percent: 100,
+      name: data?.operatingSystems[0].name,
+      percent: data?.operatingSystems[0].percent,
     },
   ];
+
+  if (error) {
+    return <div>Error loading WakaTime data</div>;
+  }
 
   return (
     <div className="w-full flex flex-col gap-5">
@@ -72,7 +67,7 @@ const WakaTimeActivities = () => {
           </p>
           <OverViewCard border={true}>
             <ul className="flex flex-col gap-1 px-4 py-3">
-              {languages.map((data, i) => (
+              {data?.languages.map((data, i) => (
                 <li key={i}>
                   <Progress
                     data={data}

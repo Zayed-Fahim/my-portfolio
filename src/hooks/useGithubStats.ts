@@ -1,5 +1,6 @@
 "use client";
 import useSWR from "swr";
+import { githubFetcher } from "./fetcher";
 
 interface Contribution {
   date: string;
@@ -16,30 +17,37 @@ interface ContributionsData {
   contributions: Contribution[];
 }
 
+interface StarData {
+  stars: number;
+  forks: number;
+}
+
+interface UserData {
+  followers: number;
+  following: number;
+  public_repos: number;
+}
+
 interface GitHubStats {
   totalContributions: number;
   lastSevenDaysContributions: number;
   highestDailyContribution: number;
   averageDailyContribution: number;
+  followers: number;
+  stars: number;
   isLoading: boolean;
   error: Error | null;
 }
 
 const ONE_HOUR = 3600000; // 1 hour in milliseconds
 
-const fetcher = async (url: string): Promise<ContributionsData> => {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Failed to fetch GitHub contributions");
-  }
-  return response.json();
-};
-
 const calculateStats = (
-  data: ContributionsData
+  contributionsData: ContributionsData,
+  starData: StarData,
+  userData: UserData
 ): Omit<GitHubStats, "isLoading" | "error"> => {
   // Calculate total contributions
-  const totalContributions = Object.values(data.total).reduce(
+  const totalContributions = Object.values(contributionsData.total).reduce(
     (sum, count) => sum + count,
     0
   );
@@ -49,18 +57,18 @@ const calculateStats = (
   sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
   sevenDaysAgo.setHours(0, 0, 0, 0);
 
-  const lastSevenDaysContributions = data.contributions
+  const lastSevenDaysContributions = contributionsData.contributions
     .filter((contrib) => new Date(contrib.date) >= sevenDaysAgo)
     .reduce((sum, contrib) => sum + contrib.count, 0);
 
   // Find highest contribution in a single day
   const highestDailyContribution = Math.max(
-    ...data.contributions.map((contrib) => contrib.count)
+    ...contributionsData.contributions.map((contrib) => contrib.count)
   );
 
   // Calculate average daily contribution
-  const totalDays = data.contributions.length;
-  const totalCount = data.contributions.reduce(
+  const totalDays = contributionsData.contributions.length;
+  const totalCount = contributionsData.contributions.reduce(
     (sum, contrib) => sum + contrib.count,
     0
   );
@@ -72,13 +80,19 @@ const calculateStats = (
     lastSevenDaysContributions,
     highestDailyContribution,
     averageDailyContribution,
+    followers: userData.followers,
+    stars: starData.stars,
   };
 };
 
 export function useGithubStats(username: string): GitHubStats {
-  const { data, error, isLoading } = useSWR<ContributionsData>(
+  const {
+    data: contributionsData,
+    error: contributionsError,
+    isLoading: contributionsLoading,
+  } = useSWR<ContributionsData>(
     `https://github-contributions-api.jogruber.de/v4/${username}`,
-    fetcher,
+    githubFetcher,
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
@@ -87,31 +101,70 @@ export function useGithubStats(username: string): GitHubStats {
     }
   );
 
+  const {
+    data: starData,
+    error: starError,
+    isLoading: starLoading,
+  } = useSWR<StarData>(
+    `https://api.github-star-counter.workers.dev/user/${username}`,
+    githubFetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      refreshInterval: ONE_HOUR,
+      dedupingInterval: ONE_HOUR,
+    }
+  );
+
+  const {
+    data: userData,
+    error: userError,
+    isLoading: userLoading,
+  } = useSWR<UserData>(
+    `https://api.github.com/users/${username}`,
+    githubFetcher,
+    {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false,
+      refreshInterval: ONE_HOUR,
+      dedupingInterval: ONE_HOUR,
+    }
+  );
+
+  const isLoading = contributionsLoading || starLoading || userLoading;
+  const error = contributionsError || starError || userError;
+
   if (error) {
     return {
       totalContributions: 0,
       lastSevenDaysContributions: 0,
       highestDailyContribution: 0,
       averageDailyContribution: 0,
+      followers: 0,
+      stars: 0,
       isLoading: false,
       error,
     };
   }
 
-  if (isLoading || !data) {
+  if (isLoading || !contributionsData || !starData || !userData) {
     return {
       totalContributions: 0,
       lastSevenDaysContributions: 0,
       highestDailyContribution: 0,
       averageDailyContribution: 0,
+      followers: 0,
+      stars: 0,
       isLoading: true,
       error: null,
     };
   }
 
   return {
-    ...calculateStats(data),
+    ...calculateStats(contributionsData, starData, userData),
     isLoading: false,
     error: null,
   };
 }
+
+export default useGithubStats;

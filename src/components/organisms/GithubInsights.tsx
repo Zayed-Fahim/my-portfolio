@@ -1,13 +1,11 @@
 "use client";
-import "../../app/styles/gradientBorder.css";
-import React from "react";
-import { Animation, GithubContributionsGraph } from "../molecules";
-import { OverViewCard } from "../atoms";
-import Link from "next/link";
 import { GitHub } from "@/constants";
-import configuration from "@/configuration";
 import { useGithubStats } from "@/hooks/useGithubStats";
+import Link from "next/link";
+import "../../app/styles/gradientBorder.css";
+import { OverViewCard } from "../atoms";
 import IncrementCounter from "../atoms/IncrementCounter";
+import { Animation, GithubContributionsGraph } from "../molecules";
 
 const GithubInsights = () => {
   const {
@@ -15,9 +13,11 @@ const GithubInsights = () => {
     lastSevenDaysContributions,
     highestDailyContribution,
     averageDailyContribution,
+    followers,
+    stars,
     isLoading,
     error,
-  } = useGithubStats(configuration.githubUsername);
+  } = useGithubStats(process.env.NEXT_PUBLIC_GITHUB_USERNAME as string);
 
   const contributions = [
     {
@@ -41,11 +41,11 @@ const GithubInsights = () => {
   const userData = [
     {
       title: "Stars",
-      count: 0,
+      count: isLoading ? "..." : stars,
     },
     {
       title: "Followers",
-      count: 1,
+      count: isLoading ? "..." : followers,
     },
   ];
 
@@ -71,7 +71,7 @@ const GithubInsights = () => {
               <Link
                 href="https://github.com/Zayed-Fahim"
                 target="_blank"
-                className="hover:text-secondary-color"
+                className="hover:text-secondary-color text-[#a1a1aa]"
               >
                 @Zayed-Fahim
               </Link>

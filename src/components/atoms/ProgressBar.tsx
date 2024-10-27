@@ -8,7 +8,7 @@ const ProgressBar = ({
   data,
   className,
 }: {
-  data: { name: string; percent?: number };
+  data: { name: string | undefined; percent?: number | undefined };
   className?: string;
 }) => {
   const { name, percent = 0 } = data;
