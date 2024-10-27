@@ -3,6 +3,7 @@
     "site": "zayed-fahim",
     "public": "out",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "engines": { "node": "20" },
     "rewrites": [
       {
         "source": "**",
