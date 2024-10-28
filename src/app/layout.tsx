@@ -25,18 +25,16 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body
         className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
       >
-        <main>
-          <ThemeProvider>
-            <Navbar />
-            <FloatingNav navItems={navItems} />
+        <ThemeProvider>
+          <Navbar />
+          <FloatingNav navItems={navItems} />
 
-            {children}
+          <main>{children}</main>
 
-            <Animation delay={0.26}>
-              <Footer />
-            </Animation>
-          </ThemeProvider>
-        </main>
+          <Animation delay={0.26}>
+            <Footer />
+          </Animation>
+        </ThemeProvider>
       </body>
     </html>
   );

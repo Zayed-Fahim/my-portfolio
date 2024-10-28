@@ -1,15 +1,13 @@
 "use client";
+import { PageHeader, SkeletonLoader, ToolTip } from "@/components/atoms";
+import { Animation } from "@/components/molecules";
 import { SITE } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { IoMdDownload } from "react-icons/io";
 import { LuExternalLink } from "react-icons/lu";
-import { Animation } from "@/components/molecules";
-import { useState } from "react";
-import { PageHeader, SkeletonLoader, ToolTip } from "@/components/atoms";
-import dynamic from "next/dynamic";
-
-const Biography = dynamic(() => import("@/components/organisms/Biography"));
+import { Biography } from "@/components/organisms";
 
 const About = () => {
   const [isLoading, setIsLoading] = useState(true);

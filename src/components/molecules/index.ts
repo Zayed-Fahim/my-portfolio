@@ -4,3 +4,4 @@ export { default as SocialLink } from "./SocialLink";
 export { default as FormField } from "./FormField";
 export { default as MetaData } from "./MetaData";
 export { default as GithubContributionsGraph } from "./GithubContributionsGraph";
+export { default as SearchBar } from "./SearchBar";

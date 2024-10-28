@@ -16,3 +16,4 @@ export { default as BlogCardSkeletonLoader } from "./BlogCardSkeletonLoader";
 export { default as FormSubmissionSpinner } from "./FormSubmissionSpinner";
 export { default as OverViewCard } from "./OverViewCard";
 export { default as ProgressBar } from "./ProgressBar";
+export { default as IncrementCounter } from "./IncrementCounter";

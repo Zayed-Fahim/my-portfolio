@@ -1,11 +1,11 @@
 "use client";
+import "../../app/styles/gradientBorder.css";
 import { GitHub } from "@/constants";
 import { useGithubStats } from "@/hooks/useGithubStats";
 import Link from "next/link";
-import "../../app/styles/gradientBorder.css";
-import { OverViewCard } from "../atoms";
-import IncrementCounter from "../atoms/IncrementCounter";
-import { Animation, GithubContributionsGraph } from "../molecules";
+import { OverViewCard } from "@/components/atoms";
+import { IncrementCounter } from "@/components/atoms";
+import { Animation, GithubContributionsGraph } from "@/components/molecules";
 
 const GithubInsights = () => {
   const {

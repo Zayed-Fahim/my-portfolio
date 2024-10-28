@@ -5,6 +5,7 @@
  */
 const nextConfig = {
   output: "export",
+  trailingSlash: true,
   swcMinify: true,
   compress: true,
   reactStrictMode: true,

@@ -1,15 +1,10 @@
 "use client";
-import { PageHeader } from "@/components/atoms";
+import { PageHeader, ProjectCardSkeletonLoader } from "@/components/atoms";
 import { Animation } from "@/components/molecules";
 import { IProjectProps } from "@/types/projects";
 import { fetchData } from "@/utils/fetchData";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-
-const ProjectCardSkeletonLoader = dynamic(
-  () => import("../atoms/ProjectCardSkeletonLoader")
-);
-const ProjectCard = dynamic(() => import("../organisms/ProjectCard"));
+import { ProjectCard } from "@/components/organisms";
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);

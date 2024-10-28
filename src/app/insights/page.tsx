@@ -1,5 +1,5 @@
 import { MetaData } from "@/components/molecules";
-import InsightsTemplate from "@/components/templates/InsightsTemplate";
+import { InsightsTemplate } from "@/components/templates";
 
 export const metadata = MetaData({
   title: "Insights | Zayed Fahim",

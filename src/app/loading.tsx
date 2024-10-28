@@ -1,6 +1,6 @@
+import "../app/styles/loader.css";
 import { Loader } from "@/components/atoms";
 import React from "react";
-import "../app/styles/loader.css";
 
 const Loading = () => {
   return (

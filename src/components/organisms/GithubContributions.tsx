@@ -1,11 +1,6 @@
 import "../../app/styles/gradientBorder.css";
-import { Animation } from "@/components/molecules";
+import { Animation, GithubContributionsGraph } from "@/components/molecules";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const GithubContributionsGraph = dynamic(
-  () => import("../molecules/GithubContributionsGraph")
-);
 
 const GithubContributions = () => {
   return (

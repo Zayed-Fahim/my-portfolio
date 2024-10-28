@@ -1,17 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Animation } from "@/components/molecules";
-import { BiDetail } from "react-icons/bi";
-import dynamic from "next/dynamic";
-import { PageHeader } from "@/components/atoms";
-import SearchBar from "../molecules/SearchBar";
+import { BlogCardSkeletonLoader, PageHeader } from "@/components/atoms";
+import { Animation, SearchBar } from "@/components/molecules";
 import { Search } from "@/constants";
 import { blogs } from "@/data/blogs";
-
-const BlogCard = dynamic(() => import("../organisms/BlogCard"));
-const BlogCardSkeletonLoader = dynamic(
-  () => import("../atoms/BlogCardSkeletonLoader")
-);
+import { useEffect, useState } from "react";
+import { BiDetail } from "react-icons/bi";
+import { BlogCard } from "@/components/organisms";
 
 const Blogs = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
