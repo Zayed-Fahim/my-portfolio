@@ -9,8 +9,8 @@
     "start": "serve out",
     "check-types": "tsc --noEmit --pretty",
     "build": "yarn clean && yarn check-types && next build",
-    "clean": "rimraf .next && rimraf out && rimraf node_modules",
-    "deploy": "next build && firebase deploy --only hosting:zayed-fahim"
+    "clean": "rimraf .next && rimraf out",
+    "deploy": "yarn build && firebase deploy --only hosting:zayed-fahim"
   },
   "dependencies": {
     "axios": "^1.7.7",
@@ -38,9 +38,10 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.14",
     "postcss": "^8",
-    "rimraf": "6.0.1",
+    "rimraf": "4.4.1",
     "serve": "^14.2.4",
     "tailwindcss": "^3.4.1",
+    "tsc": "^2.0.4",
     "typescript": "^5"
   }
 }
