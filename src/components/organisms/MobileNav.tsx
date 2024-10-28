@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { HiOutlineX } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
-import Logo from "../../../public/logo/logo_4.png";
 import { navItems } from "@/data/navItems";
 import { usePathname } from "next/navigation";
 
@@ -39,7 +38,7 @@ const MobileNav = () => {
       >
         <div className="flex items-center justify-between mt-6 px-8">
           <Link href="/" onClick={onToggleNav}>
-            <Image src={Logo} width={90} height={30} alt="logo" />
+            <Image src="/logo/logo_4.png" width={90} height={30} alt="logo" />
           </Link>
 
           <button
