@@ -1,9 +1,10 @@
 "use client";
-import { projectData } from "@/data/projects";
 import { PageHeader } from "@/components/atoms";
-import React, { useState, useEffect } from "react";
 import { Animation } from "@/components/molecules";
+import { IProjectProps } from "@/types/projects";
+import { fetchData } from "@/utils/fetchData";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
 const ProjectCardSkeletonLoader = dynamic(
   () => import("../atoms/ProjectCardSkeletonLoader")
@@ -11,14 +12,31 @@ const ProjectCardSkeletonLoader = dynamic(
 const ProjectCard = dynamic(() => import("../organisms/ProjectCard"));
 
 const Projects = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [projectData, setProjectData] = useState<IProjectProps[]>([]);
+
+  const handleData = async () => {
+    setIsLoading(true);
+    try {
+      const result = await fetchData(
+        "https://zayedfahim.vercel.app/api/v2/projects?visible=true",
+        "get"
+      );
+
+      if (result.success) {
+        setProjectData(result.data);
+      } else {
+        console.error(result.message);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    handleData();
   }, []);
 
   return (

@@ -7,9 +7,11 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "serve out",
-    "check-types": "tsc --noEmit --pretty",
-    "build": "yarn clean && yarn check-types && next build",
+    "build": "next build",
+    "prebuild": "yarn predev",
     "clean": "rimraf .next && rimraf out",
+    "check-types": "tsc --noEmit --pretty",
+    "predev": "yarn clean && yarn check-types",
     "deploy": "yarn build && firebase deploy --only hosting:zayed-fahim"
   },
   "dependencies": {

@@ -47,7 +47,7 @@ export const projectData = [
       {
         name: "ExpressJS",
         icon: (
-          <ExpressJS className={cn("w-6 h-6 fill-black", "dark:fill-white")} />
+          <ExpressJS className={cn("w-6 h-6")} />
         ),
       },
       {

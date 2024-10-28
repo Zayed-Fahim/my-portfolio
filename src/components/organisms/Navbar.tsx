@@ -5,7 +5,6 @@ import { navItems } from "@/data/navItems";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Logo from "../../../public/logo/logo_4.png";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -17,7 +16,7 @@ const Navbar = () => {
           <Link href="/" className="md:block hidden">
             <Image
               loading="lazy"
-              src={Logo}
+              src="/logo/logo_4.png"
               width={120}
               height={40}
               alt="logo"
@@ -26,7 +25,7 @@ const Navbar = () => {
           <Link href="/" className="block md:hidden">
             <Image
               loading="lazy"
-              src={Logo}
+              src="/logo/logo_4.png"
               width={90}
               height={30}
               alt="logo"

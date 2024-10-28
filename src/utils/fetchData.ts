@@ -21,12 +21,12 @@ export const fetchData = async (
     if (axios.isAxiosError(error) && error.response) {
       return {
         success: error.response.data?.success || false,
-        message: error.response.data?.message || "Something went wrong",
+        message: error.response.data?.message || "Something went wrong!",
       };
     } else {
       return {
         success: false,
-        message: "Network error or unknown error occurred",
+        message: "Network error or unknown error occurred!",
       };
     }
   }

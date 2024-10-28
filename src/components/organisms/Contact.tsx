@@ -1,26 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { Animation } from "@/components/molecules";
 import { ContactForm } from "@/components/organisms";
 
 const Contact = () => {
-  const [currentHash, setCurrentHash] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setCurrentHash(window.location.hash);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (currentHash === "#contact") {
-      const contactSection = document.getElementById("contact");
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  }, [currentHash]);
-
   return (
     <div className="flex flex-col max-w-7xl gap-5 mt-16" id="contact">
       <div className="flex flex-col justify-center items-center">
