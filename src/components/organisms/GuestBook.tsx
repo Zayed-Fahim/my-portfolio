@@ -1,6 +1,6 @@
-import React from "react";
-import { Animation } from "@/components/molecules";
 import { PageHeader } from "@/components/atoms";
+import { Animation } from "@/components/molecules";
+import { GuestBookPlayground } from "@/components/organisms";
 
 const GuestBook = () => {
   return (
@@ -8,9 +8,11 @@ const GuestBook = () => {
       <Animation delay={0.1}>
         <PageHeader
           title="Guestbook"
-          description="This page is currently under development."
+          description="Feel free to share your suggestions, appreciation, or anything else on your mind."
         />
       </Animation>
+
+      <GuestBookPlayground />
     </div>
   );
 };

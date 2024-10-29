@@ -9,7 +9,7 @@ import { ToolTip } from "@/components/atoms";
 
 const Experience = () => {
   return (
-    <div className="mb-16" id="experience">
+    <div className="mb-16">
       <Animation delay={0.16}>
         <div className="mb-16">
           <h2 className="font-incognito text-4xl mb-4 font-bold tracking-tight">

@@ -5,39 +5,37 @@ import Progress from "../atoms/ProgressBar";
 import { Animation } from "../molecules";
 
 const WakaTimeActivities = () => {
-  // const { data, isLoading, error } = useWakaTimeStats();
-
   const activities = [
     {
       title: "Daily Coding Average",
-      count: "6 hrs 38 mins",
+      count: "6 hrs 34 mins",
     },
     {
-      title: "This Week Coding Time",
-      count: "45 hrs 55 mins",
+      title: "Last Week Coding Time",
+      count: "46 hrs 2 mins",
     },
     {
       title: "Best Day Coding Time",
-      count: "Tue Oct 22nd 2024(12 hrs 5 mins)",
+      count: "Sat Oct 26th 2024(9 hrs 45 mins)",
     },
     {
       title: "All Time Coding Time",
-      count: "484 hrs 17 mins",
+      count: "493 hrs 28 mins",
     },
   ];
 
   const languages = [
     {
       name: "Typescript",
-      percent: 74,
+      percent: 88,
     },
     {
       name: "JavaScript",
-      percent: 10,
+      percent: 3,
     },
     {
       name: "Others",
-      percent: 16,
+      percent: 9,
     },
   ];
 
@@ -48,17 +46,13 @@ const WakaTimeActivities = () => {
     },
     {
       name: "Windows",
-      percent: 85,
+      percent: 100,
     },
-    {
-      name: "Ubuntu",
-      percent: 15,
-    },
+    // {
+    //   name: "Ubuntu",
+    //   percent: 15,
+    // },
   ];
-
-  // if (error) {
-  //   return <div>Error loading WakaTime data</div>;
-  // }
 
   return (
     <div className="w-full flex flex-col gap-5">

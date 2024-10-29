@@ -17,3 +17,5 @@ export { default as FormSubmissionSpinner } from "./FormSubmissionSpinner";
 export { default as OverViewCard } from "./OverViewCard";
 export { default as ProgressBar } from "./ProgressBar";
 export { default as IncrementCounter } from "./IncrementCounter";
+export { default as Text } from "./Text";
+export { default as GuestBookTextSkeletonLoader } from "./GuestBookTextSkeletonLoader";
