@@ -1,9 +1,6 @@
-import Link from "next/link";
 import { Animation } from "@/components/molecules";
-import { Connect } from "@/components/organisms";
-import dynamic from "next/dynamic";
-
-const TechStacks = dynamic(() => import("@/components/organisms/TechStacks"));
+import { Connect, TechStacks } from "@/components/organisms";
+import Link from "next/link";
 
 const Biography = () => {
   return (
@@ -23,6 +20,8 @@ const Biography = () => {
               <p>
                 Hi there! Thanks for visiting my digital home on the internet.
               </p>
+            </Animation>
+            <Animation delay={0.2}>
               <p>
                 I&apos;m Sayed Asif Zayed, a Software Engineer with a focus on
                 delivery innovative digital solutions that drive business value.
@@ -36,7 +35,7 @@ const Biography = () => {
                 the opportunity to put my skills to work on a daily basis.
               </p>
             </Animation>
-            <Animation delay={0.2}>
+            <Animation delay={0.22}>
               <p>
                 I have a wealth of experience in crafting scalable software
                 systems that meet both technical and business requirements,
@@ -72,7 +71,7 @@ const Biography = () => {
                 solutions that meet the unique needs of organizations.
               </p>
             </Animation>
-            <Animation delay={0.22}>
+            <Animation delay={0.24}>
               <p>
                 In my role as a Software Engineer, I take a charge of
                 developing, and maintaining software that meets both technical
@@ -85,7 +84,7 @@ const Biography = () => {
                 business outcomes.
               </p>
             </Animation>
-            <Animation delay={0.24}>
+            <Animation delay={0.26}>
               <p>
                 I consider myself a curious and inquisitive person, always eager
                 to learn and improve my skills. In my free time, I enjoy working
@@ -96,7 +95,7 @@ const Biography = () => {
                 the latest industry advancements.
               </p>
             </Animation>
-            <Animation delay={0.26}>
+            <Animation delay={0.28}>
               <p>
                 I also have a strong appreciation for video games and music. I
                 find that these activities provide an important balance to my
@@ -111,7 +110,7 @@ const Biography = () => {
 
         <TechStacks />
 
-        <Animation delay={0.22}>
+        <Animation delay={0.3}>
           <Connect />
         </Animation>
       </div>

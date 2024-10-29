@@ -19,3 +19,4 @@ export { default as WakaTime } from "./WakaTime";
 export { default as WakaTimeActivities } from "./WakaTimeActivities";
 export { default as GithubInsights } from "./GithubInsights";
 export { default as Home } from "./Home";
+export { default as GuestBook } from "./GuestBook";

@@ -1,14 +1,15 @@
 "use client";
 import { BlogCardSkeletonLoader, PageHeader } from "@/components/atoms";
 import { Animation, SearchBar } from "@/components/molecules";
-import { Search } from "@/constants";
-import { blogs } from "@/data/blogs";
-import { useEffect, useState } from "react";
-import { BiDetail } from "react-icons/bi";
 import { BlogCard } from "@/components/organisms";
+import { Search } from "@/constants";
+import { CommonContext } from "@/contexts";
+import { blogs } from "@/data/blogs";
+import { useContext, useEffect } from "react";
+import { BiDetail } from "react-icons/bi";
 
 const Blogs = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { isLoading, setIsLoading } = useContext(CommonContext)!;
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -16,7 +17,7 @@ const Blogs = () => {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [setIsLoading]);
 
   return (
     <section className="max-w-7xl mx-auto px-6 md:px-16">

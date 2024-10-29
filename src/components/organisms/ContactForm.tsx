@@ -2,10 +2,11 @@
 import "../../app/styles/contactForm.css";
 import "../../app/styles/gradientBorder.css";
 import { z } from "zod";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FormField } from "@/components/molecules";
 import { Button, FormSubmissionSpinner, Message } from "@/components/atoms";
 import { fetchData } from "@/utils/fetchData";
+import { CommonContext } from "@/contexts";
 
 const emailFormatSchema = z
   .string()
@@ -36,7 +37,7 @@ const initialFormState: ContactFormData = {
 };
 
 const ContactForm = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { isLoading, setIsLoading } = useContext(CommonContext)!;
   const [formData, setFormData] = useState<ContactFormData>(initialFormState);
   const [errors, setErrors] = useState<FormErrors>({});
   const [formMessage, setFormMessage] = useState<string | null>(null);

@@ -13,7 +13,7 @@ const Contact = () => {
               digital presence to the next level?
             </h1>
             <p className="md:mt-10 my-5 text-center">
-              Reach out to me today and let&apos;s discuss how I can help you
+              Reach out me today and let&apos;s discuss how I can help you to
               achieve your goals.
             </p>
           </>

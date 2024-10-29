@@ -2,11 +2,12 @@
 import "@/app/styles/projectCard.css";
 import { SkeletonLoader, ToolTip } from "@/components/atoms";
 import { Animation } from "@/components/molecules";
+import { CommonContext } from "@/contexts";
 import DynamicIcon from "@/helpers/iconRegistry";
 import { IProjectProps } from "@/types/projects";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { FaGithub } from "react-icons/fa";
 
 const ProjectCard: React.FC<IProjectProps> = ({
@@ -19,7 +20,7 @@ const ProjectCard: React.FC<IProjectProps> = ({
   serverRepo,
   clientRepo,
 }) => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { isLoading, setIsLoading } = useContext(CommonContext)!;
 
   return (
     <div

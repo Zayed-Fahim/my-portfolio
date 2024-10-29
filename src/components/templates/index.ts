@@ -3,3 +3,4 @@ export { default as AboutTemplate } from "./AboutTemplate";
 export { default as ProjectsTemplate } from "./ProjectsTemplate";
 export { default as BlogTemplate } from "./BlogTemplate";
 export { default as InsightsTemplate } from "./InsightsTemplate";
+export { default as GuestBookTemplate } from "./GuestBookTemplate";

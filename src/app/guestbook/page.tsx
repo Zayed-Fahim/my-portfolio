@@ -1,6 +1,5 @@
-import { PageHeader } from "@/components/atoms";
-import { Animation, MetaData } from "@/components/molecules";
-import React from "react";
+import { MetaData } from "@/components/molecules";
+import { GuestBookTemplate } from "@/components/templates";
 
 export const metadata = MetaData({
   title: "Guestbook | Zayed Fahim",
@@ -11,16 +10,7 @@ export const metadata = MetaData({
 });
 
 const GuestbookPage = () => {
-  return (
-    <div className="max-w-7xl mx-auto px-6 lg:px-16">
-      <Animation delay={0.1}>
-        <PageHeader
-          title="Guestbook"
-          description="This page is currently under development."
-        />
-      </Animation>
-    </div>
-  );
+  return <GuestBookTemplate />;
 };
 
 export default GuestbookPage;

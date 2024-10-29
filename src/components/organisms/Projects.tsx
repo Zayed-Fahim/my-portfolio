@@ -3,14 +3,15 @@ import { PageHeader, ProjectCardSkeletonLoader } from "@/components/atoms";
 import { Animation } from "@/components/molecules";
 import { IProjectProps } from "@/types/projects";
 import { fetchData } from "@/utils/fetchData";
-import { useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { ProjectCard } from "@/components/organisms";
+import { CommonContext } from "@/contexts";
 
 const Projects = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const { isLoading, setIsLoading } = useContext(CommonContext)!;
   const [projectData, setProjectData] = useState<IProjectProps[]>([]);
 
-  const handleData = async () => {
+  const handleData = useCallback(async () => {
     setIsLoading(true);
     try {
       const result = await fetchData(
@@ -28,11 +29,11 @@ const Projects = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [setIsLoading]);
 
   useEffect(() => {
     handleData();
-  }, []);
+  }, [handleData]);
 
   return (
     <section className="max-w-7xl mx-auto px-6 md:px-16">

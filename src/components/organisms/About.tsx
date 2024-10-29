@@ -4,13 +4,14 @@ import { Animation } from "@/components/molecules";
 import { SITE } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext } from "react";
 import { IoMdDownload } from "react-icons/io";
 import { LuExternalLink } from "react-icons/lu";
 import { Biography } from "@/components/organisms";
+import { CommonContext } from "@/contexts";
 
 const About = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading, setIsLoading } = useContext(CommonContext)!;
 
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-16">
@@ -56,13 +57,13 @@ const About = () => {
                 </Link>
 
                 <div className="group relative inline-block">
-                  <Link
-                    href="./resume/resume.pdf"
+                  <a
+                    href="/resume/resume.pdf"
                     className="flex flex-row-reverse justify-center items-center text-[18px] gap-x-2 rounded py-3 px-2.5 dark:bg-primary-bg bg-zinc-100 border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
                     download="Resume_Sayed-Asif-Zayed.pdf"
                   >
                     <IoMdDownload className="text-secondary-color" />
-                  </Link>
+                  </a>
                   <ToolTip name="Download Résumé" />
                 </div>
               </div>
