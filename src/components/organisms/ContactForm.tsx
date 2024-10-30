@@ -122,7 +122,7 @@ const ContactForm = () => {
     setIsLoading(true);
     setFormMessage("submitting");
     try {
-      const url = "https://zayedfahim.vercel.app/api/v2/email/send";
+      const url = "https://api-zayedfahim.vercel.app/api/v2/email/send";
       const response = await fetchData(url, "post", {
         data: formData,
       });

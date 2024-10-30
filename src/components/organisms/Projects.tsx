@@ -15,7 +15,7 @@ const Projects = () => {
     setIsLoading(true);
     try {
       const result = await fetchData(
-        "https://zayedfahim.vercel.app/api/v2/projects?visible=true",
+        "https://api-zayedfahim.vercel.app/api/v2/projects?visible=true",
         "get"
       );
 

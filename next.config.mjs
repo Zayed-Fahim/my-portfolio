@@ -4,8 +4,7 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  output: "export",
-  trailingSlash: true,
+  // trailingSlash: true,
   swcMinify: true,
   compress: true,
   reactStrictMode: true,
