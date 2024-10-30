@@ -5,6 +5,7 @@ import { GuestBookAuthentication } from "@/components/organisms";
 import { useContext, useEffect } from "react";
 import { CommonContext } from "@/contexts";
 import { GuestBookTextSkeletonLoader } from "@/components/atoms";
+import { SessionProvider } from "next-auth/react";
 
 const GuestBookPlayground = () => {
   const { isLoading, setIsLoading } = useContext(CommonContext)!;
@@ -42,7 +43,9 @@ const GuestBookPlayground = () => {
         <hr className="border-zinc-600" />
       </Animation>
       <Animation delay={0.22}>
-        <GuestBookAuthentication />
+        <SessionProvider>
+          <GuestBookAuthentication />
+        </SessionProvider>
       </Animation>
     </div>
   );

@@ -15,32 +15,32 @@ const className =
 export const navItems: INavItemsPrps[] = [
   {
     title: "Projects",
-    href: "/projects/",
+    href: "/projects",
     id: "projects",
     icon: <HiBeaker className={`${className}`} aria-hidden="true" />,
   },
   {
     title: "Insights",
-    href: "/insights/",
+    href: "/insights",
     id: "insights",
     icon: <MdInsights className={`${className}`} aria-hidden="true" />,
   },
   {
     title: "Blog",
-    href: "/blog/",
+    href: "/blog",
     id: "blog",
     icon: <HiBookmarkAlt className={`${className}`} aria-hidden="true" />,
   },
 
   {
     title: "Guestbook",
-    href: "/guestbook/",
+    href: "/guestbook",
     id: "guestbook",
     icon: <MdMenuBook className={`${className}`} aria-hidden="true" />,
   },
   {
     title: "About",
-    href: "/about/",
+    href: "/about",
     id: "about",
     icon: <HiUser className={`${className}`} aria-hidden="true" />,
   },

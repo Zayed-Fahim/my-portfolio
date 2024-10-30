@@ -22,3 +22,4 @@ export { default as WakaTimeActivities } from "./WakaTimeActivities";
 export { default as GuestBookPlayground } from "./GuestBookPlayground";
 export { default as GithubContributions } from "./GithubContributions";
 export { default as GuestBookAuthentication } from "./GuestBookAuthentication";
+export { default as GuestBookMessage } from "./GuestBookMessage";

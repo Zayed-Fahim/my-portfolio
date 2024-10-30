@@ -1,10 +1,10 @@
 import React from "react";
 
 interface IInputProps {
-  type?: string;
   id: string;
   name: string;
   placeholder?: string;
+  type?: string;
   className?: string;
   value?: string;
   required?: boolean;

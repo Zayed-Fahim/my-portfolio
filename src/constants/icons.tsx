@@ -140,6 +140,23 @@ export const Back = (props: ComponentProps<"svg">) => (
   </svg>
 );
 
+export const Send = (props: ComponentProps<"svg">) => (
+  <svg
+    role="img"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 30.000000 30.000000"
+    preserveAspectRatio="xMidYMid meet"
+    {...props}
+  >
+    <g
+      transform="translate(0.000000,30.000000) scale(0.100000,-0.100000)"
+      stroke="none"
+    >
+      <path d="M44 256 c-3 -8 -4 -29 -2 -48 3 -31 5 -33 56 -42 28 -5 52 -13 52 -16 0 -3 -24 -11 -52 -16 -52 -9 -53 -9 -56 -48 -2 -21 1 -43 6 -48 10 -10 232 97 232 112 0 7 -211 120 -224 120 -4 0 -9 -6 -12 -14z" />
+    </g>
+  </svg>
+);
+
 export const NotFound404 = (props: ComponentProps<"svg">) => (
   <svg
     version="1.1"

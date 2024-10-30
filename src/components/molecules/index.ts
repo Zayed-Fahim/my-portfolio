@@ -6,3 +6,4 @@ export { default as MetaData } from "./MetaData";
 export { default as GithubContributionsGraph } from "./GithubContributionsGraph";
 export { default as SearchBar } from "./SearchBar";
 export { default as GuestBookText } from "./GuestBookText";
+export { default as MessageField } from "./MessageField";

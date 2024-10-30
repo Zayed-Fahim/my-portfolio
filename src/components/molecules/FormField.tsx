@@ -3,9 +3,9 @@ import { Input, Textarea } from "@/components/atoms";
 
 interface IFormFieldProps {
   as: "input" | "textarea";
-  label: React.ReactNode;
-  htmlFor: string;
   name: string;
+  label?: React.ReactNode;
+  htmlFor?: string;
   type?: string;
   value?: string;
   required?: boolean;
