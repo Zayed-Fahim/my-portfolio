@@ -1,5 +1,5 @@
 import { Send } from "@/constants";
-import React, { FC } from "react";
+import React, { FC, FormEvent } from "react";
 import { Input } from "@/components/atoms";
 
 interface IMessageFieldProps {
@@ -12,7 +12,7 @@ interface IMessageFieldProps {
   required?: boolean;
   disabled?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSend?: () => void;
+  onSend?: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 const MessageField: FC<IMessageFieldProps> = ({
@@ -27,8 +27,18 @@ const MessageField: FC<IMessageFieldProps> = ({
   onChange,
   onSend,
 }) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent form from submitting normally
+    if (onSend) {
+      onSend(e);
+    }
+  };
+
   return (
-    <div className="w-full h-[45px] rounded-md relative bg-transparent dark:border-zinc-700 border-zinc-200 border">
+    <form
+      onSubmit={handleSubmit}
+      className="w-full h-[45px] rounded-md relative bg-transparent dark:border-zinc-700 border-zinc-200 border"
+    >
       <Input
         id={id}
         name={name}
@@ -40,13 +50,13 @@ const MessageField: FC<IMessageFieldProps> = ({
         disabled={disabled}
         onChange={onChange}
       />
-      <div
+      <button
+        type="submit"
         className="cursor-pointer rounded-md absolute top-1/2 right-1 -translate-y-1/2 flex justify-center items-center hover:bg-[#16a34a] bg-secondary-color w-[40px] py-2"
-        onClick={onSend}
       >
         <Send className="w-5 h-5 -rotate-45" fill="white" />
-      </div>
-    </div>
+      </button>
+    </form>
   );
 };
 

@@ -1,18 +1,18 @@
-export interface IProjectTechnologyProps {
+export type IProjectTechnologyProps = {
   name: string;
   icon: {
     name: string;
     className: string;
     fill?: string;
   };
-}
+};
 
-export interface IProjectStylesProps {
+export type IProjectStylesProps = {
   backgroundImage: string;
   brandColor: string;
-}
+};
 
-export interface IProjectProps {
+export type IProjectProps = {
   styles: IProjectStylesProps;
   title: string;
   shortDescription: string;
@@ -22,4 +22,4 @@ export interface IProjectProps {
   clientRepo: string;
   serverRepo: string;
   isVisible?: boolean;
-}
+};

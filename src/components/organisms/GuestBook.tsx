@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/atoms";
 import { Animation } from "@/components/molecules";
 import { GuestBookPlayground } from "@/components/organisms";
+import { SessionProvider } from "next-auth/react";
 
 const GuestBook = () => {
   return (
@@ -11,8 +12,9 @@ const GuestBook = () => {
           description="Feel free to share your suggestions, appreciation, or anything else on your mind."
         />
       </Animation>
-
-      <GuestBookPlayground />
+      <SessionProvider>
+        <GuestBookPlayground />
+      </SessionProvider>
     </div>
   );
 };

@@ -10,24 +10,16 @@ export const fetchData = async (
       url,
       method,
       ...config,
+      headers: {
+        "Content-Type": "application/json",
+        ...config?.headers,
+      },
     });
 
-    return {
-      success: response.data.success,
-      message: response.data.message,
-      data: response.data.data,
-    };
-  } catch (error: unknown) {
-    if (axios.isAxiosError(error) && error.response) {
-      return {
-        success: error.response.data?.success || false,
-        message: error.response.data?.message || "Something went wrong!",
-      };
-    } else {
-      return {
-        success: false,
-        message: "Network error or unknown error occurred!",
-      };
+    return response.data;
+  } catch (error: any) {
+    if (error?.response) {
+      return error?.response.data;
     }
   }
 };

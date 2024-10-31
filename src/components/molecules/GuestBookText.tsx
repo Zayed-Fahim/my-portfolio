@@ -1,22 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import { Text } from "@/components/atoms";
+import { GuestBookContentProps } from "@/types/guestBook";
+import { formatDate } from "@/helpers/formatDate";
 
-type GuestBookTextProps = {
-  image: string;
-  avatarUrl: string;
-  name: string;
-  type: string;
-  message: string;
-  createdAt: string;
-  email: string;
-};
-
-const GuestBookText: React.FC<GuestBookTextProps> = ({
-  image,
-  name,
-  type,
-  message,
+const GuestBookText: React.FC<GuestBookContentProps> = ({
+  user: { image, name, type },
+  content,
   createdAt,
 }) => {
   return (
@@ -27,7 +17,8 @@ const GuestBookText: React.FC<GuestBookTextProps> = ({
     >
       {type === "user" && (
         <Image
-          src={image}
+          referrerPolicy="no-referrer"
+          src={image ?? "/logo/profile.png"}
           alt={`${name} logo`}
           loading="lazy"
           width={40}
@@ -49,9 +40,11 @@ const GuestBookText: React.FC<GuestBookTextProps> = ({
               {type.charAt(0).toUpperCase() + type.slice(1)}
             </p>
           )}
-          <p className="text-sm text-[#a1a1aa]">{createdAt}</p>
+          <p className="text-sm text-[#a1a1aa]">
+            {formatDate(createdAt, "dd-MM-yyyy h:mm a")}
+          </p>
         </div>
-        <Text text={message} type={type} />
+        <Text text={content} type={type} />
       </div>
       {type === "author" && (
         <Image
