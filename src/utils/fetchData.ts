@@ -1,4 +1,3 @@
-// @ts-nocheck
 import axios, { AxiosRequestConfig, AxiosResponse, Method } from "axios";
 
 export const fetchData = async (
@@ -19,8 +18,8 @@ export const fetchData = async (
 
     return response.data;
   } catch (error) {
-    if (error?.response) {
-      return error?.response.data;
+    if (axios.isAxiosError(error)) {
+      return error;
     }
   }
 };
