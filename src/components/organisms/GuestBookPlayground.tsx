@@ -54,7 +54,7 @@ const GuestBookPlayground = () => {
       };
 
       const result = await fetchData(
-        "http://api-zayedfahim.vercel.app/api/v2/guest-book",
+        "https://api-zayedfahim.vercel.app/api/v2/guest-book",
         "post",
         {
           data: guestMessageData,

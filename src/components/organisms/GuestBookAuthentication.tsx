@@ -38,7 +38,7 @@ const GuestBookAuthentication = ({
         </div>
       )}
 
-      {session?.user && (
+      {session && session?.user && (
         <Animation delay={0.22}>
           <GuestBookMessage
             error={error}
