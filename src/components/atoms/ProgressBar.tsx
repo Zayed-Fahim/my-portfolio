@@ -1,5 +1,4 @@
 "use client";
-
 import useMounted from "@/hooks/useMounted";
 import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
@@ -30,7 +29,7 @@ const ProgressBar = ({
           <div className={cn("w-24")}>{name}</div>
           <div
             className={cn(
-              "relative flex h-3 lg:h-4 flex-1 justify-center rounded-full bg-secondary-bg dark:bg-primary-bg"
+              "relative flex h-3 lg:h-4 flex-1 justify-center rounded-full bg-[#f7f7f7] dark:bg-primary-bg"
             )}
           >
             <motion.span

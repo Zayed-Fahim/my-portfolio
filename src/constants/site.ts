@@ -18,12 +18,11 @@ interface Site {
   title: string;
   description: string;
   author: Author;
-  //   keywords?: string[];
 }
 
 export const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://zayed-fahim.web.app"
+    ? "https://zayedfahim.vercel.app"
     : "http://localhost:3000";
 
 export const SITE: Site = {
@@ -41,21 +40,9 @@ export const SITE: Site = {
       username: "Zayed-Fahim",
       url: "https://www.github.com/Zayed-Fahim",
     },
-    avatar: "/zayed/2.png",
+    avatar: "https://i.ibb.co.com/v1hjvCZ/2.png",
     facebook: "https://www.facebook.com/Zayed.Fahim33",
     resume:
       "https://drive.google.com/file/d/14zOkpbR2bKQ9XQIgBnWrPdCeRlwWUQOJ/view",
   },
-  //   keywords: [
-  //     "bonabrian",
-  //     "Bona Brian Siagian",
-  //     "developer",
-  //     "portfolio",
-  //     "developer portfolio website",
-  //     "portfolio website",
-  //     "full-stack",
-  //     "back-end",
-  //     "front-end",
-  //     "software engineer",
-  //   ],
 };

@@ -25,14 +25,14 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} dark:bg-zinc-900 bg-white dark:text-white text-zinc-700`}
+        className={`${incognito.variable} ${inter.className} ${gitlabmono.variable} dark:bg-black bg-white dark:text-white text-zinc-700`}
       >
         <ThemeProvider>
           <CommonProvider>
             <Navbar />
             <FloatingNav navItems={navItems} />
 
-            <main className="min-h-[calc(80vh-100px)] md:min-h-[calc(80vh-165px)] xl:min-h-[calc(80vh-145px)]">
+            <main className="min-h-[calc(80vh-100px)] md:min-h-[calc(80vh-165px)] xl:min-h-[calc(80vh-150px)]">
               {children}
             </main>
 

@@ -56,7 +56,7 @@ const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "hidden md:block fixed max-w-max mx-auto inset-x-0 top-10 border border-white/[0.2] dark:border-black/[0.2] rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-3 dark:bg-[#1E1E21] bg-[#EEEEEE]",
+          "hidden md:block fixed max-w-max mx-auto inset-x-0 top-10 border border-white/[0.2] dark:border-black/[0.2] rounded-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] px-10 py-3 dark:bg-[#1E1E21] bg-[#f7f7f7]",
           className
         )}
       >

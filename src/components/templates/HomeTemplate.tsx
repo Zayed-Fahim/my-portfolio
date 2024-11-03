@@ -1,4 +1,4 @@
-import { Home } from "../organisms";
+import { Home } from "@/components/organisms";
 
 const HomeTemplate = () => {
   return <Home />;

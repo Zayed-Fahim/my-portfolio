@@ -1,17 +1,17 @@
-export interface IStack {
+export type IStack = {
   name: string;
   icon?: JSX.Element;
-}
+};
 
-export interface IPosition {
+export type IPosition = {
   role: string;
   startDate: string;
   endDate: string | null;
   stacks: IStack[];
   accomplishments: string[];
-}
+};
 
-export interface ICompany {
+export type ICompany = {
   name: string;
   logo: string;
   url: string;
@@ -21,8 +21,8 @@ export interface ICompany {
   startDate: string;
   endDate: string | null;
   positions: IPosition[];
-}
+};
 
-export interface Experience {
+export type Experience = {
   company: ICompany;
-}
+};

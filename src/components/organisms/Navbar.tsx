@@ -11,21 +11,21 @@ const Navbar = () => {
 
   return (
     <section className="sticky top-0 left-0 md:relative z-[9999999]">
-      <header className="dark:bg-[#18181B] bg-[#F1F1F1] md:bg-transparent md:dark:bg-transparent text-sm py-4 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
+      <header className=" bg-white dark:bg-black text-sm py-4 md:px-16 px-6 border-b dark:border-zinc-800 border-zinc-200 z-30 md:mb-28 mb-10">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <Link href="/" className="md:block hidden">
             <Image
               loading="lazy"
-              src="/logo/logo_4.png"
-              width={120}
-              height={40}
+              src="https://i.ibb.co.com/9YmxdvV/logo-4.png"
+              width={110}
+              height={35}
               alt="logo"
             />
           </Link>
           <Link href="/" className="block md:hidden">
             <Image
               loading="lazy"
-              src="/logo/logo_4.png"
+              src="https://i.ibb.co.com/9YmxdvV/logo-4.png"
               width={90}
               height={30}
               alt="logo"

@@ -13,7 +13,7 @@ import {
 } from "@/constants";
 
 // Define icon registry with explicit typing
-export const iconRegistry = {
+const iconRegistry = {
   ExpressJS,
   JavaScript,
   JWT,

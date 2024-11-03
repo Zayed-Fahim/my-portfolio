@@ -18,7 +18,7 @@ const GuestBookText: React.FC<GuestBookContentProps> = ({
       {type === "user" && (
         <Image
           referrerPolicy="no-referrer"
-          src={image ?? "/logo/profile.png"}
+          src={image ?? "https://i.ibb.co.com/Wzmq0gZ/profile.png"}
           alt={`${name} logo`}
           loading="lazy"
           width={40}

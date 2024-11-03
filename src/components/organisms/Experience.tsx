@@ -18,9 +18,13 @@ const Experience = () => {
         </div>
       </Animation>
 
-      <div className={cn("px-4", "font-incognito")}>
+      <div className={cn("pl-4", "font-incognito")}>
         <Animation delay={0.18}>
-          <ol className={cn("space-y-4 border-l-[1px] border-[#B2B2B2] pl-10")}>
+          <ol
+            className={cn(
+              "space-y-4 border-l-[1px] border-[#B2B2B2] pl-7 md:pl-10"
+            )}
+          >
             {EXPERIENCES.map(({ company }, index) => {
               const jobStartDate = new Date(company.startDate);
               const jobEndDate = company.endDate
@@ -52,7 +56,7 @@ const Experience = () => {
                   <Animation delay={0.18}>
                     <div
                       className={cn(
-                        "absolute -left-[63px] bottom-0 mt-0 h-full"
+                        "absolute -left-[49px] md:-left-[63px] bottom-0 mt-0 h-full"
                       )}
                     >
                       <div className={cn("flex items-start")}>
@@ -62,7 +66,7 @@ const Experience = () => {
                           width={45}
                           height={45}
                           className={cn(
-                            "ml-0 rounded dark:border-none border-[1.5px]"
+                            "ml-0 rounded dark:border-none border-[1.5px] w-[40px] h-[40px] md:w-[45px] md:h-[45px]"
                           )}
                         />
                       </div>
@@ -131,9 +135,9 @@ const Experience = () => {
                           return (
                             <li
                               key={`${role}-${index}`}
-                              className={cn("relative pl-2 md:pl-8")}
+                              className={cn("relative md:pl-8")}
                             >
-                              <div className="flex gap-5 h-full">
+                              <div className="flex gap-2 md:gap-5 h-full">
                                 <div className="flex flex-col justify-start items-center">
                                   <Animation delay={0.18}>
                                     <GoDotFill className="h-6 w-6 text-[#B2B2B2]" />
@@ -228,7 +232,7 @@ const Experience = () => {
                                           >
                                             <div
                                               className={cn(
-                                                "rounded bg-[#F7F7F7] dark:bg-[#18181B] border-[1.5px] border-black/[0.1] dark:border-white/[0.2] p-1.5 cursor-pointer"
+                                                "rounded bg-[#F7F7F7] dark:bg-[#18181B] border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 p-1.5 cursor-pointer"
                                               )}
                                             >
                                               {icon}

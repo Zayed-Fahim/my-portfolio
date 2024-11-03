@@ -7,7 +7,7 @@ const GithubContributions = () => {
     <div className="glow-border p-5" id="github-contributions">
       <Animation delay={0.16}>
         <div className="w-full flex justify-between items-center font-incognito mb-8">
-          <h2 className="text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             Contrbution Graph
           </h2>
           <Link

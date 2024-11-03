@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { BiSolidTime } from "react-icons/bi";
 import { HiCalendar } from "react-icons/hi";
-import { Animation } from "../molecules";
+import { Animation } from "@/components/molecules";
 import { IBlogDetailsProps } from "@/data/blogs";
 
 const BlogCard: React.FC<IBlogDetailsProps> = ({
@@ -21,10 +21,10 @@ const BlogCard: React.FC<IBlogDetailsProps> = ({
     <Link
       href={`/blog/${blogLink}`}
       className="flex lg:flex-row flex-col lg:items-center items-start gap-8 p-3 rounded-lg group
-      dark:bg-primary-bg bg-secondary-bg border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
+      dark:bg-primary-bg bg-[#f7f7f7] border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
     >
       <Animation delay={0.1}>
-        <div className="relative w-full lg:w-[450px] h-64 overflow-hidden">
+        <div className="relative w-full lg:w-[450px] h-64 overflow-hidden rounded-md">
           <Image
             src={imageSrc}
             alt={title}

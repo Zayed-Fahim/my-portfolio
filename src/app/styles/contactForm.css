@@ -30,7 +30,7 @@
   border-radius: 8px;
   font-family: inherit;
   background-color: transparent;
-  border: 1px solid #414141;
+  /* border: 1px solid #414141; */
 }
 
 .form-container .form-group textarea {
@@ -39,7 +39,7 @@
   border-radius: 8px;
   resize: none;
   height: 96px;
-  border: 1px solid #414141;
+  /* border: 1px solid #414141; */
   background-color: transparent;
   font-family: inherit;
 }

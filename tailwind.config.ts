@@ -35,10 +35,16 @@ const config: Config = {
         full: "min-content 1fr",
       },
       backgroundImage: {
-        noise: "url('/logo/noise.png')",
+        pattern: `
+          linear-gradient(0deg, transparent 23%, var(--color) 24%, var(--color) 25%, transparent 26%, transparent 73%, var(--color) 74%, var(--color) 75%, transparent 76%, transparent),
+          linear-gradient(90deg, transparent 23%, var(--color) 24%, var(--color) 25%, transparent 26%, transparent 73%, var(--color) 74%, var(--color) 75%, transparent 76%, transparent)
+        `,
       },
       backgroundPosition: {
         zero: "0 0",
+      },
+      backgroundSize: {
+        "pattern-size": "45px 45px",
       },
       keyframes: {
         skeletonload: {

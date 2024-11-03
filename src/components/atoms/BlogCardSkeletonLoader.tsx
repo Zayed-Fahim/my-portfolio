@@ -5,7 +5,7 @@ const BlogCardSkeletonLoader = () => {
   return (
     <div
       className="flex lg:flex-row flex-col lg:items-center items-start gap-8 p-3 rounded-lg 
-      dark:bg-primary-bg bg-secondary-bg"
+      dark:bg-primary-bg bg-[#f7f7f7]"
     >
       <SkeletonLoader className="relative rounded-md w-full lg:w-[450px] h-64">
         <div className={`object-cover`} />

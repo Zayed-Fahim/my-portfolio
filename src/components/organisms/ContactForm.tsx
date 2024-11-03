@@ -16,14 +16,14 @@ const emailFormatSchema = z
       const domainPart = email.split("@")[1];
       return domainPart && domainPart.split(".").length <= 2;
     },
-    { message: "Invalid email address" }
+    { message: "Invalid email address!" }
   );
 
 const contactSchema = z.object({
-  fullName: z.string().min(1, "Full Name is required"),
-  email: z.string().min(1, "Email is required"),
-  subject: z.string().min(1, "Subject is required"),
-  message: z.string().min(1, "Message is required"),
+  fullName: z.string().min(1, "Full Name is required."),
+  email: z.string().min(1, "Email is required."),
+  subject: z.string().min(1, "Subject is required."),
+  message: z.string().min(1, "Message is required."),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -147,7 +147,7 @@ const ContactForm = () => {
   return (
     <div className="form-container glow-border p-5">
       <form
-        className="form bg-[#F8F8F8] dark:bg-primary-bg"
+        className="form bg-[#F8F8F8] dark:bg-primary-bg border dark:border-zinc-700 border-zinc-200"
         onSubmit={handleFormSubmit}
       >
         {formMessage === "submitting" && isLoading ? (
@@ -174,7 +174,7 @@ const ContactForm = () => {
               name="fullName"
               id="fullName"
               type="text"
-              className="font-incognito text-[14px]"
+              className="font-incognito border dark:border-zinc-700 border-zinc-200 text-[14px]"
               value={formData.fullName}
               onChange={handleChange}
             />
@@ -195,7 +195,7 @@ const ContactForm = () => {
               name="email"
               id="email"
               type="email"
-              className="font-incognito text-[14px]"
+              className="font-incognito border dark:border-zinc-700 border-zinc-200 text-[14px]"
               value={formData.email}
               onChange={handleChange}
             />
@@ -215,7 +215,7 @@ const ContactForm = () => {
             name="subject"
             id="subject"
             type="text"
-            className="font-incognito text-[14px]"
+            className="font-incognito border dark:border-zinc-700 border-zinc-200 text-[14px]"
             value={formData.subject}
             onChange={handleChange}
           />
@@ -233,7 +233,7 @@ const ContactForm = () => {
             }
             name="message"
             id="message"
-            className="font-incognito text-[14px]"
+            className="font-incognito border dark:border-zinc-700 border-zinc-200 text-[14px]"
             rows={10}
             cols={50}
             value={formData.message}

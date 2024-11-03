@@ -3,7 +3,7 @@ import { SkeletonLoader } from "@/components/atoms";
 
 const ProjectCardSkeletonLoader = () => {
   return (
-    <div className="dark:bg-primary-bg bg-secondary-bg relative rounded-xl flex flex-col sm:max-h-[500px] max-h-[485px]">
+    <div className="dark:bg-primary-bg bg-[#f7f7f7] relative rounded-xl flex flex-col sm:max-h-[500px] max-h-[485px]">
       <div className="relative">
         <SkeletonLoader className="rounded-tl-xl rounded-tr-xl w-full h-[250px] md:h-[285px] lg:h-[301px]" />
       </div>

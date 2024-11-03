@@ -24,7 +24,7 @@ const ProjectCard: React.FC<IProjectProps> = ({
 
   return (
     <div
-      className="project-card dark:bg-primary-bg bg-secondary-bg border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 relative rounded-xl flex flex-col max-h-[485px]"
+      className="project-card dark:bg-primary-bg bg-[#f7f7f7] border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200 relative rounded-xl flex flex-col max-h-[485px]"
       style={
         {
           "--bg-image": `url(${styles.backgroundImage})`,

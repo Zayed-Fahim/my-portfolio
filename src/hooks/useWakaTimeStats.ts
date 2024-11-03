@@ -2,8 +2,7 @@
 import useSWR from "swr";
 import { wakaTimeFetcher } from "./fetcher";
 
-// Define interfaces for API responses
-interface WakaTimeStats {
+type WakaTimeStats = {
   grand_total: {
     total_seconds: number;
   };
@@ -20,17 +19,17 @@ interface WakaTimeStats {
     name: string;
     percent: number;
   }>;
-}
+};
 
-interface AllTimeStats {
+type AllTimeStats = {
   data: {
     text: string;
   };
-}
+};
 
-interface SummaryResponse {
+type SummaryResponse = {
   data: WakaTimeStats[];
-}
+};
 
 type CodingStats = {
   dailyAverage: string;
@@ -52,14 +51,13 @@ type CodingStats = {
 };
 
 export const useWakaTimeStats = () => {
-  // Set up SWR hooks with daily revalidation
   const { data: summaryData, error: summaryError } = useSWR<SummaryResponse>(
     "https://wakatime.com/api/v1/users/current/summaries?range=last_7_days",
     wakaTimeFetcher,
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-      refreshInterval: 60 * 60, // 1 hour
+      refreshInterval: 60 * 60,
     }
   );
 
@@ -69,7 +67,7 @@ export const useWakaTimeStats = () => {
     {
       revalidateOnFocus: false,
       revalidateOnReconnect: false,
-      refreshInterval: 60 * 60, // 1 hour
+      refreshInterval: 60 * 60,
     }
   );
 
@@ -93,7 +91,6 @@ export const useWakaTimeStats = () => {
   let totalSeconds = 0;
   let bestDay = { date: "", total_seconds: 0 };
 
-  // Calculate total seconds and find best day
   days.forEach((day) => {
     totalSeconds += day.grand_total.total_seconds;
     if (day.grand_total.total_seconds > bestDay.total_seconds) {
@@ -104,38 +101,31 @@ export const useWakaTimeStats = () => {
     }
   });
 
-  // Calculate daily average
   const averageSeconds = totalSeconds / days.length;
   const averageHours = Math.floor(averageSeconds / 3600);
   const averageMinutes = Math.floor((averageSeconds % 3600) / 60);
   const dailyAverage = `${averageHours}h ${averageMinutes}m`;
 
-  // Calculate weekly total
   const weeklyHours = Math.floor(totalSeconds / 3600);
   const weeklyMinutes = Math.floor((totalSeconds % 3600) / 60);
   const weeklyTotal = `${weeklyHours}h ${weeklyMinutes}m`;
 
-  // Calculate best day time
   const bestDayHours = Math.floor(bestDay.total_seconds / 3600);
   const bestDayMinutes = Math.floor((bestDay.total_seconds % 3600) / 60);
   const bestDayTime = `${bestDayHours}h ${bestDayMinutes}m`;
 
-  // Get the last day's data
   const lastDay = days[days.length - 1];
 
-  // Process operating systems
   const operatingSystems = lastDay.operating_systems.map((os) => ({
     name: os.name,
     percent: parseFloat(os.percent.toFixed(2)),
   }));
 
-  // Process editors
   const editors = lastDay.editors.map((editor) => ({
     name: editor.name,
     percent: parseFloat(editor.percent.toFixed(2)),
   }));
 
-  // Process languages
   const mainLanguages = ["TypeScript", "JavaScript"];
   let otherPercent = 0;
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 
-interface FetcherConfig {
+type FetcherConfig = {
   requiresAuth?: boolean;
   apiKey?: string;
-}
+};
 
 export const createFetcher = (config: FetcherConfig = {}) => {
   return async (url: string) => {

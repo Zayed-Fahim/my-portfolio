@@ -27,24 +27,29 @@ const MobileNav = () => {
       <button
         aria-label="Toggle Menu"
         onClick={onToggleNav}
-        className="md:hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-md p-2"
+        className="md:hidden dark:bg-primary-bg bg-[#f7f7f7] border dark:border-zinc-800 border-zinc-200 rounded-md p-2"
       >
         <RxHamburgerMenu className="text-xl" />
       </button>
       <div
-        className={`md:hidden fixed left-0 top-0 z-10 h-full w-full transform duration-[600ms] ease-[cubic-bezier(0.7,0,0,1)] dark:bg-zinc-900 bg-white ${
+        className={`md:hidden fixed left-0 top-0 z-10 h-full w-full transform duration-[600ms] ease-[cubic-bezier(0.7,0,0,1)] dark:bg-black bg-white ${
           navShow ? "translate-x-0 rounded-none" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between mt-6 px-8">
           <Link href="/" onClick={onToggleNav}>
-            <Image src="/logo/logo_4.png" width={90} height={30} alt="logo" />
+            <Image
+              src="https://i.ibb.co.com/9YmxdvV/logo-4.png"
+              width={90}
+              height={30}
+              alt="logo"
+            />
           </Link>
 
           <button
             aria-label="Toggle Menu"
             onClick={onToggleNav}
-            className={`md:hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-500 ${
+            className={`md:hidden dark:bg-primary-bg bg-[#f7f7f7] border dark:border-zinc-800 border-zinc-200 rounded-full p-2 duration-500 ${
               !navShow ? "-rotate-[360deg]" : null
             }`}
           >

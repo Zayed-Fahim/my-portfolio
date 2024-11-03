@@ -11,7 +11,7 @@ const OverViewCard = ({
     <div
       className={`${
         !border
-          ? "bg-secondary-bg dark:bg-primary-bg w-full p-4 font-incognito rounded-md border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
+          ? "bg-[#f7f7f7] dark:bg-primary-bg w-full p-4 font-incognito rounded-md border border-transparent dark:hover:border-zinc-700 hover:border-zinc-200"
           : "bg-transparent"
       } h-full`}
     >

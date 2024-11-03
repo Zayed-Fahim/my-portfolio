@@ -14,10 +14,7 @@ const SocialLink: React.FC<ISocialLink> = ({
   return (
     <div className="group relative inline-block">
       <Link href={url} target="_blank" aria-label={name}>
-        <SocialButton
-          icon={icon}
-          className={`dark:bg-[#202023] bg-[#eee] ${className}`}
-        />
+        <SocialButton icon={icon} className={`${className}`} />
       </Link>
       {tooltip && <ToolTip name={name} />}
     </div>

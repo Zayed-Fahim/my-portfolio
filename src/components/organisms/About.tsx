@@ -16,7 +16,7 @@ const About = () => {
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-16">
       <div className="flex flex-col items-start gap-16 min-h-screen">
-        <Animation delay={0.1}>
+        <Animation delay={0.1} className="w-full">
           <PageHeader title="About" description="A short overview of me." />
         </Animation>
         <div className="flex flex-col md:flex-row flex-nowrap gap-10">
@@ -30,7 +30,7 @@ const About = () => {
                   <SkeletonLoader className="absolute top-0 left-0 w-[280px] h-[294px] rounded-xl" />
                 )}
                 <Image
-                  src="/zayed/2.png"
+                  src={SITE.author.avatar}
                   alt="zayed-fahim"
                   width={907}
                   height={970}

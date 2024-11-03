@@ -4,12 +4,14 @@ import { Animation, SearchBar } from "@/components/molecules";
 import { BlogCard } from "@/components/organisms";
 import { Search } from "@/constants";
 import { CommonContext } from "@/contexts";
-import { blogs } from "@/data/blogs";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BiDetail } from "react-icons/bi";
+import { EmptyState } from "@/components/molecules";
+import { IBlogDetailsProps } from "@/data/blogs";
 
 const Blogs = () => {
   const { isLoading, setIsLoading } = useContext(CommonContext)!;
+  const [blogs, setBlogs] = useState<IBlogDetailsProps[]>([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,19 +51,31 @@ const Blogs = () => {
           </Animation>
 
           <div className="w-full flex flex-col gap-12 transition-all duration-1000 ease-in-out">
-            {isLoading
-              ? Array(4)
-                  .fill(0)
-                  .map((_, i) => (
-                    <Animation delay={0.06} key={i}>
-                      <BlogCardSkeletonLoader />
-                    </Animation>
-                  ))
-              : blogs.map((blog, i) => (
+            {isLoading ? (
+              Array(1)
+                .fill(0)
+                .map((_, i) => (
                   <Animation delay={0.06} key={i}>
-                    <BlogCard {...blog} />
+                    <BlogCardSkeletonLoader />
                   </Animation>
-                ))}
+                ))
+            ) : blogs.length > 0 ? (
+              blogs?.map((blog, i) => (
+                <Animation delay={0.06} key={i}>
+                  <BlogCard {...blog} />
+                </Animation>
+              ))
+            ) : (
+              <EmptyState
+                message={
+                  // query
+                  //   ? `No posts for "${query}". Perhaps the little guy is too busy running in the wheel of code.`
+                  //   :
+                  // "The posts are playing hide and seek – we just can't find them!"
+                  "I haven't anything posted yet. Please check back later!"
+                }
+              />
+            )}
           </div>
         </div>
       </div>

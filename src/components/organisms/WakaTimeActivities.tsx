@@ -1,8 +1,8 @@
 "use client";
 import "../../app/styles/gradientBorder.css";
-import { OverViewCard } from "../atoms";
-import Progress from "../atoms/ProgressBar";
-import { Animation } from "../molecules";
+import { OverViewCard } from "@/components/atoms";
+import { ProgressBar } from "@/components/atoms";
+import { Animation } from "@/components/molecules";
 
 const WakaTimeActivities = () => {
   const activities = [
@@ -79,7 +79,7 @@ const WakaTimeActivities = () => {
             <ul className="flex flex-col gap-1 px-4 py-3">
               {languages.map((data, i) => (
                 <li key={i}>
-                  <Progress
+                  <ProgressBar
                     data={data}
                     className="bg-gradient-to-r from-[#0CCE6B] via-[#655adc] to-[#e440bb]"
                   />
@@ -100,7 +100,7 @@ const WakaTimeActivities = () => {
             <ul className="flex flex-col gap-1 px-4 py-3">
               {others.map((data, i) => (
                 <li key={i}>
-                  <Progress
+                  <ProgressBar
                     data={data}
                     className="bg-gradient-to-r from-[#0CCE6B] via-[#655adc] to-[#e440bb]"
                   />

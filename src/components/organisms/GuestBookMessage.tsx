@@ -2,7 +2,7 @@
 import { handleLogOut } from "@/actions/authActions";
 import { MessageField } from "@/components/molecules";
 import { GuestBookProps } from "@/types/guestBook";
-import { Message } from "../atoms";
+import { Message } from "@/components/atoms";
 
 const GuestBookMessageField = ({
   message,

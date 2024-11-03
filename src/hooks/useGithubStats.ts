@@ -39,20 +39,18 @@ interface GitHubStats {
   error: Error | null;
 }
 
-const ONE_HOUR = 3600000; // 1 hour in milliseconds
+const ONE_HOUR = 3600000;
 
 const calculateStats = (
   contributionsData: ContributionsData,
   starData: StarData,
   userData: UserData
 ): Omit<GitHubStats, "isLoading" | "error"> => {
-  // Calculate total contributions
   const totalContributions = Object.values(contributionsData.total).reduce(
     (sum, count) => sum + count,
     0
   );
 
-  // Calculate last 7 days contributions
   const sevenDaysAgo = new Date();
   sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
   sevenDaysAgo.setHours(0, 0, 0, 0);
@@ -61,12 +59,10 @@ const calculateStats = (
     .filter((contrib) => new Date(contrib.date) >= sevenDaysAgo)
     .reduce((sum, contrib) => sum + contrib.count, 0);
 
-  // Find highest contribution in a single day
   const highestDailyContribution = Math.max(
     ...contributionsData.contributions.map((contrib) => contrib.count)
   );
 
-  // Calculate average daily contribution
   const totalDays = contributionsData.contributions.length;
   const totalCount = contributionsData.contributions.reduce(
     (sum, contrib) => sum + contrib.count,

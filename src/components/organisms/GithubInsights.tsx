@@ -58,16 +58,13 @@ const GithubInsights = () => {
       <div className="flex flex-col gap-5">
         <div>
           <Animation delay={0.2}>
-            <div className="flex justify-start items-center gap-2 pb-1">
-              <GitHub className="w-5 h-5 md:w-6 md:h-6" />
-              <h1 className="text-xl md:text-2xl font-bold">GitHub Insights</h1>
-            </div>
-          </Animation>
-          <Animation delay={0.2}>
             <div className="flex justify-between items-center">
-              <p className="text-base md:text-xl font-thin">
-                A quick look at followers, stars, and contributions activity.
-              </p>
+              <div className="flex justify-start items-center gap-2 pb-1">
+                <GitHub className="w-5 h-5 md:w-6 md:h-6" />
+                <h1 className="text-xl md:text-2xl font-bold">
+                  GitHub Insights
+                </h1>
+              </div>
               <Link
                 href="https://github.com/Zayed-Fahim"
                 target="_blank"
@@ -76,6 +73,11 @@ const GithubInsights = () => {
                 @Zayed-Fahim
               </Link>
             </div>
+          </Animation>
+          <Animation delay={0.2}>
+            <p className="text-base md:text-xl font-thin">
+              A quick look at followers, stars, and contributions activity.
+            </p>
           </Animation>
         </div>
         <Animation delay={0.22}>
@@ -97,7 +99,7 @@ const GithubInsights = () => {
       </div>
       <Animation delay={0.22}>
         <div className="glow-border p-6 rounded-xl">
-          <p className="absolute -top-4 left-3 bg-white dark:bg-primary-bg px-2 text-2xl font-semibold">
+          <p className="absolute -top-4 left-3 bg-white dark:bg-black px-2 text-2xl font-semibold">
             Contributions
           </p>
           <Animation delay={0.24}>

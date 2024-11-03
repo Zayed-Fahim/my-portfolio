@@ -29,7 +29,7 @@ const GithubContributionsGraph = () => {
 
   return (
     <div className="flex xl:flex-row flex-col gap-4">
-      <div className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 p-8 rounded-lg max-w-full max-h-fit">
+      <div className="dark:bg-primary-bg bg-[#f7f7f7] border dark:border-zinc-800 border-zinc-200 p-8 rounded-lg max-w-full max-h-fit">
         <GitHubCalendar
           username={username}
           colorScheme={serverTheme}

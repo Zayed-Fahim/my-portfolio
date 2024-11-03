@@ -6,6 +6,7 @@ import { fetchData } from "@/utils/fetchData";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ProjectCard } from "@/components/organisms";
 import { CommonContext } from "@/contexts";
+import { EmptyState } from "@/components/molecules";
 
 const Projects = () => {
   const { isLoading, setIsLoading } = useContext(CommonContext)!;
@@ -46,19 +47,23 @@ const Projects = () => {
         </Animation>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:gap-x-14 sm:gap-x-6 gap-y-24 transition-all duration-1000 ease-in-out">
-          {isLoading
-            ? Array(5)
-                .fill(0)
-                .map((_, i) => (
-                  <Animation delay={0.06} key={i}>
-                    <ProjectCardSkeletonLoader />
-                  </Animation>
-                ))
-            : projectData.map((project, i) => (
+          {isLoading ? (
+            Array(5)
+              .fill(0)
+              .map((_, i) => (
                 <Animation delay={0.06} key={i}>
-                  <ProjectCard {...project} />
+                  <ProjectCardSkeletonLoader />
                 </Animation>
-              ))}
+              ))
+          ) : projectData.length > 0 ? (
+            projectData.map((project, i) => (
+              <Animation delay={0.06} key={i}>
+                <ProjectCard {...project} />
+              </Animation>
+            ))
+          ) : (
+            <EmptyState message="No projects available at the moment. Please check back later!" />
+          )}
         </div>
       </div>
     </section>
