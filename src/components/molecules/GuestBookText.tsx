@@ -23,7 +23,7 @@ const GuestBookText: React.FC<GuestBookContentProps> = ({
           loading="lazy"
           width={40}
           height={40}
-          className="mr-2 mt-2 rounded-full h-8 w-8 md:h-10 md:w-10"
+          className="mr-2 mt-4 rounded-full h-8 w-8 md:h-10 md:w-10"
         />
       )}
       <div
@@ -33,7 +33,7 @@ const GuestBookText: React.FC<GuestBookContentProps> = ({
             : "items-start justify-center"
         }`}
       >
-        <div className="flex items-center gap-2">
+        <div className={`flex items-center gap-2 ${type === "user" && "mt-2"}`}>
           <h1 className="md:text-xl font-semibold">{name}</h1>
           {type === "author" && (
             <p className="text-secondary-color text-sm font-bold">

@@ -9,7 +9,7 @@ const EmptyState = ({ message }: { message: string }) => {
       )}
     >
       <MoodSad className={cn("size-12")} />
-      <p>{message}</p>
+      <p className="text-center">{message}</p>
     </div>
   );
 };

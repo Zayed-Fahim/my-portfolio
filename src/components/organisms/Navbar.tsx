@@ -53,7 +53,7 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-x-4">
+          <div className="flex items-center gap-x-4 sm:gap-x-0">
             <Theme />
             <MobileNav />
           </div>

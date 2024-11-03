@@ -25,7 +25,7 @@ const WakaTime = () => {
       <div className="w-full flex flex-col gap-5">
         <div>
           <Animation delay={0.12}>
-            <div className="flex flex-col sm:flex-row justify-between items-start pb-2 sm:pb-0">
+            <div className="flex flex-row justify-between items-start pb-2 sm:pb-0">
               <div className="flex justify-start items-center gap-2 pb-1">
                 <SiWakatime className="w-5 h-5 md:w-6 md:h-6" />
                 <h1 className="text-xl md:text-2xl font-bold">
@@ -47,7 +47,7 @@ const WakaTime = () => {
                 My WakaTime last 7 days stats.
               </p>
               <p className="text-[#a1a1aa]">
-                Last Updated: {process.env.NEXT_PUBLIC_LAST_UPDATED}
+                Updated: {process.env.NEXT_PUBLIC_LAST_UPDATED}
               </p>
             </div>
           </Animation>

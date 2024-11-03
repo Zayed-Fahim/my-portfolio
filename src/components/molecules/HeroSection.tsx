@@ -17,7 +17,8 @@ const HeroSectionDemo = () => {
   const [skills, setSkills] = useState<string[]>([]);
   const [error, setError] = useState("");
 
-  const validCommand = "yarn install skills";
+  const validCommandOne = "npm install skills";
+  const validCommandTwo = "yarn install skills";
   const finalMessage = "Done in";
 
   const skillsByMajor: SkillCategories = {
@@ -60,7 +61,7 @@ const HeroSectionDemo = () => {
     if (e.key === "Enter") {
       setError("");
 
-      if (inputText.trim() === validCommand) {
+      if (inputText.trim() === (validCommandOne || validCommandTwo)) {
         setLoading(true);
         setSkills([]);
 
@@ -100,7 +101,6 @@ const HeroSectionDemo = () => {
       } else {
         setTimeout(() => {
           setSkills((prev) => [...prev, finalMessage]);
-          // setInstalling(false); // Enable input after installation is complete
         }, 500);
       }
     };
@@ -109,7 +109,7 @@ const HeroSectionDemo = () => {
   };
 
   return (
-    <aside className="bg-white dark:bg-black border dark:border-zinc-700 border-zinc-200 p-6 rounded-lg w-full h-[300px] sm:h-[280px] overflow-y-auto font-mono">
+    <aside className="bg-white dark:bg-black border dark:border-zinc-700 border-zinc-200 p-6 rounded-lg w-full h-[300px] lg:h-[375px] xl:h-[290px] 2xl:h-[287px] overflow-y-auto font-mono">
       <div className="flex justify-between items-center">
         <div className="flex space-x-2">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -127,9 +127,9 @@ const HeroSectionDemo = () => {
               value={inputText}
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
-              className="ml-2 bg-transparent outline-none w-full placeholder:text-sm disabled:opacity-50"
-              placeholder="Type 'yarn install skills' and press Enter."
-              disabled={loading || installing} // Disable input during loading and installation
+              className="ml-2 bg-transparent outline-none w-full placeholder:text-[12px] sm:placeholder:text-base lg:placeholder:text-sm disabled:opacity-50"
+              placeholder="Type 'npm/yarn install skills' and press Enter."
+              disabled={loading || installing}
             />
           </div>
         </div>
