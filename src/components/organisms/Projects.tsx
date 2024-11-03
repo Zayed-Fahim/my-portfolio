@@ -62,7 +62,9 @@ const Projects = () => {
               </Animation>
             ))
           ) : (
-            <EmptyState message="No projects available at the moment. Please check back later!" />
+            <Animation delay={0.06}>
+              <EmptyState message="No projects available at the moment. Please check back later!" />
+            </Animation>
           )}
         </div>
       </div>

@@ -1,17 +1,15 @@
 "use client";
 import { BlogCardSkeletonLoader, PageHeader } from "@/components/atoms";
-import { Animation, SearchBar } from "@/components/molecules";
+import { Animation, EmptyState, SearchBar } from "@/components/molecules";
 import { BlogCard } from "@/components/organisms";
 import { Search } from "@/constants";
 import { CommonContext } from "@/contexts";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { BiDetail } from "react-icons/bi";
-import { EmptyState } from "@/components/molecules";
-import { IBlogDetailsProps } from "@/data/blogs";
 
 const Blogs = () => {
   const { isLoading, setIsLoading } = useContext(CommonContext)!;
-  const [blogs, setBlogs] = useState<IBlogDetailsProps[]>([]);
+  const blogs = Array(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -66,15 +64,17 @@ const Blogs = () => {
                 </Animation>
               ))
             ) : (
-              <EmptyState
-                message={
-                  // query
-                  //   ? `No posts for "${query}". Perhaps the little guy is too busy running in the wheel of code.`
-                  //   :
-                  // "The posts are playing hide and seek – we just can't find them!"
-                  "I haven't anything posted yet. Please check back later!"
-                }
-              />
+              <Animation delay={0.06}>
+                <EmptyState
+                  message={
+                    // query
+                    //   ? `No posts for "${query}". Perhaps the little guy is too busy running in the wheel of code.`
+                    //   :
+                    // "The posts are playing hide and seek – we just can't find them!"
+                    "I haven't anything posted yet. Please check back later!"
+                  }
+                />
+              </Animation>
             )}
           </div>
         </div>
