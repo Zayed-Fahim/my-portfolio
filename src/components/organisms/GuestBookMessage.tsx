@@ -10,9 +10,15 @@ const GuestBookMessageField = ({
   name,
   handleSend,
   error,
+  isPopoverOpen,
+  setIsPopoverOpen,
 }: GuestBookProps) => {
   return (
-    <div className="font-incognito flex flex-col gap-1">
+    <div
+      className={`font-incognito flex flex-col gap-1 ${
+        isPopoverOpen && "px-4"
+      }`}
+    >
       <MessageField
         id="guestbook-message"
         name="message"
@@ -28,7 +34,10 @@ const GuestBookMessageField = ({
         <p className="text-[#a1a1aa]">
           You are logged in as {name}.{" "}
           <button
-            onClick={() => handleLogOut()}
+            onClick={() => {
+              handleLogOut();
+              setIsPopoverOpen?.(false);
+            }}
             className="text-secondary-color font-bold cursor-pointer hover:underline"
           >
             Logout

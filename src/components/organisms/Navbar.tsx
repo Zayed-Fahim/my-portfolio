@@ -55,7 +55,7 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-x-4 sm:gap-x-0">
+          <div className="flex items-center gap-x-2 sm:gap-x-0">
             {MemorizedTheme}
             <MobileNav />
           </div>

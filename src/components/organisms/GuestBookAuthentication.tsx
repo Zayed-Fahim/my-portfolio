@@ -7,17 +7,22 @@ import { Animation } from "@/components/molecules";
 import { GuestBookProps } from "@/types/guestBook";
 
 const GuestBookAuthentication = ({
-  status,
   session,
   message,
   setMessage,
   handleSend,
   error,
+  isPopoverOpen,
+  setIsPopoverOpen,
 }: GuestBookProps) => {
   return (
     <>
-      {(status === "loading" || !session) && (
-        <div className="font-incognito flex justify-center flex-col gap-2">
+      {!session && (
+        <div
+          className={`font-incognito flex justify-center flex-col gap-2 ${
+            isPopoverOpen && "px-4"
+          }`}
+        >
           <p className="text-[#a1a1aa] text-center mt-1">
             Please login to start a conversation.
           </p>
@@ -26,13 +31,17 @@ const GuestBookAuthentication = ({
               onClick={() => handleSignIn("google")}
               title="Continue with Google"
               icon={<Google className="w-6 h-6" />}
-              className="w-full flex items-center justify-center gap-3 px-6 py-2 text-[0.875rem] font-bold leading-5 text-center uppercase align-middle rounded-lg border dark:border-zinc-700 border-zinc-200 hover:dark:bg-primary-bg hover:bg-[#f7f7f7] cursor-pointer transition-transform duration-600 ease-in-out"
+              className={`${
+                isPopoverOpen ? "gap-2 px-2" : "gap-3 px-6"
+              } w-full flex items-center justify-center py-2 text-[0.875rem] font-bold leading-5 text-center uppercase align-middle rounded-lg border dark:border-zinc-700 border-zinc-200 hover:dark:bg-primary-bg hover:bg-[#f7f7f7] cursor-pointer transition-transform duration-600 ease-in-out`}
             />
             <Button
               onClick={() => handleSignIn("github")}
               title="Continue with Github"
               icon={<GitHub className="w-6 h-6" />}
-              className="w-full flex items-center justify-center gap-3 px-6 py-2 text-[0.875rem] font-bold leading-5 text-center uppercase align-middle rounded-lg border dark:border-zinc-700 border-zinc-200 hover:dark:bg-primary-bg hover:bg-[#f7f7f7] cursor-pointer transition-transform duration-600 ease-in-out"
+              className={`${
+                isPopoverOpen ? "gap-2 px-2" : "gap-3 px-6"
+              } w-full flex items-center justify-center py-2 text-[0.875rem] font-bold leading-5 text-center uppercase align-middle rounded-lg border dark:border-zinc-700 border-zinc-200 hover:dark:bg-primary-bg hover:bg-[#f7f7f7] cursor-pointer transition-transform duration-600 ease-in-out`}
             />
           </div>
         </div>
@@ -41,6 +50,8 @@ const GuestBookAuthentication = ({
       {session && session?.user && (
         <Animation delay={0.22}>
           <GuestBookMessage
+            isPopoverOpen={isPopoverOpen}
+            setIsPopoverOpen={setIsPopoverOpen}
             error={error}
             message={message}
             setMessage={setMessage}

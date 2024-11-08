@@ -8,6 +8,7 @@ const GuestBookText: React.FC<GuestBookContentProps> = ({
   user: { image, name, type },
   content,
   createdAt,
+  isPopoverOpen
 }) => {
   return (
     <div
@@ -44,7 +45,7 @@ const GuestBookText: React.FC<GuestBookContentProps> = ({
             {formatDate(createdAt, "dd-MM-yyyy h:mm a")}
           </p>
         </div>
-        <Text text={content} type={type} />
+        <Text isPopoverOpen={isPopoverOpen} text={content} type={type} />
       </div>
       {type === "author" && (
         <Image

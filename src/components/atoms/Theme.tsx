@@ -1,12 +1,12 @@
 "use client";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { useTheme } from "next-themes";
-import Button from "./Button";
+import { Button } from "@/components/atoms";
 import { memo, useEffect, useState } from "react";
 
 const ThemeSwitch = () => {
   const { resolvedTheme: theme, setTheme } = useTheme();
-  const [isThemeResolved, setIsThemeResolved] = useState(false);
+  const [isThemeResolved, setIsThemeResolved] = useState<boolean>(false);
 
   useEffect(() => {
     if (theme) setIsThemeResolved(true);
@@ -38,7 +38,6 @@ const ThemeSwitch = () => {
   const pathLengthMoon = useTransform(scaleMoon, [0.6, 1], [0, 1]);
   const pathLengthSun = useTransform(scaleSun, [0.6, 1], [0, 1]);
 
-  // Prevent initial render until theme is resolved
   if (!isThemeResolved)
     return (
       <div className="rounded w-8 h-8 bg-[#F5F5F5] dark:bg-[#262626] animate-pulse transition-all duration-300" />

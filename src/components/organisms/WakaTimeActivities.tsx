@@ -1,5 +1,5 @@
 "use client";
-import "../../app/styles/gradientBorder.css";
+import "@/app/styles/gradientBorder.css";
 import { OverViewCard } from "@/components/atoms";
 import { ProgressBar } from "@/components/atoms";
 import { Animation } from "@/components/molecules";
@@ -55,7 +55,7 @@ const WakaTimeActivities = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col gap-5">
+    <div className="w-full flex flex-col gap-5 z-[-1]">
       <Animation delay={0.16}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {activities.map(({ title, count }, i) => (

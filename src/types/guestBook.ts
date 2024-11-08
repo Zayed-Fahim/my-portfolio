@@ -9,6 +9,8 @@ export type GuestBookContentProps = {
     type: string;
     image: string;
   };
+  isPopoverOpen?: boolean;
+  setIsPopoverOpen?: Dispatch<boolean>;
 };
 
 export type GuestBookProps = {
@@ -19,4 +21,6 @@ export type GuestBookProps = {
   status?: string;
   session?: Session;
   error: string | null;
+  isPopoverOpen?: boolean;
+  setIsPopoverOpen?: Dispatch<boolean>;
 };

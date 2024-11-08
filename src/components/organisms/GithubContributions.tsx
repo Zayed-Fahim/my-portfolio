@@ -1,4 +1,4 @@
-import "../../app/styles/gradientBorder.css";
+import "@/app/styles/gradientBorder.css";
 import { Animation, GithubContributionsGraph } from "@/components/molecules";
 import Link from "next/link";
 

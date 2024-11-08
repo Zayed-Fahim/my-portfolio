@@ -6,9 +6,22 @@ import { CommonContext } from "@/contexts";
 import { GuestBookContentProps } from "@/types/guestBook";
 import { fetchData } from "@/utils/fetchData";
 import { useSession } from "next-auth/react";
-import { FormEvent, useCallback, useContext, useEffect, useState } from "react";
+import {
+  Dispatch,
+  FormEvent,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
-const GuestBookPlayground = () => {
+const GuestBookPlayground = ({
+  isPopoverOpen,
+  setIsPopoverOpen,
+}: {
+  isPopoverOpen?: boolean;
+  setIsPopoverOpen?: Dispatch<boolean>;
+}) => {
   const { data: session, status } = useSession();
   const { isLoading, setIsLoading } = useContext(CommonContext)!;
   const [message, setMessage] = useState<string>("");
@@ -77,20 +90,26 @@ const GuestBookPlayground = () => {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="mt-10 pr-3 min-h-[35vh] max-h-[62vh] md:min-h-[30vh] md:max-h-[70vh] lg:min-h-[38vh] lg:max-h-[72vh] overflow-y-auto sticky top-0 left-0">
+      <div
+        className={`${
+          isPopoverOpen
+            ? "px-4 h-[45vh]"
+            : "mt-10 pr-3 min-h-[35vh] max-h-[62vh] md:min-h-[30vh] md:max-h-[70vh] lg:min-h-[38vh] lg:max-h-[72vh]"
+        } overflow-y-auto sticky top-0 left-0`}
+      >
         {isLoading ? (
           Array(2)
             .fill(0)
             .map((_, i) => (
               <Animation delay={0.14} key={i}>
-                <GuestBookTextSkeletonLoader />
+                <GuestBookTextSkeletonLoader isPopoverOpen={isPopoverOpen} />
               </Animation>
             ))
         ) : (
           <>
             {guestBookData.map((data, i) => (
               <Animation delay={0.14} key={i}>
-                <GuestBookText {...data} />
+                <GuestBookText {...data} isPopoverOpen={isPopoverOpen} />
               </Animation>
             ))}
           </>
@@ -98,10 +117,12 @@ const GuestBookPlayground = () => {
       </div>
 
       <Animation delay={0.18}>
-        <hr className="border-zinc-600" />
+        <hr className="border-zinc-200 dark:border-zinc-700" />
       </Animation>
       <Animation delay={0.22}>
         <GuestBookAuthentication
+          isPopoverOpen={isPopoverOpen}
+          setIsPopoverOpen={setIsPopoverOpen}
           status={status}
           session={session ?? undefined}
           handleSend={handleSend}

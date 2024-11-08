@@ -9,3 +9,5 @@ export { default as GuestBookText } from "./GuestBookText";
 export { default as MessageField } from "./MessageField";
 export { default as HeroSection } from "./HeroSection";
 export { default as EmptyState } from "./EmptyState";
+export { default as Popover } from "./Popover";
+export { default as GuestBookWidgetHeader } from "./GuestBookWidgetHeader";

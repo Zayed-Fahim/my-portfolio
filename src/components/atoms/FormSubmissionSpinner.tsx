@@ -1,5 +1,5 @@
 import React from "react";
-import "../../app/styles/formSubmissionSpinner.css";
+import "@/app/styles/formSubmissionSpinner.css";
 
 const FormSubmissionSpinner = ({ title }: { title: string }) => {
   return (

@@ -1,6 +1,6 @@
 "use client";
-import "../../app/styles/contactForm.css";
-import "../../app/styles/gradientBorder.css";
+import "@/app/styles/contactForm.css";
+import "@/app/styles/gradientBorder.css";
 import { z } from "zod";
 import React, { useContext, useState } from "react";
 import { FormField } from "@/components/molecules";

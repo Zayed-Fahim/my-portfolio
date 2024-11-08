@@ -1,5 +1,5 @@
 "use client";
-import "../../app/styles/gradientBorder.css";
+import "@/app/styles/gradientBorder.css";
 import { GitHub } from "@/constants";
 import { useGithubStats } from "@/hooks/useGithubStats";
 import Link from "next/link";

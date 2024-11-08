@@ -1,5 +1,5 @@
 import React from "react";
-import SkeletonLoader from "./SkeletonLoader";
+import { SkeletonLoader } from "@/components/atoms";
 
 const BlogCardSkeletonLoader = () => {
   return (
