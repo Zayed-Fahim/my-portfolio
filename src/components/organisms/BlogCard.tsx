@@ -6,7 +6,16 @@ import React from "react";
 import { BiSolidTime } from "react-icons/bi";
 import { HiCalendar } from "react-icons/hi";
 import { Animation } from "@/components/molecules";
-import { IBlogDetailsProps } from "@/data/blogs";
+
+type IBlogDetailsProps = {
+  title: string;
+  description: string;
+  date: string;
+  createdAt: string;
+  views: number;
+  imageSrc: string;
+  blogLink: string;
+};
 
 const BlogCard: React.FC<IBlogDetailsProps> = ({
   title,
