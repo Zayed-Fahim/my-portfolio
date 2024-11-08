@@ -33,7 +33,7 @@ export const SITE: Site = {
     "Passionate Software engineer who focused on solving problems with digital products.",
   author: {
     name: "Sayed Asif Zayed",
-    url: "https://zayed-fahim.web.app",
+    url: "https://zayedfahim.vercel.app",
     email: "work.zayedfahim@gmail.com",
     linkedIn: "https://www.linkedin.com/in/zayed-fahim",
     github: {
@@ -43,6 +43,6 @@ export const SITE: Site = {
     avatar: "https://i.ibb.co.com/v1hjvCZ/2.png",
     facebook: "https://www.facebook.com/Zayed.Fahim33",
     resume:
-      "https://drive.google.com/file/d/14zOkpbR2bKQ9XQIgBnWrPdCeRlwWUQOJ/view",
+      "https://drive.google.com/file/d/1irDGWr9WFkAwDh5nL95KVuali7Pnl1ui/view",
   },
 };

@@ -17,8 +17,7 @@ const HeroSectionDemo = () => {
   const [skills, setSkills] = useState<string[]>([]);
   const [error, setError] = useState("");
 
-  const validCommandOne = "npm install skills";
-  const validCommandTwo = "yarn install skills";
+  const validCommand = "npm install skills";
   const finalMessage = "Done in";
 
   const skillsByMajor: SkillCategories = {
@@ -61,7 +60,7 @@ const HeroSectionDemo = () => {
     if (e.key === "Enter") {
       setError("");
 
-      if (inputText.trim() === (validCommandOne || validCommandTwo)) {
+      if (inputText.trim() === validCommand) {
         setLoading(true);
         setSkills([]);
 
@@ -71,7 +70,7 @@ const HeroSectionDemo = () => {
           startDisplayingSkills();
         }, 1000);
       } else {
-        setError("Command not found. Try 'yarn install skills'");
+        setError("Command not found. Try 'npm install skills'");
         setLoading(false);
         setInstalling(false);
         setSkills([]);
@@ -128,7 +127,7 @@ const HeroSectionDemo = () => {
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
               className="ml-2 bg-transparent outline-none w-full placeholder:text-[12px] sm:placeholder:text-base lg:placeholder:text-sm disabled:opacity-50"
-              placeholder="Type 'npm/yarn install skills' and press Enter."
+              placeholder="Type 'npm install skills' and press Enter."
               disabled={loading || installing}
             />
           </div>

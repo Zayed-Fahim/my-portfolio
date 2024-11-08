@@ -6,7 +6,6 @@ import {
   Git,
   GitHub,
   JavaScript,
-  MaterialTailwind,
   MongoDB,
   MongooseJS,
   MySQL,
@@ -66,10 +65,6 @@ export const STACKS: Stack[] = [
   {
     name: "Bootstrap",
     icon: <Bootstrap fill="#7952B3" />,
-  },
-  {
-    name: "Material Tailwind",
-    icon: <MaterialTailwind />,
   },
   {
     name: "MongoDB",

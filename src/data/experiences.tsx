@@ -6,7 +6,6 @@ import {
   GitHub,
   JavaScript,
   JWT,
-  MaterialTailwind,
   MongoDB,
   MongooseJS,
   NestJS,
@@ -25,12 +24,12 @@ import { cn } from "@/utils/cn";
 export const EXPERIENCES: Experience[] = [
   {
     company: {
-      name: "Zaynax Limited",
-      logo: "https://i.ibb.co.com/RTTBNK3/zaynax-logo.jpg",
+      name: "Zaynax Health",
+      logo: "https://i.ibb.co.com/WtVHZvt/zaynax-logo.jpg",
       location: "Dhaka, Bangladesh",
       workplaceType: "On-Site",
       jobType: "Full-time",
-      url: "https://zaynax.com/",
+      url: "https://zaynaxhealth.com",
       startDate: "2024-03",
       endDate: null, // Present
       positions: [
@@ -142,11 +141,6 @@ export const EXPERIENCES: Experience[] = [
               name: "Tailwind CSS",
               icon: <TailwindCSS className={cn("w-6 h-6")} fill="#38B2AC" />,
             },
-            {
-              name: "Material Tailwind",
-              icon: <MaterialTailwind className={cn("w-6 h-6")} />,
-            },
-
             {
               name: "NodeJS",
               icon: <NodeJS className={cn("w-6 h-6")} fill="green" />,

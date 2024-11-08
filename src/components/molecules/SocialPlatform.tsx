@@ -4,6 +4,7 @@ import { Button } from "@/components/atoms";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { LuExternalLink } from "react-icons/lu";
 import Link from "next/link";
+import { SITE } from "@/constants";
 
 const SocialPlatform = () => {
   const className =
@@ -14,7 +15,7 @@ const SocialPlatform = () => {
 
   return (
     <div className="flex items-center justify-start gap-5 flex-wrap">
-      <Link href="https://github.com/Zayed-Fahim" target="_blank">
+      <Link href={SITE.author.github.url} target="_blank">
         <Button
           title="Github"
           icon={<FaGithub className={`${className}`} />}
@@ -23,7 +24,7 @@ const SocialPlatform = () => {
           borderClassName={borderClassName}
         />
       </Link>
-      <Link href="https://www.linkedin.com/in/zayed-fahim/" target="_blank">
+      <Link href={SITE.author.linkedIn} target="_blank">
         <Button
           title="LinkedIn"
           icon={<FaLinkedin className={`${className}`} />}
@@ -32,10 +33,7 @@ const SocialPlatform = () => {
           borderClassName={borderClassName}
         />
       </Link>
-      <Link
-        href="https://drive.google.com/file/d/14zOkpbR2bKQ9XQIgBnWrPdCeRlwWUQOJ/view"
-        target="_blank"
-      >
+      <Link href={SITE.author.resume} target="_blank">
         <Button
           title="Resume"
           icon={<LuExternalLink className={`${className}`} />}
