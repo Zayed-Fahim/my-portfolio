@@ -5,9 +5,11 @@ import { navItems } from "@/data/navItems";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { memo, useMemo } from "react";
 
 const Navbar = () => {
   const pathName = usePathname();
+  const MemorizedTheme = useMemo(() => <Theme />, []);
 
   return (
     <section className="sticky top-0 left-0 md:relative z-[9999999]">
@@ -54,7 +56,7 @@ const Navbar = () => {
           </nav>
 
           <div className="flex items-center gap-x-4 sm:gap-x-0">
-            <Theme />
+            {MemorizedTheme}
             <MobileNav />
           </div>
         </div>
@@ -63,4 +65,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);
