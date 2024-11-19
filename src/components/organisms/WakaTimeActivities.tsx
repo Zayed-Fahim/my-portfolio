@@ -55,7 +55,7 @@ const WakaTimeActivities = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col gap-5 z-[-1]">
+    <div className="w-full flex flex-col gap-5">
       <Animation delay={0.16}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {activities.map(({ title, count }, i) => (
@@ -67,7 +67,7 @@ const WakaTimeActivities = () => {
         </div>
       </Animation>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch w-full z-[-1]">
         <Animation
           delay={0.18}
           className="flex-1 rounded-xl glow-border relative"
