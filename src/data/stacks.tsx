@@ -5,7 +5,9 @@ import {
   ExpressJS,
   Git,
   GitHub,
+  GraphQL,
   JavaScript,
+  Jest,
   MongoDB,
   MongooseJS,
   MySQL,
@@ -23,7 +25,6 @@ import {
   TypeScript,
 } from "@/constants";
 import { Stack } from "@/types/stack";
-import { cn } from "@/utils/cn";
 
 export const STACKS: Stack[] = [
   {
@@ -76,13 +77,17 @@ export const STACKS: Stack[] = [
     name: "PostgreSQL",
     icon: <PostgreSQL fill="#4169E1" />,
   },
+  {
+    name: "GraphQL",
+    icon: <GraphQL />,
+  },
   { name: "Redis", icon: <Redis fill="#FF4438" /> },
   {
-    name: "Mongoose.js",
+    name: "Mongoose ODM",
     icon: <MongooseJS />,
   },
   {
-    name: "Prisma",
+    name: "Prisma ORM",
     icon: <Prisma />,
   },
   {
@@ -95,7 +100,11 @@ export const STACKS: Stack[] = [
   },
   {
     name: "S3",
-    icon: <S3 className={cn("w-6 h-6")} fill="#FF9900" />,
+    icon: <S3 className="w-6 h-6" fill="#FF9900" />,
+  },
+  {
+    name: "Jest",
+    icon: <Jest fill="#C21325" />,
   },
   {
     name: "Docker",

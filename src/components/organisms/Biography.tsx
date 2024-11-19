@@ -27,7 +27,7 @@ const Biography = () => {
                 delivery innovative digital solutions that drive business value.
                 I am currently working at{" "}
                 <span className="text-secondary-color hover:dark:text-white hover:text-black">
-                  <Link href="https://zaynaxhealth.com/" target="_blank">
+                  <Link href="https://zaynaxhealth.com" target="_blank">
                     Zaynax Health
                   </Link>
                 </span>

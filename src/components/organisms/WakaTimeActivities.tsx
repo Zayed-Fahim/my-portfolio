@@ -8,11 +8,11 @@ const WakaTimeActivities = () => {
   const activities = [
     {
       title: "Daily Coding Average",
-      count: "6 hrs 34 mins",
+      count: "3 hrs 5 mins",
     },
     {
       title: "Last Week Coding Time",
-      count: "46 hrs 2 mins",
+      count: "12 hrs 20 mins",
     },
     {
       title: "Best Day Coding Time",
@@ -20,22 +20,22 @@ const WakaTimeActivities = () => {
     },
     {
       title: "All Time Coding Time",
-      count: "493 hrs 28 mins",
+      count: "567 hrs 14 mins",
     },
   ];
 
   const languages = [
     {
       name: "Typescript",
-      percent: 88,
+      percent: 58,
     },
     {
       name: "JavaScript",
-      percent: 3,
+      percent: 21,
     },
     {
       name: "Others",
-      percent: 9,
+      percent: 21,
     },
   ];
 
